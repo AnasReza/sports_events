@@ -6,5 +6,9 @@
 
 
     <color name="splashColor">#0D3965</color>
+    <color name="editTextStroke">#AEAEAE</color>
+    <color name="googleColor">#CB3626</color>
+    <color name="facebookColor">#2E428B</color>
+
 
 </resources>

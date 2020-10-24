@@ -1,5 +1,6 @@
 package com.sportseventmanagement.ui.activity
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.view.View
@@ -90,11 +91,11 @@ class OnBoardingActivity : AppCompatActivity(), View.OnClickListener {
                     skip_text!!.visibility=View.GONE
                     index++
                 }else if(index>3){
-                    Toast.makeText(this@OnBoardingActivity,"Fragment is Ended",Toast.LENGTH_SHORT).show()
+                   startActivity(Intent(this@OnBoardingActivity,LoginActivity::class.java))
                 }
             }
             R.id.skip_text->{
-                Toast.makeText(this@OnBoardingActivity,"SKIP IS PRESSED",Toast.LENGTH_SHORT).show()
+                startActivity(Intent(this@OnBoardingActivity,LoginActivity::class.java))
             }
         }
     }
