@@ -19,6 +19,12 @@
         <activity android:name=".ui.activity.OnBoardingActivity"/>
         <activity android:name=".ui.activity.LoginActivity"/>
         <activity android:name=".ui.activity.RegisterActivity"/>
+        <activity android:name=".ui.activity.ForgotPasswordActivity"/>
+        <activity android:name=".ui.activity.OTPActivity"/>
+        <activity android:name=".ui.activity.NewPasswordActivity"/>
+        <activity android:name=".ui.activity.ResetConfirmationActivity"/>
+        <activity android:name=".ui.activity.VerifyAccountActivity"/>
+        <activity android:name=".ui.activity.AccountConfirmationActivity"/>
 
     </application>
 

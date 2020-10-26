@@ -10,7 +10,8 @@ import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
 
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
-    private var create_one:TextView?=null
+    private var create_one: TextView? = null
+    private var forgot_text: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -23,17 +24,22 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
         init()
     }
 
-    private fun init(){
-        create_one=findViewById(R.id.create_one)
+    private fun init() {
+        create_one = findViewById(R.id.create_one)
+        forgot_text = findViewById(R.id.forgot_text)
 
 
         create_one!!.setOnClickListener(this)
+        forgot_text!!.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
-        when(v!!.id){
-            R.id.create_one->{
-                startActivity(Intent(this@LoginActivity,RegisterActivity::class.java))
+        when (v!!.id) {
+            R.id.create_one -> {
+                startActivity(Intent(this@LoginActivity, RegisterActivity::class.java))
+            }
+            R.id.forgot_text -> {
+                startActivity(Intent(this@LoginActivity, ForgotPasswordActivity::class.java))
             }
         }
     }
