@@ -3,4 +3,1169 @@
 
 
     <string name="create_one"><u>Create One</u></string>
+
+    <string-array name="termsArray">
+        <item><b>1. Introduction\n</b></item>
+        <item>1.1. These are the terms of use, including the terms and conditions
+of supply (Terms), for the NightMap application. For the purposes of
+these Terms, both the website and application shall be referred to
+as the "App". The App is operated by Night Map trading as
+NightMap (we, us and our company). We are a simple partnership,
+governed by art. 530 et seq. of the Swiss Code of Obligations.\n</item>
+        <item>1.2. Your use of the App is subject to these Terms and you agree to
+be bound by them. Use of your personal information submitted via
+this App is governed by our Privacy Policy.\n</item>
+        <item>1.3. We reserve the right to change these Terms from time to time
+by changing them on the App. Your continued use of the App a will
+be bound by the new Terms.\n</item>
+        <item>1.4. As a consumer, nothing in these Terms will prevent you or stop
+you from being able to enforce or receive the full benefit of your
+legal rights provided under general Swiss law (your \"non-excludable
+statutory rights\").\n</item>
+        <item>1.5. By accessing, downloading, using, purchasing, or subscribing
+to the NightMap Service, you acknowledge that you have read,
+understood and agreed to be bound by the Terms and Conditions,
+including the NightMap Privacy Policy (together, these "terms"). If
+you are not eligible, or do not agree to these Terms, then you do
+not have our permission to use the App.\n</item>
+        <item>1.6. As a condition of use, you promise not to use the App for any
+purpose that is prohibited by these Terms of Use. You are
+responsible for all of your activity in connection with the App.
+Additionally, you shall abide by all applicable local, state, national
+and international laws and regulations and, if you represent a
+business, any advertising, marketing, privacy, or other
+self-regulatory code(s) applicable to your industry.\n</item>
+        <item><b>2. The basics\n</b></item>
+        <item>2.1 To use the App, you must be 16 or over. By continuing to use
+the App and agreeing to these Terms you are representing to us
+that you are 16 and we can rely on this representation. Additionally,
+to fall within the eligibility criteria, you must not have been
+previously suspended or removed from the App. Finally, any
+registration for and use of the App is in compliance with all
+applicable laws and regulations.\n</item>
+        <item>2.2 If you are using the App on behalf of an entity, organisation, or
+company, you represent and warrant that you have the authority to
+bind that organisation to these Terms and you agree to be bound by
+these Terms on behalf of that organisation. NightMap may, in its
+sole discretion, refuse to offer the App to any person or entity, and
+may change its eligibility criteria at any time.\n</item>
+        <item>2.3 The App is only directed at people who access the App. While
+the App helps you on choosing the best Venue for a given night and
+provides you with further facilitates such as Reviews and Catch,
+you should be careful to take a good judgement on the Venue
+suitability. All actions are undertaken at your own initiative and
+responsibility.\n</item>
+        <item>2.4 We grant you a limited license to use the App to access and use
+our services for your own personal and non-commercial use,
+provided that you comply fully with these Terms. Subject to your
+complete and ongoing compliance with all the terms and conditions
+set forth in the Terms (including, without limitation, payment of any
+applicable fees and compliance with all license restrictions),
+NightMap grants you: (1) a limited, non-exclusive, non-transferable,
+non-sub licensable, revocable license to use one copy of the App
+downloaded directly from NightMap or from a legitimate
+marketplace or Distributor (such as Apple’s App Store or Google
+Play Store), solely in object code format and solely for your
+personal use for lawful purposes, on a single compatible mobile
+device that you own or control; and (2) permission to access and
+use the Service, only for your personal use, and solely through the
+use of a licensed copy of the App. You may not reproduce,
+distribute, publicly display, or publicly perform the App or any part of
+the Service. Except if, and solely to the extent that, such a
+restriction is impermissible under applicable law, you may not (a)
+decompile, reverse engineer, or otherwise access or attempt to
+access the source code for the App, or make or attempt to make
+any modification to or derivative work of the App; or (b) interfere
+with or circumvent any feature of the App, including without
+limitation any security or access control mechanism. You may not
+use the App or the Service for any purpose other than a purpose for
+which the App and the Service are expressly designed. The term
+App, as used herein, includes any update or modification to the App
+made available to you by NightMap (unless provided with separate
+terms). If you are prohibited under applicable law from using the
+App or the Service, you may not use them.\n</item>
+        <item>2.5 We reserve the right to prevent you using the App, however we
+will honour your historic activity, unless you have not complied with
+these Terms or we are unable to because of circumstances outside
+our control. For more on this, please read below.</item>
+        <item>2.6 Your use of the App may be subject to separate third party
+terms of service and fees, including, without limitation, the terms of
+service and data, SMS, MMS, and other fees of your mobile
+network operator (the "Carrier"), which are your sole responsibility.</item>
+        <item>2.7 The App is provided "as is" without warranties of any kind, and
+NightMap’s liability to you is limited.\n</item>
+        <item>2.8 By registering the account with NightMap, you consent to the
+collection and use of your personally identifiable information in
+accordance with NightMap’s Privacy Policy, including, without
+limitation, the collection of information regarding purchases.\n</item>
+        <item>2.9 There is currently no charge for the use of the App, except the
+case in which the users buy tickets through the platform (Platform).\n</item>
+        <item>2.10. We reserve the right, at our discretion, to change these Terms
+on a going-forward basis at any time. Please check these Terms
+periodically for changes. In the event that a change to these Terms
+materially modifies your rights or obligations, we will make
+reasonable efforts to notify you of such change. We may provide
+notice through a pop-up or banner within the Service, by sending an
+email to any address you may have used to register for an account,
+or through other similar mechanisms. Additionally, if the changed
+Terms materially modify your rights or obligations, we may require
+you to provide consent by accepting the changed Terms. If we
+require your acceptance of the changed Terms, changes are
+effective only after your acceptance. If you do not accept the
+changed Terms, we may terminate your access to and use of the
+App. All other changes are effective upon publication of the
+changed Terms. Disputes arising under these Terms will be
+resolved in accordance with the version of these Terms that was in
+effect at the time the dispute arose.\n</item>
+        <item>2.11 By using the App, you agree to receive certain electronic
+communications from us as further described in our Privacy Policy.
+Please read our Privacy Policy to learn more about your choices
+regarding our electronic communications practices. You agree that
+any notices, agreements, disclosures, or other communications that
+we send to you electronically will satisfy any legal communication
+requirements, including that those communications be in writing.\n</item>
+        <item>2.12 Open Source Software. The App may include open source
+software or third party software. Any such software is made
+available to you under the terms of the applicable licenses. Please
+review the information below for the applicable notices and license
+terms.\n</item>
+        <item>2.13 You are solely responsible for your interaction with other
+users. You understand that the company currently does not conduct
+criminal background checks or screenings on its users. The
+company also does not inquire into the backgrounds of all of its
+users or attempt to verify the statement of its users. The company
+makes no representations or warranties as to the conduct of users
+or their compatibility with any current or future users. The company
+reserves the right to conduct any criminal background check or
+other screenings (such as sex offender register searches), at any
+time and using available public records.\n</item>
+        <item>2.14 You understand and agree that we may, but are not obligated
+to, monitor or review any Content you post as part of an App. We
+may delete any Content, in whole or in part, that in the sole
+judgment of us violates this Agreement or may harm the reputation
+of the App or ours.\n</item>
+        <item><b>3. Use and Access to the App</b>\n</item>
+        <item>3.1 We cannot guarantee the continuous, uninterrupted or error-free
+operability of the App. There may be times when certain features,
+parts or content of the App, or the entire App, become unavailable
+(whether on a scheduled or unscheduled basis) or are modified,
+suspended or withdrawn by us, in our sole discretion, without notice
+to you. You agree that we will not be liable to you or to any third
+party for any unavailability, modification, suspension or withdrawal
+of the App, or any features, parts or content of the App.\n</item>
+        <item>3.2 We may change the format and Content of the App from time to
+time unilaterally. We reserve the right to modify, change, substitute
+or withdraw any information on our App. You agree that your use of
+the App is on an \'as is\' and \'as available\' basis and at your sole risk.\n</item>
+        <item>3.3 You may only use the App for non-commercial use and only in
+accordance with these Terms. You may retrieve and display content
+from the App on a computer or mobile device screen, print and copy
+individual pages. Additional terms may also apply to certain
+features, parts or content of the App and, where they apply, they
+will be displayed before you access the relevant features, parts or
+content.\n</item>
+        <item>3.4 Except to the extent expressly set out in these Terms, you are
+not allowed to:\n\n\t
+● Store pages of the App on a server or other storage device connected to a
+network or create an electronic database by systematically downloading and
+storing all or most of the pages of the App; or\n\t
+● Remove or change any Content of the App or attempt to circumvent security or
+interfere with the proper working of the App or the servers on which it is hosted.\n</item>
+        <item>3.5 You must only use the App and anything available from the App
+for lawful purposes (complying with all applicable laws and
+regulations), in a responsible manner, and not in a way that might
+damage our name or reputation or that of any of our affiliates.\n</item>
+        <item>3.5.1 All rights granted to you under these Terms will terminate
+immediately in the event that you have not followed your
+responsibilities as required by them (legally known as a \"breach\").\n</item>
+        <item><b>3. You are not allowed to:\n</b></item>
+
+        <item>Act unlawfully against other users:\n</item>
+        <item>Use the App for any illegal purpose or in violation of any local, state,
+national, or international law; Violate, or encourage others to
+violate, any right of a third party, including by infringing or
+misappropriating any third party intellectual property right; Interfere
+with security-related features of the App, including by: (1) disabling
+or circumventing features that prevent or limit use or copying of any
+content; or (2) reverse engineering or otherwise attempting to
+discover the source code of any portion of the Service except to the
+extent that the activity is expressly permitted by applicable law;
+interfere with the operation of the App or any users enjoyment of
+the App, including by: (a) uploading or otherwise any disseminating
+virus, adware, spyware, worm, or other malicious code; (b) making
+any unsolicited offer or advertisement to another user of the App,
+including any informational announcements, charity requests, and
+petitions for signatures; (c) attempting to collect, personal
+information about another user or third party without consent; (d)
+taking any action (directly or indirectly) that imposes or may impose
+(as determined by App in its sole discretion) an unreasonable or
+disproportionately large load on NightMap’s or its third party
+providers infrastructure; or (e) interfering with or disrupting any
+network, equipment, or server connected to or used to provide the
+App, or violating any regulation, policy, or procedure of any
+network, equipment, or server; Perform any fraudulent activity,
+including impersonating any person or entity or claiming a false
+affiliation; Misrepresenting the source, identity or content of
+information transmitted via the App; Accessing any other App
+account without permission, or falsifying your age or date of birth;
+Sell or otherwise transfer the access granted under these Terms, or
+any right or ability to view, access, or use any part of the App;
+Attempt to do any of the acts described in this Section, or assist or
+permit any person in engaging in any of the acts described in this
+Section, or impersonate any person or entity by:\n\t</item>
+        <item>● solicit money from any users;
+● \"stalk\" or otherwise harass any person;\n\t
+● express or imply that any statements you make are endorsed by the Company
+without our specific prior written consent;\n\t
+● use the App in an illegal manner or to commit an illegal act;\n\t
+● access the App in a jurisdiction in which it is illegal or unauthorized;\n\t</item>
+        <item>● ask or use users to conceal the identity, source, or destination of any illegally
+gained money or products;\n\t
+● use any robot, spider, site search/retrieval application, or other manual or
+automatic device or process to retrieve, index, \"data mine\", or in any way
+reproduce or circumvent the navigational structure or presentation of the App or
+its Content;\n\t
+● collect usernames and/or email addresses of users by electronic or other means
+for the purpose of sending unsolicited email or unauthorized framing of or linking
+to the App;\n\t
+● interfere with or disrupt the App or the servers or networks connected to the App;\n\t
+● email or otherwise transmit any material that contains software viruses or any
+other computer code, files or programs designed to interrupt, destroy or limit the
+functionality of any computer software or hardware or telecommunications
+equipment;\n\t
+● forge headers or otherwise manipulate identifiers in order to disguise the origin of
+any information transmitted to or through the App (either directly or indirectly
+through use of third party software);\n\t
+● \"frame\" or \"mirror\" any part of the App, without the Company\'s prior written
+authorization;\n\t
+● use meta tags or code or other devices containing any reference to the Company
+or the App (or any trademark, trade name, service mark, logo or slogan of the
+Company) to direct any person to any other website for any purpose;\n\t
+● modify, adapt, sublicense, translate, sell, reverse engineer, decipher, decompile
+or otherwise disassemble any portion of the App or any software used on or for
+the App, or cause others to do so;\n\t
+● post, use, transmit or distribute, directly or indirectly, (e.g. screen scrape) in any
+manner or media any content or information obtained from the App other than
+solely in connection with your use of the App in accordance with this Agreement;\n\t</item>
+        <item><b>4. Registering a NightMap Account and Information Sharing:\n</b></item>
+        <item>4.1 In order to access NightMap facilities and make best use of the
+App, you need to register the account by providing information
+described in the Privacy Policy (such as name, nickname, email
+address or other contact information). However, we reserve the
+right to decline a new registration or cancel your account at any
+time (including if you don\'t provide us with a valid email address
+that is personal to you, or if you don\'t provide us with a correct
+name and surname).\n</item>
+        <item>4.2 To register an account you will need to fill out a form on the
+mobile app or online, once applicable. You warrant that the
+information you input is true, complete and accurate. You will
+promptly inform us of any changes to such information (you can do
+this by updating your account details at any time). The personal
+information you give us is governed by our privacy policy.\n</item>
+        <item>4.3 In order to register and access your account, you will need to
+choose a password. It is important you keep this password
+confidential because you are entirely responsible if you do not
+maintain the confidentiality of your password to a reasonably
+expected standard. Let us know as soon as you become aware
+there has been a breach of security and we will suspend your
+account. You agree that any person who you directly or implicitly
+permit to use your password (implicitly, for example, because you
+do not logout of your account and another person uses your device
+to conduct any activity on the app or you write your password on a
+noticeboard in your home and a family member then uses it to gain
+access to your account) is authorised to act as your agent to use
+the App and proceed any activity. If sensitive information is
+revealed to unrelated parties, please undertake necessary steps
+and notify us of a password change or that security has been
+compromised.\n</item>
+        <item>4.4 One individual user is allowed to register only one account on
+the App. You warrant that you will not create fraudulent accounts.
+You also warrant that you will not use any fraudulent activities to
+generate unfair Reward Credits in the App to be applied to you (for
+instance, you will not redeem your own invitation code with a
+different account of yours).\n</item>
+        <item>4.5 In order to download the App, you may be required by the third
+party who is distributing or providing you access to the App, such as
+Apple, Inc. or Google Inc. (each, a "Distributor") to create an
+account. You are solely responsible for maintaining the security of
+any logins, passwords, or other credentials that you select or that
+are provided to you to access your account with any Distributor.
+Your use of any account with a Distributor is subject to any terms,
+conditions, and policies, including privacy policies, of that
+Distributor. NightMap is not responsible for any act or omission of
+any Distributor.\n</item>
+        <item>4.6 In consideration of your use of our App, you agree that Your
+Information:\n</item>
+        <item>(a) shall not be fraudulent; (b) shall not infringe any third party\'s copyright, patent,
+trademark, trade secret or other proprietary rights or rights of publicity or privacy; (c)
+shall not violate any law, statute, ordinance or regulation; (d) shall not be defamatory,
+trade libellous, unlawfully threatening or unlawfully harassing; (e) shall not be obscene or
+contain, pornography, child pornography, or photographs of unclothed person(s); (f) shall
+not contain any viruses, trojan horses, worms, time bombs, cancelbots, easter eggs or
+other computer programming routines that may damage, detrimentally interfere with,
+surreptitiously intercept or expropriate any system, data or personal information; (g) shall
+not create liability for us or cause us to lose (in whole or in part) the services of our ISPs
+or other suppliers; (h) shall not link directly or indirectly to any materials to which you do
+not have a right to link to or include. In addition, you agree that you will provide us with
+your valid, current email address, both at the time of your registration with us and from
+time to time as your email address changes.\n</item>
+        <item>4.7 Except as otherwise provided in our Privacy Policy, we will not
+sell, rent or otherwise disclose any of your Personally Identifiable
+Information (as defined in our Privacy Policy) about you (including
+your email address) to any third party.\n</item>
+        <item>4.8 The information that you post to the App is intended for public
+consumption, including your live ratings, reviews, photos, check-ins,
+going-to, comments, likes, friends, lists, compliments, and account
+profile etc. According to your preferences, some features can be
+adjusted to Private Mode available to your friends only. In-App
+Messenger and Catch function shall be for private use only and not
+publicly displayed. If you decide to share on Facebook certain
+check-ins or content, then you might be entitled to a reward by the
+Managers of the relevant Venues, such promotions being available
+and notified from time to time by the relevant Managers.\n</item>
+        <item>4.9 Each of your check-ins using the App is saved to your \"Check-in
+History,\" which allows you and your friends to look back at all the
+locations you have checked in since you created your App account.
+You can delete any or all of your check-ins from the check-in details
+page on our website and in the App. If for some reason you ever
+decide to delete your App account, your entire check-in history will
+be removed from our database.\n</item>
+        <item>4.10 Friends on NightMap can see, for example, your location (as
+described in more detail below), name, email, phone number,
+profile photo, hometown, a list of your friends, plans you write or
+comment on, photos you post, reviews you write, live ratings you
+post, check-ins, going to function, after party mode, traffic light in
+the check-out function and which NightMap Services you use. Also,
+through the ‘Catch’ function, if you swipe right to say "yes" in the
+Check-out function to a person, you will be able to chat with that
+person if they swipe right to you, i.e., when you "Catch" someone. If
+you chat with your Catch, she/he will see the content of your chat.\n</item>
+        <item>4.11 Individuals reading this information may use it or disclose it to
+other individuals or entities without our control and without your
+knowledge. We therefore urge you to think carefully about including
+any specific information you may deem private in comments, plans
+or tips or other content (location or otherwise) that you create in the
+App. Please read our Privacy Policy for further information.\n</item>
+        <item><b>5. Intellectual Property Rights\n</b></item>
+        <item>5.1 All intellectual property rights (which includes rights such as
+copyright, and rights in trademarks) in any content of the App
+(including text, graphics, software, photographs and other images,
+videos, sound, trademarks and logos) are owned by us and/or our
+licensors. Except as expressly set out in these Terms, nothing in
+these Terms gives you any rights in respect of any intellectual
+property owned by us or our licensors and you acknowledge that
+you do not acquire any ownership rights by downloading content
+from the App. If you print off, copy or store pages from the App
+(only as permitted by these Terms and Conditions), you must
+ensure that any copyright, trademark or other intellectual property
+right notices contained in the original content are reproduced.\n</item>
+        <item>5.2 You agree that by submitting any posting, images or other
+content for publication on the App (Your Content), you retain any
+copyright you may have in Your Content, however you grant us and
+our affiliates a perpetual, irrevocable, worldwide, non-exclusive,
+royalty-free and fully sub-licensable right and license to use,
+reproduce, edit, modify, adapt, publish, translate, create derivative
+works from, distribute, perform and display such content (in whole
+or in part) and/or to incorporate it into other works in any form,
+media or technology, whether for commercial or non-commercial
+purposes. You waive any moral rights you may have in, or to be
+identified as the author, of Your Content.\n</item>
+        <item>5.3 You are solely responsible for Your Content (including content
+you share with other sites, such as social networking sites) and we
+do not endorse Your Content or any opinion, recommendation, or
+advice expressed therein, and we expressly disclaim any and all
+liability in connection with Your Content.\n</item>
+        <item>5.4 In terms of our ownership and proprietary rights, this App is
+owned and operated by NightMap. The visual interfaces, graphics,
+design, compilation, information, data, computer code (including
+source code or object code), products, software, services, and all
+other elements of the App ("Materials") provided by NightMap are
+protected by intellectual property and other laws. All Materials
+contained in the App are the property of NightMap or our third-party
+licensors. Except as expressly authorized by NightMap, you may
+not make use of the Materials. NightMap reserves all rights to the
+Materials not granted expressly in these Terms.\n</item>
+        <item><b>6. Review Forums\n</b></item>
+        <item>6.1 The App may, from time to time, make message boards,
+newsgroups and/or other public forums (collectively Review
+Forums) available to you so that you can feedback on Events
+offered on the App and read the feedback submitted by other users
+of the App. We do not control the material submitted to Review
+Forums (collectively Postings), nor are Review Forums moderated.
+You are solely responsible for the content of your Postings as
+submitted by you and acknowledge that all Postings express the
+views of their respective authors, and not our views.\n</item>
+        <item>If you participate in any Review Forum, you must:\n\t</item>
+        <item>● keep all Postings relevant to the purpose of the Review Forum and the nature of
+any topic;\n\t
+● not submit any Posting that is unlawful, threatening, abusive, libellous,
+pornographic, obscene, vulgar, indecent, offensive or which infringes on the
+intellectual property rights or other rights of any person;\n\t
+● not submit any Posting that contains any viruses and/or other code that has
+contaminating or destructive elements;\n\t
+● not submit any Posting containing any form of advertising; and\n\t
+● not impersonate, or misrepresent an affiliation with, any person or entity.\n\t</item>
+        <item>You agree that, by submitting any Posting, you grant us and our
+affiliates a perpetual, irrevocable, worldwide, non-exclusive,
+royalty-free and fully sub-licensable right and license to use,
+reproduce, modify, adapt, publish, translate, create derivative works
+from, distribute, perform and display such Posting (in whole or part)
+and/or to incorporate it in other works in any form, media or
+technology, and you waive any moral rights you may have in, or to
+be identified as the author, of such Posting.\n</item>
+        <item>Whilst we do not screen or monitor Postings, we reserve the right,
+in our sole discretion, to delete, edit or modify any Posting
+submitted by you and/or to close any topic, at any time without
+notice to you.\n</item>
+        <item>Complaints about the content of any Posting must be sent to
+nightmapgeneva@gmail.com and must contain details of the
+specific Posting giving rise to the complaint.\n</item>
+        <item><b>7. External Links\n</b></item>
+        <item>7.1 The App may, from time to time, include links to external sites.
+We have included links to these sites to provide you with access to
+information and services that you may find useful or interesting. We
+are not responsible for the content of these sites or for anything
+provided by them and do not guarantee that they will be
+continuously available. The fact that we include links to such
+external sites does not imply any endorsement of or association
+with their operators.\n</item>
+        <item><b>8. Your Personal Information\n</b></item>
+        <item>8.1 Use of your personal information submitted via the App is
+governed by our Privacy Policy.\n</item>
+        <item><b>9. Our Service Standards\n</b></item>
+        <item>9.1 We warrant that we will exercise reasonable care and skill in
+performing our obligations under these Terms. Provided we have
+done so, we shall not be liable for errors or omissions. In the event
+of an error or omission we will use reasonable endeavours to
+correct any errors or omissions as soon as reasonably practicable
+after we become aware.\n</item>
+        <item>9.2 Except as expressly stated in these Terms, all warranties,
+conditions or other terms, whether express or implied by statute or
+common law or otherwise are excluded to the fullest extent
+permitted by law. This does not stop you from exercising your legal
+rights under general law to the extent that we cannot lawfully
+exclude them, or claiming any remedies you might be entitled to
+under general law.\n</item>
+        <item>9.3 Users can buy certain tickets through the Platform. Users
+accept to pay the relevant cost as indicated by the Platform with
+respect to the purchase of the relevant ticket.\n</item>
+        <item>9.4 NightMap is not responsible if the Venue does not admit the
+ticket holder to the Venue because of reasons not depending on
+NightMap. It is under the buyer\'s responsibility to comply with the
+terms of entrance and rules of the relevant Venues (e.g. dress
+code, entry time etc.) and NightMap we can not guarantee nor be
+held liable if the ticket holder is not admitted because of
+non-compliance with the Venue\'s standard rules.\n</item>
+        <item><b>10. Liability\n</b></item>
+        <item>10.1 In no event shall we be liable to you for any business losses
+(and loss of profits shall always be treated as a type of business
+loss) and any liability we do have for losses you suffer. Further, our
+liability to you for any and all losses however they arise in
+connection with these Terms and your use of the App is strictly
+limited to losses that were reasonably foreseeable. Losses are
+foreseeable where they could be contemplated by you and us at the
+time your order is accepted by us.\n</item>
+        <item>10.2 Other than as expressly described in these Terms, A&amp;A.make
+Ltd does not warrant and excludes all liability in respect of, or to
+provide, including in respect of the quality, safety, usability or any
+other aspect of the Events in respect of which a Ticket is or may be
+redeemed. We do, however, issue credits and refunds in limited
+circumstances (see section Our Refunds Policy).\n</item>
+        <item>10.3 We will not be liable or responsible for any failure to perform,
+or delay in performance of, any of our obligations that are caused
+by events outside our reasonable control.\n</item>
+        <item>10.4 Where pictures, reviews, statistics, ratings and descriptions
+are displayed they are intended to be purely representative of the
+Venue. Your actual experience may vary.\n</item>
+        <item>10.5 We are not responsible for the conduct of any user. In no
+event shall the App, its affiliates or its partners be liable (directly or
+indirectly) for any losses or damages whatsoever, whether direct,
+indirect, general, special, compensatory, consequential, and/or
+incidental, arising out of or relating to the conduct of you or anyone
+else in connection with the use of the App, including, without
+limitation, death, bodily injury, emotional distress, and/or any other
+damages resulting from communications or meetings with other
+users or persons you meet through the App. You agree to take all
+necessary precautions in all interactions with other users,
+particularly if you decide to communicate off the App or meet in
+person, or if you decide to send money to another user. You
+understand that We make no guarantees, either express or implied,
+regarding your ultimate compatibility with individuals you meet
+through the App. You should not provide your financial information
+(for example, your credit card or bank account information), or wire
+or otherwise send money, to other users.\n</item>
+        <item>10.6 You agree that NightMap shall not be responsible or liable for
+any unauthorized access to, alteration or use of your account,
+transmissions or data, or any material or data sent or received or
+not sent or received through the Platform. You agree that NightMap
+is not responsible or liable for any threatening, defamatory,
+obscene, offensive, illegal or other content or conduct of any third
+party or any infringement of another\'s rights, including intellectual
+property rights.\n</item>
+        <item>NightMap (or its affiliates, licensors and suppliers), as a mere web
+based platform, under no circumstances or in any event will be held
+liable concerning any subject matter related to the Platform,
+regardless of the form of any claim or action, tort, whether in
+contract, negligence, strict liability or otherwise, for any (a) matter
+beyond its reasonable control, including, but not limited to, any loss,
+damages, death or personal injury to the attendants of the Event
+taking place at the Venues. The Managers shall be solely
+responsible for managing the relevant Venues, the relevant Events
+and shall ensure compliance with the applicable safety standards.
+Such terms shall be applicable also in case NightMap shall
+organize events at the said Venues, in agreement with the relevant
+Managers (b) loss or inaccuracy of data, loss or interruption of use,
+or cost of procuring substitute technology, goods or services (c)
+indirect, punitive, incidental, reliance, special, exemplary or
+consequential damages including, but not limited to, loss of
+business, revenues, profits or goodwill.\n</item>
+        <item><b>11. Suspension and termination\n</b></item>
+        <item>11.1 We may suspend or terminate all or part of your use of the App
+and your account if you use (or permit anyone other than you to
+use) the App or your account in breach of these Terms and we do
+not reasonably consider that your breach can be resolved, or if it
+can be resolved you have failed to resolve it to our reasonable
+satisfaction after we have asked you to do so and given you a
+reasonable opportunity to do so.\n</item>
+        <item>11.2 Termination shall not prejudice any other right or remedy you
+or We may have in respect of accrued rights (including rights in
+respect of any breach) or liabilities, which arose prior to termination.\n</item>
+        <item>11.3 In addition, NightMap may in its sole discretion terminate your
+account on the App or suspend or terminate your access to the App
+at any time, with or without notice. We also reserve the right to
+modify, update, or discontinue the App at any time (including by
+limiting or discontinuing certain features of the App) without notice
+to you. Should NightMap update the App, you consent to automatic
+updating on your device through the App, and agree that the terms
+and conditions of this Agreement will apply to all such updates.
+NightMap will have no liability whatsoever on account of any
+change to the App or any suspension or termination of your access
+to or use of the App. You may terminate your account at any time
+by contacting customer service at nightmapgeneva@gmail.com or
+deleting your account on the App.\n</item>
+        <item><b>12. General\n</b></item>
+        <item>12.1 These Terms are personal to you. You may not transfer or
+assign any or all of your rights or obligations under these Terms to
+any other person without our consent.\n</item>
+        <item>12.2 All notices given by you to us must be given in writing to the
+address set out at the end of these Terms. We may give notice to
+you at either the email or postal address you provide to us when
+placing an order.\n</item>
+        <item>12.3 If we fail to enforce any of our rights, it does not result in a
+waiver of that right.\n</item>
+        <item>12.4 If any provision of these Terms is found to be unenforceable,
+that provision shall be struck out and where capable all other
+provisions shall remain in force unaffected.\n</item>
+        <item>12.5 These Terms may not be varied except with our express
+written consent.\n</item>
+        <item>12.6 These Terms and any document expressly referred to in them
+constitute the entire agreement between you and us about the
+subject matter of these Terms and, in relation to such subject
+matter, supersedes and extinguishes all earlier understandings and
+agreements between you and us and all earlier representations by
+us, including any innocent or negligent misrepresentations. We do
+not limit our liability to you for any fraudulent misrepresentations
+made by us in these Terms or otherwise.\n</item>
+        <item>12.7 All provisions of these Terms apply equally to and are for the
+benefit of A&amp;A.make Ltd, its group members (which means, in
+relation to A&amp;A.make Ltd, any \"group undertaking\" as defined in
+section 1161 of the Companies Act) and the Merchants at any
+relevant time and each shall have the right to enforce such
+provisions directly or on its own behalf (save that these Terms may
+be varied or rescinded without the consent of the group members
+and the Merchants). Subject to the previous sentence, no term of
+this Agreement is otherwise enforceable pursuant to the Contracts
+(Rights of Third Parties) Act 1999 by any person who is not a party
+to it.\n</item>
+        <item><b>13. Dispute Resolution\n</b></item>
+        <item>13.1 In the first instance we request that you contact us
+(nightmapgeneva@gmail.com) if you have a complaint against us
+and we shall try to resolve it.\n</item>
+        <item>13.2 This Terms and Conditions and any dispute or claim arising
+out of or in connection with it or its subject matter or formation
+(including non-contractual disputes or claims) shall be governed by
+and construed in accordance with the law of England and Wales.\n</item>
+        <item>13.3 Each party irrevocably agrees that the courts of England and
+Wales shall have exclusive jurisdiction to settle any dispute or claim
+that arises out of or in connection with this agreement or its subject
+matter or formation (including non-contractual disputes or claims).\n</item>
+        <item><b>14. Indemnity\n</b></item>
+        <item>14.1 You agree that you will be responsible for your use of the App,
+and you agree to defend and indemnify NightMap and its officers,
+directors, employees, consultants, affiliates, subsidiaries and
+agents (together, the \"NightMap Entities\") from and against every
+claim, liability, damage, loss, and expense, including reasonable
+attorneys\' fees and costs, arising out of or in any way connected
+with: (a) your access to, use of, or alleged use of, the App; (b) your
+violation of any portion of these Terms, any representation,
+warranty, or agreement referenced in these Terms, or any
+applicable law or regulation; (c) your violation of any third-party
+right, including any intellectual property right or publicity,
+confidentiality, other property, or privacy right; or (d) any dispute or
+issue between you and any third party. We reserve the right, at our
+own expense, to assume the exclusive defence and control of any
+matter otherwise subject to indemnification by you (without limiting
+your indemnification obligations with respect to that matter), and in
+that case, you agree to cooperate with our defence of that claim.\n</item>
+        <item><b></b></item>
+        <item>15. Additional Terms relating to Apple\n</item>
+        <item>If you download, access and/or use the App on Apple\'s iOS
+operating system:\n</item>
+        <item>15.1 The App may only be accessed and used on a device owned
+or controlled by you and using Apple\'s iOS operating system, and
+only in accordance with Apple’s usage rules published in its App
+Store terms of service.\n</item>
+        <item>15.2 You acknowledge and agree that:\n</item>
+        <item>a) Apple has no obligation at all to provide any support or
+maintenance services in relation to the App. If you have any
+maintenance or support questions in relation to the App, please
+contact us (nightmapgeneva@gmail.com) not Apple, using the
+details in these Terms;\n</item>
+        <item>b) Except as otherwise expressly set out in these Terms, any claims
+relating to the possession or use of the App are between you and
+us (and not between you, or anyone else, and Apple);\n</item>
+        <item>c) In the event of any claim by a third party that your possession or
+use (in accordance with these Terms) of the App infringes any
+intellectual property rights, Apple will not be responsible or liable to
+you in relation to that claim; and\n</item>
+        <item>d) Although these Terms are entered into between you and us (and
+not Apple), Apple, as a third-party beneficiary under these Terms,
+will have the right to enforce these Terms against you.\n</item>
+        <item>15.3 You represent and warrant that:\n</item>
+        <item>a) You are not, and will not be, located in any country that is the
+subject of UN and EU sanctions, embargoes or that has been
+designated by the UN or EU as a \"terrorist supporting\" country; and</item>
+        <item>b) You are not listed on any UN and EU list of prohibited or
+restricted parties.\n</item>
+        <item>15.4 If the App does not conform to any warranty applying to it, you
+may notify Apple, which will then refund the purchase price of the
+App (if any) to you. Subject to that, and to the maximum extent
+permitted by law, Apple does not give or enter into any warranty,
+condition or other term in relation to the App and will not be liable to
+you for any claims, losses, costs or expenses of whatever nature in
+relation to the App or as a result of you or anyone else using the
+App or relying on any of its content.\n</item>
+        <item><b>16. Parties at Venues\n</b></item>
+        <item>16.1 Through our App we provide you with the ability to locate the
+party in the city of your choice that is happening at the venue
+included in our app (either existing in our database or added
+manually by the users). Please acknowledge that we do not
+supervise these parties and are not involved in any way with the
+actions of any individuals at these parties. As a result, we have no
+control over the identity or actions of the individuals who are
+present at a NightMap Party, and we request that our users
+exercise caution and good judgment when attending any NightMap
+Party.\n</item>
+        <item>16.2 Because we do not supervise or control the parties or
+interactions among or between members of NightMap users and
+other persons or companies, and because we are not involved in
+any way with physical transportation to or from parties or with the
+actions of any individuals at parties, and because we do not control
+any third party providers such as Amazon.com, PayPal, credit card
+companies or other payment processing companies, and because
+we cannot guarantee the true identity, age, nationality of App users,
+and because we have very limited control, if any, over the quality,
+safety, morality, legality, truthfulness or accuracy of various aspects
+of the App you agree that you bear all risk and you agree to release
+us (and our officers, directors, shareholders, agents, employees,
+affiliates, subsidiaries, and third party partners) from claims,
+demands, and damages (actual and consequential) of every kind
+and nature, known and unknown, suspected and unsuspected,
+disclosed and undisclosed, now and in the future, arising out of or in
+any way connected with your use of the App, your Third Party
+Transactions, our resolution of any disputes among users, and/or
+your transportation to or from, attendance at, or the actions of you
+or other persons at, a party.\n</item>
+        <item><b>17. Warranties\n</b></item>
+        <item>17.1 No information, whether oral or written, obtained by you from
+the App or any materials or content available through the App will
+create any warranty regarding any of the NightMap entities or the
+App that is not expressly stated in these terms. You assume all risk
+for any damage that may result from your use of or access to the
+App, your dealing with any other service user, and any materials or
+content available through the App. You understand and agree that
+you use the service, access, download, or otherwise obtain
+materials or content through the App and any associated sites or
+services, at your own discretion and risk, and that you are solely
+responsible for any damage to your property (including your
+computer system or mobile device used in connection with the
+App), or the loss of data that results from the use of the App or the
+download or use of that material or content.\n</item>
+        <item>17.2 Some jurisdictions may prohibit a disclaimer of warranties and
+you may have other rights that vary from jurisdiction to jurisdiction.
+In no event will the NightMap entities be liable to you for any
+indirect, incidental, special, consequential or punitive damages
+(including damages for loss of profits, goodwill, or any other
+intangible loss) arising out of or relating to your access to or use of,
+or your inability to access or use, the App or any materials or
+content on the service, whether based on warranty, contract, tort
+(including negligence), statute, or any other legal theory, and
+whether or not any NightMap entity has been informed of the
+possibility of damage.\n</item>
+        <item><b>18. Trademarks; Copyrights; Proprietary Rights\n</b></item>
+        <item>18.1 NightMap trademarks and service marks, and other NightMap
+logos, products and service names, are trademarks of A&amp;A.make
+Ltd. (the "A&amp;A.make Trademark"). Except as otherwise permitted
+by law, you agree not to display or use in any manner the
+A&amp;A.make Ltd Trademarks without A&amp;A.make Ltd\'s prior written
+consent.\n</item>
+        <item>18.2 NightMap respects the intellectual property of others, and we
+ask our users to do the same. To the extent NightMap uses a
+trademark that is the property of a third party, NightMap shall
+provide clear notice to anyone viewing NightMap’s use of that
+trademark that (a) NightMap does not own the trademark and that
+the trademark is the property of a third party, (b) NightMap has no
+affiliation, connection or association with that third party, and (c) if
+applicable, that third party has not approved or sponsored
+NightMap’s use of the trademark in any way. We may, in
+appropriate circumstances and in our discretion, remove, or disable
+access to, material that infringes on the rights of others, and
+terminate access to our App to those who may be repeat infringers.
+If you believe that your work has been copied in a way that
+constitutes copyright infringement, or your intellectual property
+rights have been otherwise violated, please provide us on the
+following email nightmapgeneva@gmail.com with the following
+information: 1.an electronic or physical signature of the person
+authorized to act on behalf of the owner of the copyright or other
+intellectual property interest; 2.a description of the copyrighted work
+or other intellectual property that you claim has been infringed; 3.a
+description of where the material that you claim is infringing is
+located on the site; 4.your address, telephone number, and email
+address; 5.a statement by you that you have a good faith belief that
+the disputed use is not authorized by the copyright owner, its agent,
+or the law; 6.a statement by you, made under penalty of perjury,
+that the above information in your Notice is accurate and that you
+are the copyright or intellectual property owner or authorized to act
+on the copyright or intellectual property owner\'s behalf.\n</item>
+        <item><b>19. Language\n</b></item>
+        <item>19.1 Where NightMap has provided you with a translation of the
+English language version of these Terms of Use, then you agree
+that the translation is provided for your convenience only and that
+the English language versions of the Terms will govern your
+relationship with NightMap.\n</item>
+        <item>19.2 If there is any contradiction between what the English
+language version of these Terms of Use says and what a
+translation says, then the English language version shall take
+precedence.\n</item>
+        <item><b>20. Contact Us\n</b></item>
+        <item>Please submit any questions you have about these Terms, an order
+you have placed or purchasing in general by email to
+nightmapgeneva@gmail.com\n</item>
+    </string-array>
+
+    <string-array name="policyArray">
+        <item>Welcome to NightMap’s Privacy Policy. Thank you for taking the
+time to read it.\n</item>
+        <item>We appreciate that you trust us with your information and we intend
+to always keep that trust. This starts with making sure you
+understand the information we collect, why we collect it, how it is
+used and your choices regarding your information. This Policy
+describes our privacy practices in plain language, keeping legal and
+technical jargon to a minimum.\n</item>
+        <item><b>1. WHO WE ARE\n</b></item>
+        <item>The company that is responsible for your information under this
+Privacy Policy (the \"data controller\") is Night Map.\n</item>
+        <item><b>2. WHERE THIS PRIVACY POLICY APPLIES\n</b></item>
+        <item>This Privacy Policy applies to websites, apps, events and other
+services operated by NightMap. For simplicity, we refer to all of
+these as our \"services\" in this Privacy Policy.\n</item>
+        <item><b>3. INFORMATION WE COLLECT\n</b></item>
+        <item>It goes without saying, we can\'t help you find the best parties for
+you, discover venues and meet like-minded people without some
+information about you, such as basic profile details and the types of
+people you\'d like to meet. We also collect information generated as
+you use our services, for example access logs, as well as
+information from third parties, like when you access our services
+through a social media account. If you want additional info, we go
+into more detail below.\n</item>
+        <item><i>Information you give us</i>\n</item>
+        <item>You choose to give us certain information when using our services.
+This includes:\n</item>
+        <item>\t● When you create an account, you provide us with at least your
+login credentials, as well as some basic details necessary for
+the service to work, such as your gender or date of birth.\n
+\t● When you complete your profile, you can share with us
+additional information, such as details on your personality,
+interests and other details about you, as well as content such
+as photos and videos. To add certain content, like pictures or
+videos, you may allow us to access your camera or photo
+album. Some of the information you choose to provide us may
+be considered \"special\" or \"sensitive\" in certain jurisdictions,
+for example your racial or ethnic origins, sexual orientation
+and religious beliefs. By choosing to provide this information,
+you consent to our processing of that information.\n
+\t● When you make a purchase directly from us (rather than
+through a platform such as iOS or Android), you provide us or
+our payment service provider with information, such as your
+debit or credit card number or other financial information.\n
+\t● When you participate in surveys or focus groups, you give us
+your insights into our products and services, responses to our
+questions and testimonials.\n
+\t● When you choose to participate in our promotions, events or
+contests, we collect the information that you use to register or
+enter.\n\t● If you contact our customer care team, we collect the
+information you give us during the interaction. Sometimes, we
+monitor or record these interactions for training purposes and
+to ensure a high quality of service.\n
+\t● If you ask us to communicate with or otherwise process
+information of other people (for example, if you ask us to send
+an email on your behalf to one of your friends), we collect the
+information about others that you give us in order to complete
+your request.\n
+\t● Of course, we also process your chats with other users as well
+as the content you publish, comments and likes as part of the
+operation of the services.\n</item>
+        <item><i>Information we receive from others\n</i></item>
+        <item>In addition to the information you provide us directly, we receive
+information about you from others, including:\n</item>
+        <item>\t● Other Users\n
+\t\t Other users may provide information about you as they use
+our services. For instance, we may collect information about
+you from other users if they contact us about you.\n
+\t● Social Media\n
+\t\t You may be able to use your social media login (such as
+Facebook Login) to create and log into your NightMap
+account. This saves you from having to remember yet another
+user name and password and allows you to share some
+information from your social media account with us.\n
+\t● Other Partners\n
+\t\t We may receive info about you from our partners, for instance
+where NightMap ads are published on a partner\'s websites
+and platforms (in which case they may pass along details on a
+campaign\'s success).\n</item>
+        <item><i>Information collected when you use our services\n</i></item>
+        <item>When you use our services, we collect information about which
+features you\'ve used, how you\'ve used them and the devices you
+use to access our services. See below for more details:\n</item>
+        <item>\t● Usage Information\n
+\t\t We collect information about your activity on our services, for
+instance how you use them (e.g., date and time you logged in,
+features you\'ve been using, searches, clicks and pages which
+have been shown to you, referring webpage address,
+advertising that you click on) and how you interact with other
+users (e.g., users you connect and interact with, time and date
+of your messages, number of posts you upload).\n\t● Device information\n\t\t We collect information from and about the device(s) you use
+to access our services, including:\n</item>
+        <item>\t\t\t○ hardware and software information such as IP address,
+device ID and type, device-specific and apps settings
+and characteristics, app crashes, advertising IDs (such
+as Google’s AAID and Apple\'s IDFA, both of which are
+randomly generated numbers that you can reset by
+going into your device’ settings), browser type, version
+and language, operating system, time zones, identifiers
+associated with cookies or other technologies that may
+uniquely identify your device or browser;\n
+\t\t\t○ information on your wireless and mobile network
+connection, like your service provider and signal
+strength;\n
+\t\t\t○ information on device sensors such as accelerometers,
+gyroscopes and compasses.\n</item>
+        <item>\t● Other information with your consent\n
+\t\t If you give us permission, we can collect your precise
+geolocation (latitude and longitude) through various means,
+depending on the service and device you’re using, including
+GPS, Bluetooth or Wi-Fi connections. The collection of your
+geolocation may occur in the background even when you
+aren’t using the services if the permission you gave us
+expressly permits such collection. If you decline permission for
+us to collect your geolocation, we will not collect it.
+Similarly, if you consent, we may collect your photos and
+videos (for instance, if you want to publish a photo or a video
+from a venue you visited) or comments about posted content
+on the app.\n</item>
+        <item><b>4. COOKIES AND OTHER SIMILAR DATA
+COLLECTION TECHNOLOGIES\n</b></item>
+        <item>We use and may allow others to use cookies and similar
+technologies (e.g., web beacons, pixels) to recognise you and/or
+your device(s). You may read our Cookie Policy at
+https://www.NightMap.co/cookies for more information on why we
+use them (such as authenticating you, remembering your
+preferences and settings, analysing site traffic and trends,
+delivering and measuring the effectiveness of advertising
+campaigns, allowing you to use social features) and how you can
+better control their use, through your browser settings and other
+tools.\n</item>
+        <item>Some web browsers (including Safari, Internet Explorer, Firefox and
+Chrome) have a \"Do Not Track\" (\"DNT\") feature that tells a website
+that a user does not want to have his or her online activity tracked.
+If a website that responds to a DNT signal receives a DNT signal,
+the browser can block that website from collecting certain
+information about the browser\'s user. Not all browsers offer a DNT
+option and DNT signals are not yet uniform. For this reason, many
+businesses, including NightMap, do not currently respond to DNT
+signals.\n</item>
+        <item><b>5. HOW WE USE INFORMATION\n</b></item>
+        <item>The main reason we use your information is to deliver and improve
+our services. Read on for a more detailed explanation of the various
+reasons we use your information, together with practical examples.\n</item>
+        <item><i>To administer your account and provide our services to you\n</i></item>
+        <item>\t● Create and manage your account\n
+\t● Provide you with customer support and respond to your
+requests\n
+\t● Complete your transactions\n
+\t● Communicate with you about our services, including order
+management and ticket delivery\n</item>
+        <item><i>To help you connect with other users and create the nightlife
+community\n</i></item>
+        <item>\t● Show users\' profiles to one another\n
+\t● Show content you have posted publicly (such as photos,
+videos, check-ins posted from the venues or comments) on
+the Party Feed. Some features can be adjusted to be shown
+privately, making them visible to your friends only.\n</item>
+        <item><i></i></item>
+        <item>To provide new NightMap services to you\n</item>
+        <item>\t● Register you and display your profile on new NightMap
+features and apps\n
+\t● Administer your account on these new features and apps\n</item>
+        <item><i>To improve our services and develop new ones\n</i></item>
+        <item>\t● Administer focus groups and surveys\n
+\t● Conduct research and analysis of users’ behaviour to improve
+our services and content (for instance, we may decide to
+change the look and feel or even substantially modify a given
+feature based on users\' behaviour)\n
+\t● Develop new features and services (for example, we may
+decide to build a new interests-based feature further to
+requests received from users).\n</item>
+        <item><i>To ensure legal compliance</i>\n</item>
+        <item>\t● Comply with legal requirements\n
+\t● Assist law enforcement\n
+\t● Enforce or exercise our rights, for example our Terms\n</item>
+        <item>To process your information as described above, we rely on the
+following legal bases:\n</item>
+        <item>\t● Provide our service to you: Most of the time, the reason we
+process your information is to perform the contract that you
+have with us. For instance, as you go about using our service
+to find the best parties for you, discover venues and meet
+like-minded people, we use your information to maintain your
+account, your profile and posts, to make it viewable to other
+users and recommend other users to you.\n
+\t● Legitimate interests: We may use your information where we
+have legitimate interests to do so. For instance, we analyse
+users’ behaviour on our services to continuously improve our
+offerings and we process information for administrative and
+legal purposes.\n\t
+● Consent: From time to time, we may ask for your consent to
+use your information for certain specific reasons. You may
+withdraw your consent at any time by contacting us at the
+address provided at the end of this Privacy Policy.\n</item>
+        <item><b>6. HOW WE SHARE INFORMATION\n</b></item>
+        <item>Since our goal is to help you find best parties for you and meet
+like-minded people the main sharing of users’ information is, of
+course, with other users. We also share some users’ information
+with service providers and partners who assist us in operating the
+services and, in some cases, legal authorities. Read on for more
+details about how your information is shared with others.\n</item>
+        <item>\t● With other users\n
+\t\t You share information with other users when you voluntarily
+disclose information on the service (including your public
+profile and your posts). Please be careful with your information
+and make sure that the content you share is stuff that you’re
+comfortable being publicly viewable since neither you nor we
+can control what others do with your information once you
+share it.\n
+\t\t If you choose to limit the audience for all or part of your profile
+or for certain content or information about you, then it will be
+visible according to your settings.\n\t● With other social networks\n
+\t\t You share information with other users when you voluntarily
+disclose information on the service (including your public
+profile and your posts). Please be careful with your information
+and make sure that the content you share is stuff that you’re
+comfortable being publicly viewable since neither you nor we
+can control what others do with your information once you
+share it.\n
+\t\t If you choose to limit the audience for all or part of your profile
+or for certain content or information about you, then it will be
+visible according to your settings.\n\t● With our service providers and partners\n
+\t\t We use third parties to help us operate and improve our
+services. These third parties assist us with various tasks,
+including data hosting and maintenance, analytics, customer
+care, marketing, advertising, payment processing and security
+operations.\n
+\t\t We may also share information with partners who distribute
+and assist us in advertising our services. For instance, we
+may share limited information on you in hashed, non-human
+readable form to advertising partners.
+We follow a strict vetting process prior to engaging any service
+provider or working with any partner. All of our service
+providers and partners must agree to strict confidentiality
+obligations.\n\t● For corporate transactions\n
+\t\t We may transfer your information if we are involved, whether
+in whole or in part, in a merger, sale, acquisition, divestiture,
+restructuring, reorganisation, dissolution, bankruptcy or other
+change of ownership or control.\n\t● When required by law\n
+\t\t We may disclose your information if reasonably necessary: (i)
+to comply with a legal process, such as a court order,
+subpoena or search warrant, government / law enforcement
+investigation or other legal requirements; (ii) to assist in the
+prevention or detection of crime (subject in each case to
+applicable law); or (iii) to protect the safety of any person.\n\t● To enforce legal rights\n
+\t\t We may also share information: (i) if disclosure would mitigate
+our liability in an actual or threatened lawsuit; (ii) as necessary
+to protect our legal rights and legal rights of our users,
+business partners or other interested parties; (iii) to enforce
+our agreements with you; and (iv) to investigate, prevent, or
+take other action regarding illegal activity, suspected fraud or
+other wrongdoing.\n\t● With your consent or at your request\n
+\t\t We may ask for your consent to share your information with
+third parties. In any such case, we will make it clear why we
+want to share the information.\n
+\t\t We may use and share non-personal information (meaning
+information that, by itself, does not identify who you are such
+as device information, general demographics, general
+behavioral data, geolocation in de-identified form), as well as
+personal information in hashed, non-human readable form,
+under any of the above circumstances. We may also share
+this information with third parties (notably advertisers) to
+develop and deliver targeted advertising on websites or
+applications of third parties. We may combine this information
+with additional non-personal information or personal
+information in hashed, non-human readable form collected
+from other sources.\n</item>
+        <item><b>7. CROSS-BORDER DATA TRANSFERS\n</b></item>
+        <item>Sharing of information laid out in Section 6 “How We Share
+Information” sometimes involves cross-border data transfers, for
+instance to the United States of America and other jurisdictions. As
+an example, where the service allows for users to be located in the
+European Economic Area (“EEA”), their personal information is
+transferred to countries outside of the EEA. We use standard
+contract clauses approved by the European Commission or other
+suitable safeguard to permit data transfers from the EEA to other
+countries. Standard contractual clauses are commitments between
+companies transferring personal data, binding them to protect the
+privacy and security of your data\n</item>
+        <item><b>8. YOUR RIGHTS</b></item>
+        <item>We want you to be in control of your information, so we have
+provided you with the following tools:\n</item>
+        <item>\t● Access / Update tools in the service. Tools and account
+settings that help you to access, rectify or delete information
+that you provided to us and that’s associated with your
+account directly within the service. If you have any question on
+those tools and settings, please contact us at
+nightmapgeneva@gmail.com\n
+\t● Device permissions. Mobile platforms have permission
+systems for specific types of device data and notifications,
+such as phone book and location services as well as push
+notifications. You can change your settings on your device to
+either consent or oppose the collection of the corresponding
+information or the display of the corresponding notifications.
+Of course, if you do that, certain services may lose full
+functionality.\n
+\t● Deletion. You can delete your account by using the
+corresponding functionality directly on the service.\n</item>
+        <item>We want you to be aware of your privacy rights. Here are a few key
+points to remember:\n</item>
+        <item>\t● Reviewing your information. Applicable privacy laws may
+give you the right to review the personal information we keep
+about you (depending on the jurisdiction, this may be called
+right of access, right of portability or variations of those terms).
+You can request a copy of your personal information by
+putting in such a request at nightmapgeneva@gmail.com\n
+\t● Updating your information. If you believe that the
+information we hold about you is inaccurate or that we are no
+longer entitled to use it and want to request its rectification,
+deletion or object to its processing, please contact us at
+nightmapgeneva@gmail.com\n</item>
+        <item>For your protection and the protection of all of our users, we may
+ask you to provide proof of identity before we can answer the above
+requests.\n</item>
+        <item>Keep in mind, we may reject requests for certain reasons, including
+if the request is unlawful or if it may infringe on trade secrets or
+intellectual property or the privacy of another user. If you wish to
+receive information relating to another user, such as a copy of any
+messages you received from him or her through our service, the
+other user will have to contact our team at
+nightmapgeneva@gmail.com to provide their written consent before
+the information is released.\n</item>
+        <item>Also, we may not be able to accommodate certain requests to
+object to the processing of personal information, notably where
+such requests would not allow us to provide our service to you
+anymore. For instance, we cannot provide our service if we do not
+have your date of birth.\n</item>
+        <item>\t● Uninstall. You can stop all information collection by an app by
+uninstalling it using the standard uninstall process for your
+device. If you uninstall the app from your mobile device, the
+unique identifier associated with your device will continue to
+be stored. If you re-install the application on the same mobile
+device, we will be able to re-associate this identifier to your
+previous activities.\n
+\t● Accountability. In certain countries, including in the
+European Union, you have a right to lodge a complaint with
+the appropriate data protection authority if you have concerns
+about how we process your personal information. The data
+protection authority you can lodge a complaint with notably
+may be that of your habitual residence, where you work or
+where we are established.\n</item>
+        <item><b>9. HOW WE PROTECT YOUR INFORMATION\n</b></item>
+        <item>We work hard to protect you from unauthorised access to or
+alteration, disclosure or destruction of your personal information. As
+with all technology companies, although we take steps to secure
+your information, we do not promise, and you should not expect,
+that your personal information will always remain secure.\n</item>
+        <item>We regularly monitor our systems for possible vulnerabilities and
+attacks and regularly review our information collection, storage and
+processing practices to update our physical, technical and
+organisational security measures.\n</item>
+        <item>We may suspend your use of all or part of the services without
+notice if we suspect or detect any breach of security. If you believe
+that your account or information is no longer secure, please notify
+us immediately at nightmapgeneva@gmail.com\n</item>
+        <item><b>10. HOW LONG WE RETAIN YOUR INFORMATION\n</b></item>
+        <item>We keep your personal information only as long as we need it for
+legitimate business purposes (as laid out in Section 5 “How We Use
+Information”) and as permitted by applicable law. To protect the
+safety and security of our users on and of our services, we
+implement a safety retention window of three months following
+account deletion. During this period, account information will be
+retained although the account will of course not be visible on the
+services anymore.\n</item>
+        <item>In practice, we delete or anonymise your information upon deletion
+of your account (following the safety retention window) or after three
+years of continuous inactivity, unless:\n</item>
+        <item>\t1. we must keep it to comply with applicable law (for instance,
+some “traffic data” is kept for one year to comply with statutory
+data retention obligations);\n
+\t2. we must keep it to evidence our compliance with applicable
+law (for instance, records of consents to our Terms, Privacy
+Policy and other similar consents are kept for five years);\n
+\t3. there is an outstanding issue, claim or dispute requiring us to
+keep the relevant information until it is resolved; or\n
+\t4. the information must be kept for our legitimate business
+interests, such as fraud prevention and enhancing users\'
+safety and security. For example, information may need to be
+kept to prevent a user who was banned for unsafe behavior or
+security incidents from opening a new account.\n</item>
+        <item>Keep in mind that even though our systems are designed to carry
+out data deletion processes according to the above guidelines, we
+cannot promise that all data will be deleted within a specific time
+frame due to technical constraints.\n</item>
+        <item><b>11. CHILDREN’S PRIVACY\n</b></item>
+        <item>Our services are restricted to users who are 16 years of age or
+older. We do not permit users under the age of 16 on our platform
+and we do not knowingly collect personal information from anyone
+under the age of 16. If you suspect that a user is under the age of
+16, please use the reporting mechanism available through the
+service.\n</item>
+        <item><b>12. PRIVACY POLICY CHANGES\n</b></item>
+        <item>Because we’re always looking for new and innovative ways to help
+you find the best parties, discover new venues and meet like
+minded people, this policy may change over time. We will notify you
+before any material changes take effect so that you have time to
+review the changes.\n</item>
+        <item><b>13. HOW TO CONTACT US\n</b></item>
+        <item>If you have questions about this Privacy Policy, here’s how you can
+reach us:\n</item>
+        <item>Online:\n</item>
+        <item>nightmapgeneva@gmail.com\n</item>
+    </string-array>
+    <string name="title_activity_home">HomeActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
 </resources>

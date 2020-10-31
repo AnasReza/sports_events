@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.sportseventmanagement.ui.fragment.HomeFragment"
+        android:label="Explore Events"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_events"
+        android:name="com.sportseventmanagement.ui.fragment.MyEventsFragment"
+        android:label="My Events"
+        tools:layout="@layout/fragment_my_events" />
+
+    <fragment
+        android:id="@+id/nav_notification"
+        android:name="com.sportseventmanagement.ui.fragment.AllNotificationFragment"
+        android:label="All Notifications"
+        tools:layout="@layout/fragment_all_notifications" />
+    <fragment
+        android:id="@+id/nav_settings"
+        android:name="com.sportseventmanagement.ui.fragment.SettingsFragment"
+        android:label="Settings"
+        tools:layout="@layout/fragment_settings" />
+</navigation>

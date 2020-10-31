@@ -112,7 +112,7 @@
                     android:text="Forget Password?"
                     android:textSize="14sp" />
 
-                <LinearLayout
+                <LinearLayout android:id="@+id/login"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:layout_marginTop="20dp"

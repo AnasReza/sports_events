@@ -134,7 +134,7 @@
                     android:textSize="12sp"
                     android:text="You Wish to Receive News, Mails About Events."/>
 
-                <TextView
+                <TextView android:id="@+id/terms_policy"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_vertical"

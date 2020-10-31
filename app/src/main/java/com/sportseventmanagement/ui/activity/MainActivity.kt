@@ -1,4 +1,4 @@
-package com.sportseventmanagement
+package com.sportseventmanagement.ui.activity
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
@@ -6,7 +6,7 @@ import android.os.Bundle
 import android.os.CountDownTimer
 import android.view.Window
 import android.view.WindowManager
-import com.sportseventmanagement.ui.activity.OnBoardingActivity
+import com.sportseventmanagement.R
 
 class MainActivity : AppCompatActivity() {
     private var cdt:CountDownTimer?=null
