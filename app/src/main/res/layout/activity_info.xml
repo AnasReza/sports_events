@@ -22,7 +22,7 @@
                 android:id="@+id/profile_image"
                 android:layout_width="66dp"
                 android:layout_height="66dp"
-                android:layout_gravity="center|center_horizontal"
+                android:layout_gravity="center_horizontal"
                 android:layout_marginTop="30dp"
                 android:background="@drawable/example"
                 app:civ_border_color="#FFFFFF"
@@ -53,87 +53,49 @@
                 android:textColor="#808080"
                 android:textSize="12sp" />
 
-            <TextView android:id="@+id/info_text"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
-                android:drawableLeft="@drawable/ic_user"
+
                 android:drawableRight="@drawable/ic_path"
                 android:drawablePadding="20dp"
                 android:fontFamily="@font/helvetica_medium"
-                android:text="Personal Information"
+                android:text="Change Email"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:drawableLeft="@drawable/reward"
+
                 android:drawableRight="@drawable/ic_path"
                 android:drawablePadding="20dp"
                 android:fontFamily="@font/helvetica_medium"
-                android:text="My Awards"
+                android:text="Change Password"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:drawableLeft="@drawable/ic_report_problem"
                 android:drawableRight="@drawable/ic_path"
                 android:drawablePadding="20dp"
                 android:fontFamily="@font/helvetica_medium"
-                android:text="Report A Problem"
+                android:text="Change Username"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:drawableLeft="@drawable/ic_stars"
-                android:drawableRight="@drawable/ic_path"
-                android:drawablePadding="20dp"
-                android:fontFamily="@font/helvetica_medium"
-                android:text="Leave Rating"
-                android:textColor="@android:color/black"
-                android:textSize="16sp" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginRight="30dp"
-                android:drawableLeft="@drawable/ic_logout"
-                android:drawablePadding="20dp"
-                android:fontFamily="@font/helvetica_medium"
-                android:text="Logout"
-                android:textColor="#FF3232"
                 android:textSize="16sp" />
 
         </LinearLayout>
     </ScrollView>
-    <TextView android:id="@+id/terms_policy"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal|bottom"
-        android:text="Terms &amp; Condition · Privacy Policy"
-        android:layout_marginBottom="40dp"
-        android:textColor="#6E6E6E"
-        android:textSize="14sp"
-        android:fontFamily="@font/helvetica_medium"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"/>
+
 
 </RelativeLayout>

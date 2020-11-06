@@ -27,7 +27,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
-            <TextView
+            <TextView android:id="@+id/all_event_maker"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -47,7 +47,7 @@
             android:orientation="horizontal"
             android:weightSum="5">
 
-            <LinearLayout
+            <LinearLayout android:id="@+id/foxLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
@@ -189,7 +189,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
-            <TextView
+            <TextView android:id="@+id/nearby_event"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
@@ -203,6 +203,7 @@
         </RelativeLayout>
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/first_card"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
@@ -350,7 +351,7 @@ iste Unde Omnis Iste... "
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
-            <TextView
+            <TextView android:id="@+id/all_event"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentRight="true"
