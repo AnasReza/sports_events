@@ -13,7 +13,7 @@ import com.sportseventmanagement.R
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private var create_one: TextView? = null
     private var forgot_text: TextView? = null
-    private var login: LinearLayout? = null
+    private var login: LinearLayout? =null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

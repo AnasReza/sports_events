@@ -45,6 +45,7 @@
         <activity android:name=".ui.activity.AllEventsActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.activity.AllEventsMakerActivity" android:screenOrientation="portrait"/>
         <activity android:name=".ui.activity.EventMakerDetailsActivity" android:screenOrientation="portrait"/>
+        <activity android:name=".ui.activity.ChangeEmailActivity" android:screenOrientation="portrait"/>
     </application>
 
 </manifest>
