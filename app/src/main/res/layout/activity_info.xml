@@ -1,15 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <androidx.cardview.widget.CardView android:id="@+id/toplayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:cardElevation="10dp">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:elevation="20dp"
+            android:paddingTop="10dp"
+            android:translationZ="90dp"
+            android:paddingBottom="10dp"
+            android:clipToPadding="false">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/ic_back_arrow"
+                android:layout_marginLeft="30dp"
+                android:layout_centerVertical="true"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/helvetica_medium"
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:layout_centerInParent="true"
+                android:paddingBottom="10dp"
+                android:text="Personal Information"
+                android:textColor="@android:color/black"
+                android:textSize="16sp" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@android:color/white"
         android:layout_alignParentTop="true"
-        android:layout_above="@+id/terms_policy">
+        android:layout_below="@+id/toplayout">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -98,4 +130,4 @@
     </ScrollView>
 
 
-</RelativeLayout>
+</LinearLayout>

@@ -1,4 +1,4 @@
-package com.sportseventmanagement.ui.activity
+package com.sportseventmanagement.ui.activity.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,9 +9,8 @@ import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
 
-class ResetConfirmationActivity :AppCompatActivity(), View.OnClickListener {
-    private var verify_layout:LinearLayout?=null
-
+class NewPasswordActivity : AppCompatActivity(), View.OnClickListener {
+    private var reset_password:LinearLayout?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -19,22 +18,21 @@ class ResetConfirmationActivity :AppCompatActivity(), View.OnClickListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-        setContentView(R.layout.activity_reset_confirmation)
+        setContentView(R.layout.activity_new_password)
 
         init()
     }
 
     private fun init() {
-        verify_layout=findViewById(R.id.verify_layout)
+        reset_password=findViewById(R.id.reset_password)
 
-
-        verify_layout!!.setOnClickListener(this)
+        reset_password!!.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when(v!!.id){
-            R.id.verify_layout->{
-                startActivity(Intent(this@ResetConfirmationActivity,HomeActivity::class.java))
+            R.id.reset_password->{
+                startActivity(Intent(this, ResetConfirmationActivity::class.java))
             }
         }
     }

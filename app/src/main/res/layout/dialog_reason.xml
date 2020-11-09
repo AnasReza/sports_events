@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp">
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Select Reason"
+    android:textSize="16sp"
+    android:textColor="@android:color/black"
+    android:fontFamily="@font/roboto_bold"
+    />
+
+    <RadioGroup android:id="@+id/radioGroup"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp">
+        <RadioButton
+            android:id="@+id/accidentRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I had an accident"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_regular"/>
+        <RadioButton
+            android:id="@+id/exhaustedRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I got exhausted"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_regular"/>
+        <RadioButton
+            android:id="@+id/lostRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="I got lost"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_regular"/>
+        <RadioButton
+            android:id="@+id/otherRadio"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Other"
+            android:textSize="16sp"
+            android:fontFamily="@font/roboto_regular"/>
+    </RadioGroup>
+
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginTop="20dp">
+    <TextView android:id="@+id/cancel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="CANCEL"
+        android:layout_marginRight="10dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/roboto_medium"
+        android:layout_alignParentRight="true"/>
+    <TextView android:id="@+id/finish_race"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="FINISH RACE"
+        android:layout_toLeftOf="@+id/cancel"
+        android:layout_marginRight="10dp"
+        android:textSize="14sp"
+        android:fontFamily="@font/roboto_medium"
+        android:textColor="@android:color/black"/>
+</RelativeLayout>
+</LinearLayout>

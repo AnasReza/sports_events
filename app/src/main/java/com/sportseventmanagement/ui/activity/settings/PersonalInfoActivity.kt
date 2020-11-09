@@ -1,16 +1,17 @@
-package com.sportseventmanagement.ui.activity
+package com.sportseventmanagement.ui.activity.settings
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.cardview.widget.CardView
 import com.sportseventmanagement.R
 
-class AllEventsActivity : AppCompatActivity(), View.OnClickListener {
-    private var first_card:CardView?=null
+class PersonalInfoActivity :AppCompatActivity(), View.OnClickListener{
+    private var changeEmail: TextView? =null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,22 +20,20 @@ class AllEventsActivity : AppCompatActivity(), View.OnClickListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-        setContentView(R.layout.activity_all_events)
-
+        setContentView(R.layout.activity_info)
         init()
     }
-
-    private fun init() {
-        first_card=findViewById(R.id.first_card)
-
-        first_card!!.setOnClickListener(this)
+    private fun init(){
+        changeEmail =findViewById(R.id.changeEmail)
+        changeEmail!!.setOnClickListener(this)
     }
 
-    override fun onClick(v: View?) {
-        when(v!!.id){
-            R.id.first_card->{
-                startActivity(Intent(this@AllEventsActivity,EventDetailActivity::class.java))
+    override fun onClick(v: View?){
+        when (v!!.id) {
+            R.id.changeEmail -> {
+                startActivity(Intent(this@PersonalInfoActivity, ChangeEmailActivity::class.java))
             }
         }
+
     }
 }

@@ -1,4 +1,4 @@
-package com.sportseventmanagement.ui.activity
+package com.sportseventmanagement.ui.activity.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -31,7 +31,7 @@ class VerifyAccountActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.next_screen->{
-                startActivity(Intent(this,AccountConfirmationActivity::class.java))
+                startActivity(Intent(this, AccountConfirmationActivity::class.java))
             }
         }
     }

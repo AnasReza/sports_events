@@ -1,4 +1,4 @@
-package com.sportseventmanagement.ui.activity
+package com.sportseventmanagement.ui.activity.settings
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity

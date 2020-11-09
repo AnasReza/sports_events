@@ -1,4 +1,4 @@
-package com.sportseventmanagement.ui.activity
+package com.sportseventmanagement.ui.activity.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,7 @@ import android.view.WindowManager
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
+import com.sportseventmanagement.ui.activity.OTPActivity
 
 class ForgotPasswordActivity :AppCompatActivity(), View.OnClickListener {
     private var send_email:LinearLayout?=null
@@ -33,7 +34,7 @@ class ForgotPasswordActivity :AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.send_email->{
-                startActivity(Intent(this,OTPActivity::class.java))
+                startActivity(Intent(this, OTPActivity::class.java))
             }
         }
     }

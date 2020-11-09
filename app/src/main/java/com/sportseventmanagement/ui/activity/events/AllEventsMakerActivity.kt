@@ -1,4 +1,4 @@
-package com.sportseventmanagement.ui.activity
+package com.sportseventmanagement.ui.activity.events
 
 import android.content.Intent
 import android.os.Bundle
@@ -34,7 +34,7 @@ private var foxLayout: RelativeLayout?=null
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.foxLayout->{
-                startActivity(Intent(this@AllEventsMakerActivity,EventMakerDetailsActivity::class.java))
+                startActivity(Intent(this@AllEventsMakerActivity, EventMakerDetailsActivity::class.java))
             }
         }
     }

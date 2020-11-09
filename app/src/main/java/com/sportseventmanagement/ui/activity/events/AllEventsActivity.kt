@@ -1,4 +1,4 @@
-package com.sportseventmanagement.ui.activity
+package com.sportseventmanagement.ui.activity.events
 
 import android.content.Intent
 import android.os.Bundle
@@ -9,8 +9,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
 import com.sportseventmanagement.R
 
-class NearByActivity : AppCompatActivity(), View.OnClickListener {
-    private var first_card: CardView?=null
+class AllEventsActivity : AppCompatActivity(), View.OnClickListener {
+    private var first_card:CardView?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -18,13 +19,12 @@ class NearByActivity : AppCompatActivity(), View.OnClickListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-        setContentView(R.layout.activity_nearby_event)
+        setContentView(R.layout.activity_all_events)
 
         init()
     }
 
     private fun init() {
-
         first_card=findViewById(R.id.first_card)
 
         first_card!!.setOnClickListener(this)
@@ -33,7 +33,7 @@ class NearByActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.first_card->{
-                startActivity(Intent(this@NearByActivity,EventDetailActivity::class.java))
+                startActivity(Intent(this@AllEventsActivity, EventDetailActivity::class.java))
             }
         }
     }

@@ -1,4 +1,4 @@
-package com.sportseventmanagement.ui.activity
+package com.sportseventmanagement.ui.activity.login
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,6 +7,7 @@ import android.view.WindowManager
 import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
+import com.sportseventmanagement.ui.activity.HomeActivity
 
 class AccountConfirmationActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -31,7 +32,7 @@ class AccountConfirmationActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.verify_layout->{
-                startActivity(Intent(this@AccountConfirmationActivity,HomeActivity::class.java))
+                startActivity(Intent(this@AccountConfirmationActivity, HomeActivity::class.java))
             }
         }
     }

@@ -12,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import com.sportseventmanagement.R
+import com.sportseventmanagement.ui.activity.login.LoginActivity
 import com.sportseventmanagement.ui.fragment.FollowRouteFragment
 import com.sportseventmanagement.ui.fragment.JointsEventFragment
 import com.sportseventmanagement.ui.fragment.ShareExpFragment
@@ -91,11 +92,11 @@ class OnBoardingActivity : AppCompatActivity(), View.OnClickListener {
                     skip_text!!.visibility=View.GONE
                     index++
                 }else if(index>3){
-                   startActivity(Intent(this@OnBoardingActivity,LoginActivity::class.java))
+                   startActivity(Intent(this@OnBoardingActivity, LoginActivity::class.java))
                 }
             }
             R.id.skip_text->{
-                startActivity(Intent(this@OnBoardingActivity,LoginActivity::class.java))
+                startActivity(Intent(this@OnBoardingActivity, LoginActivity::class.java))
             }
         }
     }

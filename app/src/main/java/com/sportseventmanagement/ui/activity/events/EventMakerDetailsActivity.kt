@@ -1,16 +1,17 @@
-package com.sportseventmanagement.ui.activity
+package com.sportseventmanagement.ui.activity.events
 
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import com.sportseventmanagement.R
 
-class NewPasswordActivity : AppCompatActivity(), View.OnClickListener {
-    private var reset_password:LinearLayout?=null
+class EventMakerDetailsActivity :AppCompatActivity(), View.OnClickListener {
+    private var first_card:CardView?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -18,21 +19,20 @@ class NewPasswordActivity : AppCompatActivity(), View.OnClickListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN,
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
-        setContentView(R.layout.activity_new_password)
-
+        setContentView(R.layout.activity_event_maker_details)
         init()
     }
 
     private fun init() {
-        reset_password=findViewById(R.id.reset_password)
+        first_card=findViewById(R.id.first_card)
 
-        reset_password!!.setOnClickListener(this)
+        first_card!!.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when(v!!.id){
-            R.id.reset_password->{
-                startActivity(Intent(this,ResetConfirmationActivity::class.java))
+            R.id.first_card->{
+                startActivity(Intent(this@EventMakerDetailsActivity, EventDetailActivity::class.java))
             }
         }
     }

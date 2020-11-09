@@ -8,6 +8,7 @@ import android.view.WindowManager
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
+import com.sportseventmanagement.ui.activity.login.NewPasswordActivity
 
 class OTPActivity:AppCompatActivity(), View.OnClickListener {
 
@@ -33,7 +34,7 @@ class OTPActivity:AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.verify_layout->{
-                startActivity(Intent(this,NewPasswordActivity::class.java))
+                startActivity(Intent(this, NewPasswordActivity::class.java))
             }
         }
     }

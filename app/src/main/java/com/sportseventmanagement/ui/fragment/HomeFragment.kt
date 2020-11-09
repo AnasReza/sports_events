@@ -10,7 +10,7 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.fragment.app.Fragment
 import com.sportseventmanagement.R
-import com.sportseventmanagement.ui.activity.*
+import com.sportseventmanagement.ui.activity.events.*
 
 
 class HomeFragment : Fragment(), View.OnClickListener {
@@ -66,7 +66,7 @@ class HomeFragment : Fragment(), View.OnClickListener {
                 requireActivity().startActivity(Intent(activity, AllEventsActivity::class.java))
             }
             R.id.foxLayout->{
-requireActivity().startActivity(Intent(activity,EventMakerDetailsActivity::class.java))
+requireActivity().startActivity(Intent(activity, EventMakerDetailsActivity::class.java))
             }
         }
     }

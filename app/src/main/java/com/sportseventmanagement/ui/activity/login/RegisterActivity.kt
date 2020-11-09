@@ -1,8 +1,7 @@
-package com.sportseventmanagement.ui.activity
+package com.sportseventmanagement.ui.activity.login
 
 import android.content.Intent
 import android.graphics.Color
-import android.graphics.Typeface
 import android.os.Bundle
 import android.text.SpannableString
 import android.text.Spanned
@@ -17,6 +16,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.text.set
 import com.sportseventmanagement.R
+import com.sportseventmanagement.ui.activity.TextActivity
 
 class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     private var create_account:LinearLayout?=null
@@ -40,7 +40,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 val termsSpan=SpannableString("By registering you consent to our Terms & Condition And Privacy Policy")
         var termClickable:ClickableSpan=object: ClickableSpan() {
             override fun onClick(p0: View) {
-                startActivity(Intent(this@RegisterActivity,TextActivity::class.java).putExtra("headline", "TERMS OF USAGE"))
+                startActivity(Intent(this@RegisterActivity, TextActivity::class.java).putExtra("headline", "TERMS OF USAGE"))
             }
 
             override fun updateDrawState(ds: TextPaint) {
@@ -75,7 +75,7 @@ val termsSpan=SpannableString("By registering you consent to our Terms & Conditi
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.create_account->{
-                startActivity(Intent(this,VerifyAccountActivity::class.java))
+                startActivity(Intent(this, VerifyAccountActivity::class.java))
             }
         }
     }
