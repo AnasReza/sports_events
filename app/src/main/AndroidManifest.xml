@@ -96,6 +96,11 @@
         <activity
             android:name=".ui.activity.race.FinishRaceActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.activity.settings.AddCardActivity" />
+        <activity android:name=".ui.activity.settings.ChangeUserNameActivity" />
+        <activity android:name=".ui.activity.settings.ChangePasswordActivity" />
+        <activity android:name=".ui.activity.settings.PaymentActivity" />
+
     </application>
 
 </manifest>

@@ -105,7 +105,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-
+                android:id="@+id/changePassword"
                 android:drawableRight="@drawable/ic_path"
                 android:drawablePadding="20dp"
                 android:fontFamily="@font/helvetica_medium"
@@ -119,6 +119,7 @@
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
+                android:id="@+id/changeUsername"
                 android:drawableRight="@drawable/ic_path"
                 android:drawablePadding="20dp"
                 android:fontFamily="@font/helvetica_medium"
