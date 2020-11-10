@@ -87,7 +87,7 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.race.StartRaceActivity"
-            android:screenOrientation="portrait" >
+            android:screenOrientation="portrait">
 
         </activity>
         <activity
@@ -96,10 +96,23 @@
         <activity
             android:name=".ui.activity.race.FinishRaceActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.activity.settings.AddCardActivity" />
-        <activity android:name=".ui.activity.settings.ChangeUserNameActivity" />
-        <activity android:name=".ui.activity.settings.ChangePasswordActivity" />
-        <activity android:name=".ui.activity.settings.PaymentActivity" />
+        <activity
+            android:name=".ui.activity.settings.AddCardActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.settings.ChangeUserNameActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.settings.ChangePasswordActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.settings.PaymentActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.race.OtherReasonActivity"
+            android:screenOrientation="portrait" /><activity
+            android:name=".ui.activity.race.LeaderBoardActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

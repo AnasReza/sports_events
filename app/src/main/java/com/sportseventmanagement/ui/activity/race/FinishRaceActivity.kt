@@ -1,6 +1,7 @@
 package com.sportseventmanagement.ui.activity.race
 
 import android.app.Dialog
+import android.content.Intent
 import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
@@ -10,16 +11,19 @@ import android.view.WindowManager
 import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.cardview.widget.CardView
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.sportseventmanagement.R
+import com.sportseventmanagement.ui.activity.HomeActivity
 import kotlin.math.roundToInt
 
 
 class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListener {
     private var mapFragment: SupportMapFragment? = null
     private var transparent_image: ImageView? = null
+    private var finish_race: RelativeLayout? = null
     private var details_layout: LinearLayout? = null
     private var up_down_layout: RelativeLayout? = null
     private var quitText: TextView? = null
@@ -44,11 +48,13 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
         details_layout = findViewById(R.id.details_layout)
         up_down_layout = findViewById(R.id.up_down_layout)
         quitText = findViewById(R.id.quitText)
+        finish_race = findViewById(R.id.finish_race)
 
 
         mapFragment!!.getMapAsync(this)
         up_down_layout!!.setOnClickListener(this)
         quitText!!.setOnClickListener(this)
+        finish_race!!.setOnClickListener(this)
 
 
     }
@@ -64,10 +70,35 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
 
             R.id.quitText -> {
                 showAlertDialog()
-
-
+            }
+            R.id.finish_race -> {
+                showFinishDialog()
             }
         }
+    }
+
+    private fun showFinishDialog() {
+        val dialog = Dialog(this@FinishRaceActivity)
+        dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
+        dialog.setCancelable(true)
+        dialog.setContentView(R.layout.dialog_award)
+
+        val close_layout: RelativeLayout = dialog.findViewById(R.id.delete_layout)
+        val leaderboard: CardView = dialog.findViewById(R.id.leaderboard_card)
+
+        close_layout.setOnClickListener {
+            dialog.dismiss()
+            startActivity(Intent(this@FinishRaceActivity, LeaderBoardActivity::class.java))
+        }
+        leaderboard.setOnClickListener {
+            startActivity(
+                Intent(
+                    this@FinishRaceActivity,
+                    LeaderBoardActivity::class.java
+                )
+            )
+        }
+        dialog.show()
     }
 
     private fun showAlertDialog() {
@@ -83,6 +114,7 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
 
     }
 
+
     private fun showCustomDialog() {
         val displayMetrics = DisplayMetrics()
         windowManager.defaultDisplay.getMetrics(displayMetrics)
@@ -93,9 +125,9 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.dialog_reason)
         dialog.window!!.setLayout(width - 20, (height * 0.41).roundToInt())
-        var radioGroup:RadioGroup = dialog.findViewById(R.id.radioGroup)
+        var radioGroup: RadioGroup = dialog.findViewById(R.id.radioGroup)
         val finishText: TextView = dialog.findViewById(R.id.finish_race)
-        var radioButton:RadioButton
+        var radioButton: RadioButton
 
         radioGroup!!.setOnCheckedChangeListener { p0, selectedButtonId ->
             try {
@@ -112,11 +144,16 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
             radioButton = dialog.findViewById(selectedOption)
             val text = radioButton!!.text.toString()
             if (text != "Other") {
-                Log.e("Anas", "$text")
+
+                startActivity(Intent(this@FinishRaceActivity, HomeActivity::class.java))
+                finishAffinity()
             } else {
-                Log.e("Anas", "$text other is pressed")
+                startActivity(Intent(this@FinishRaceActivity, OtherReasonActivity::class.java))
+                finishAffinity()
             }
         }
         dialog.show()
     }
+
+
 }
