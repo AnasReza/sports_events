@@ -23,6 +23,7 @@ class EventDetailActivity: AppCompatActivity(), OnMapReadyCallback, View.OnClick
     private var mapFragment: SupportMapFragment? = null
     private var transparent_image:ImageView?=null
     private var To_Pay:RelativeLayout?=null
+    private var back_button:ImageView?=null
     private lateinit var mMap: GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -41,10 +42,12 @@ class EventDetailActivity: AppCompatActivity(), OnMapReadyCallback, View.OnClick
         mainScroll=findViewById(R.id.mainScroll)
         transparent_image=findViewById(R.id.transparent_image)
         To_Pay=findViewById(R.id.ToPay)
+        back_button=findViewById(R.id.back_button)
 
 
         mapFragment!!.getMapAsync(this)
         To_Pay!!.setOnClickListener(this)
+        back_button!!.setOnClickListener(this)
         transparent_image!!.setOnTouchListener(object : View.OnTouchListener {
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
                 var action: Int = event!!.action
@@ -83,6 +86,9 @@ class EventDetailActivity: AppCompatActivity(), OnMapReadyCallback, View.OnClick
         {
             R.id.ToPay ->{
                 startActivity(Intent(this@EventDetailActivity,PaymentActivity::class.java))
+            }
+            R.id.back_button -> {
+                finish()
             }
         }
     }

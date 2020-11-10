@@ -1,24 +1,26 @@
 package com.sportseventmanagement.ui.activity.settings
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.InputType
+import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
-import kotlinx.android.synthetic.main.activity_change_password.*
 
 class ChangePasswordActivity : AppCompatActivity(), View.OnClickListener {
 
-    private var edit_password: EditText? =null
+    private var editpassword: EditText? =null
     private var imagePass: ImageView?=null
-    private var check: Boolean?= true
+    private var editpassword1: EditText? =null
+    private var imagePass1: ImageView?=null
+    private var check:Boolean=true
+    private var check1:Boolean=true
+    private var back_button:ImageView?=null
     override fun onCreate(savedInstanceState: Bundle?) {
 
 
@@ -29,7 +31,7 @@ class ChangePasswordActivity : AppCompatActivity(), View.OnClickListener {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         setContentView(R.layout.activity_change_password)
-init()
+        init()
     }
 
 
@@ -37,28 +39,58 @@ init()
     private fun init(){
 
 
-        edit_password=findViewById<EditText>(R.id.edit_password)
-        imagePass=findViewById<ImageView>(R.id.show_pass_btn)
-        imagePass!!.setOnClickListener(this)
+        editpassword=findViewById<EditText>(R.id.edit_password)
+        imagePass=findViewById<ImageView>(R.id.imagePass)
+        back_button=findViewById(R.id.back_button)
+        editpassword1=findViewById<EditText>(R.id.edit_password1)
+        imagePass1=findViewById<ImageView>(R.id.imagePass1)
 
+        imagePass!!.setImageResource(R.drawable.ic_remove_red_eye)
+        imagePass1!!.setImageResource(R.drawable.ic_remove_red_eye)
+
+        imagePass!!.setOnClickListener(this)
+        imagePass1!!.setOnClickListener(this)
+        back_button!!.setOnClickListener(this)
 
     }
 
     override fun onClick(v: View?) {
-        if (v!!.id==R.id.show_pass_btn){
-            if(check!!) {
-                edit_password!!.inputType = InputType.TYPE_CLASS_TEXT
-                imagePass!!.setImageResource(R.drawable.ic_eye_hidden)
-                check=false
-            }
-            else{
-                edit_password!!.transformationMethod = PasswordTransformationMethod.getInstance()
 
-                imagePass!!.setImageResource(R.drawable.ic_remove_red_eye)
-                check=true
+        when(v!!.id){
+
+            R.id.back_button -> {
+                finish()
             }
+
+            R.id.imagePass->{
+                if(!check) {
+                    editpassword!!.transformationMethod = PasswordTransformationMethod.getInstance()
+                    imagePass!!.setImageResource(R.drawable.ic_remove_red_eye)
+                    check=true
+                }
+                else{
+                    editpassword!!.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                    imagePass!!.setImageResource(R.drawable.ic_invisible)
+                    check=false
+
+
+                }
+            }
+            R.id.imagePass1->{
+                if(!check1) {
+                    editpassword1!!.transformationMethod = PasswordTransformationMethod.getInstance()
+                    imagePass1!!.setImageResource(R.drawable.ic_remove_red_eye)
+                    check1=true
+                }
+
+                else{
+                    editpassword1!!.transformationMethod = HideReturnsTransformationMethod.getInstance()
+                    imagePass1!!.setImageResource(R.drawable.ic_invisible)
+                    check1=false
+                }
             }
         }
     }
+}
 
 

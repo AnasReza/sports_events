@@ -4,22 +4,38 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     tools:context=".ui.activity.HomeActivity">
 
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+<<<<<<< HEAD
         app:cardElevation="10dp">
+=======
+        android:theme="@style/AppTheme.AppBarOverlay"
+        >
+>>>>>>> d9b9a30d08783cba60e2823acc1f5c7c43235b1b
 
         <RelativeLayout
             android:layout_width="match_parent"
+<<<<<<< HEAD
             android:layout_height="wrap_content"
             android:clipToPadding="false"
             android:elevation="20dp"
             android:paddingTop="10dp"
             android:paddingBottom="10dp"
             android:translationZ="90dp">
+=======
+            android:layout_height="?attr/actionBarSize"
+            android:background="@android:color/white"
+            android:elevation="2dp"
+            android:textAlignment="center"
+
+
+           />
+>>>>>>> d9b9a30d08783cba60e2823acc1f5c7c43235b1b
 
             <ImageView
                 android:id="@+id/ic_menu_button"

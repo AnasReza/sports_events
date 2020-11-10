@@ -18,12 +18,13 @@
             android:translationZ="90dp"
             android:paddingBottom="10dp"
             android:clipToPadding="false">
+
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@drawable/ic_back_arrow"
+                android:id="@+id/back_button"
                 android:layout_marginLeft="30dp"
-                android:layout_centerVertical="true"/>
+                android:background="@drawable/ic_back_arrow" />
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
