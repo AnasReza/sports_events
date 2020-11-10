@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
@@ -12,6 +13,7 @@ import com.sportseventmanagement.R
 
 class MyAwardsActivity :AppCompatActivity(), View.OnClickListener {
 private var first_card:CardView?=null
+    private var back_button:ImageView?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -26,15 +28,19 @@ private var first_card:CardView?=null
 
     private fun init() {
         first_card=findViewById(R.id.first_card)
-
+        back_button=findViewById(R.id.back_button)
 
         first_card!!.setOnClickListener(this)
+        back_button!!.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.first_card->{
-showCustomDialog()
+                showCustomDialog()
+            }
+            R.id.back_button->{
+                finish()
             }
         }
     }

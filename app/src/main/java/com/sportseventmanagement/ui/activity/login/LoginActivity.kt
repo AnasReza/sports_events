@@ -59,9 +59,13 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener {
             }
             R.id.forgot_text -> {
                 startActivity(Intent(this@LoginActivity, ForgotPasswordActivity::class.java))
-            }  R.id.login -> {
+            }
+
+            R.id.login -> {
                 startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
-            } R.id.eye_image->{
+            }
+
+            R.id.eye_image->{
             if(!check) {
                 pass_edit_text!!.transformationMethod = PasswordTransformationMethod.getInstance()
                 eye_image!!.setImageResource(R.drawable.ic_remove_red_eye)

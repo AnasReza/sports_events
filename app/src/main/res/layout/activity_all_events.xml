@@ -22,17 +22,19 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:background="@drawable/ic_back_arrow"
+                android:id="@+id/back_button"
                 android:layout_marginLeft="30dp"
                 android:layout_centerVertical="true"/>
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
                 android:fontFamily="@font/helvetica_medium"
                 android:gravity="center"
                 android:paddingTop="10dp"
-                android:layout_centerInParent="true"
                 android:paddingBottom="10dp"
-                android:text="Nearby Events"
+                android:text="All Events"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </RelativeLayout>

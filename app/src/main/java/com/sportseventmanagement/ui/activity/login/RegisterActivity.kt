@@ -11,6 +11,7 @@ import android.text.style.ClickableSpan
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -21,6 +22,8 @@ import com.sportseventmanagement.ui.activity.TextActivity
 class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     private var create_account:LinearLayout?=null
     private var terms_policy:TextView?=null
+    private var back_button: ImageView?=null
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -36,8 +39,12 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     private fun init() {
         create_account=findViewById(R.id.create_account)
         terms_policy=findViewById(R.id.terms_policy)
+        back_button=findViewById(R.id.back_button)
 
-val termsSpan=SpannableString("By registering you consent to our Terms & Condition And Privacy Policy")
+        back_button!!.setOnClickListener(this)
+
+
+        val termsSpan=SpannableString("By registering you consent to our Terms & Condition And Privacy Policy")
         var termClickable:ClickableSpan=object: ClickableSpan() {
             override fun onClick(p0: View) {
                 startActivity(Intent(this@RegisterActivity, TextActivity::class.java).putExtra("headline", "TERMS OF USAGE"))
@@ -76,6 +83,9 @@ val termsSpan=SpannableString("By registering you consent to our Terms & Conditi
         when(v!!.id){
             R.id.create_account->{
                 startActivity(Intent(this, VerifyAccountActivity::class.java))
+            }
+            R.id.back_button -> {
+                finish()
             }
         }
     }

@@ -1,10 +1,12 @@
 package com.sportseventmanagement.ui.activity.settings
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +16,7 @@ class PersonalInfoActivity :AppCompatActivity(), View.OnClickListener{
     private var changeEmail: TextView? =null
     private var changePassword: TextView?=null
     private var changeUsername: TextView?=null
+    private var back_button: ImageView?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,9 +33,13 @@ class PersonalInfoActivity :AppCompatActivity(), View.OnClickListener{
         changeEmail =findViewById(R.id.changeEmail)
         changePassword=findViewById(R.id.changePassword)
         changeUsername=findViewById(R.id.changeUsername)
+        back_button=findViewById(R.id.back_button)
+
+
         changeEmail!!.setOnClickListener(this)
         changePassword!!.setOnClickListener(this)
         changeUsername!!.setOnClickListener(this)
+        back_button!!.setOnClickListener(this)
     }
 
     override fun onClick(v: View?){
@@ -46,6 +53,10 @@ class PersonalInfoActivity :AppCompatActivity(), View.OnClickListener{
             R.id.changeUsername -> {
                 startActivity(Intent(this@PersonalInfoActivity, ChangeUserNameActivity::class.java))
             }
+            R.id.back_button -> {
+                finish()
+            }
+
         }
 
     }

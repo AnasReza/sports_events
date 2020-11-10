@@ -1,16 +1,21 @@
 package com.sportseventmanagement.ui.activity.events
 
 import android.content.Intent
+import android.media.Image
 import android.os.Bundle
+import android.text.Html
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.AppCompatImageHelper
 import androidx.cardview.widget.CardView
 import com.sportseventmanagement.R
 
 class EventMakerDetailsActivity :AppCompatActivity(), View.OnClickListener {
     private var first_card:CardView?=null
+    private var back_button:ImageView?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -25,14 +30,18 @@ class EventMakerDetailsActivity :AppCompatActivity(), View.OnClickListener {
 
     private fun init() {
         first_card=findViewById(R.id.first_card)
-
+        back_button=findViewById(R.id.back_button)
         first_card!!.setOnClickListener(this)
+        back_button!!.setOnClickListener(this)
     }
 
     override fun onClick(v: View?) {
         when(v!!.id){
             R.id.first_card->{
                 startActivity(Intent(this@EventMakerDetailsActivity, EventDetailActivity::class.java))
+            }
+            R.id.back_button -> {
+                finish()
             }
         }
     }

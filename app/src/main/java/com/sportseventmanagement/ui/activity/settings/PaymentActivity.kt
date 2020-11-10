@@ -6,6 +6,7 @@ import android.os.PersistableBundle
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
+import android.widget.ImageView
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
@@ -15,6 +16,7 @@ class PaymentActivity() : AppCompatActivity(),
     View.OnClickListener {
     private var addcard:LinearLayout?=null
     private var card1:LinearLayout?=null
+    private var back_button: ImageView?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -28,8 +30,11 @@ class PaymentActivity() : AppCompatActivity(),
 private fun init(){
     addcard=findViewById(R.id.add_card)
     card1=findViewById(R.id.card1)
+    back_button=findViewById(R.id.back_button)
+    back_button!!.setOnClickListener(this)
     addcard!!.setOnClickListener(this)
     card1!!.setOnClickListener(this)
+
 }
 
     override fun onClick(v: View?) {
@@ -39,6 +44,9 @@ private fun init(){
             }
             R.id.card1->{
                 startActivity(Intent(this@PaymentActivity, StartRaceActivity::class.java))
+            }
+            R.id.back_button -> {
+                finish()
             }
         }
     }
