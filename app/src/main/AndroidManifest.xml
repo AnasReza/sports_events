@@ -110,7 +110,8 @@
             android:screenOrientation="portrait" />
         <activity
             android:name=".ui.activity.race.OtherReasonActivity"
-            android:screenOrientation="portrait" /><activity
+            android:screenOrientation="portrait" />
+        <activity
             android:name=".ui.activity.race.LeaderBoardActivity"
             android:screenOrientation="portrait" />
 

@@ -1,29 +1,45 @@
 package com.sportseventmanagement.ui.activity
 
 import android.annotation.SuppressLint
-import android.graphics.Color
-import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.view.Gravity
-import android.view.Menu
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import com.google.android.material.navigation.NavigationView
-import androidx.navigation.findNavController
-import androidx.navigation.ui.AppBarConfiguration
-import androidx.navigation.ui.navigateUp
-import androidx.navigation.ui.setupActionBarWithNavController
-import androidx.navigation.ui.setupWithNavController
-import androidx.drawerlayout.widget.DrawerLayout
+import android.widget.ImageView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.widget.Toolbar
+import androidx.drawerlayout.widget.DrawerLayout
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentTransaction
+import com.google.android.material.navigation.NavigationView
 import com.sportseventmanagement.R
+import com.sportseventmanagement.ui.fragment.AllNotificationFragment
+import com.sportseventmanagement.ui.fragment.HomeFragment
+import com.sportseventmanagement.ui.fragment.MyEventsFragment
+import com.sportseventmanagement.ui.fragment.SettingsFragment
 
 class HomeActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
+    private var menuIcon: ImageView? = null
+    private var info: ImageView? = null
+    private var headlineText: TextView? = null
+    private var emailText: TextView? = null
+    private var eventText: TextView? = null
+    private var homeText: TextView? = null
+    private var notiText: TextView? = null
+    private var settingsText: TextView? = null
+    private var drawerLayout: DrawerLayout? = null
+    private var navView: NavigationView? = null
+
+    private var homeFragement: HomeFragment? = null
+    private var eventsFragement: MyEventsFragment? = null
+    private var notiFragement: AllNotificationFragment? = null
+    private var settingsFragement: SettingsFragment? = null
+    private var fragmentManager: FragmentManager? = null
+    private var fragmentTransaction: FragmentTransaction? = null
+    private var check: Boolean = true
+
 
     @SuppressLint("WrongConstant", "ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -34,35 +50,77 @@ class HomeActivity : AppCompatActivity() {
             WindowManager.LayoutParams.FLAG_FULLSCREEN
         )
         setContentView(R.layout.activity_home)
-        val toolbar: Toolbar = findViewById(R.id.toolbar)
-        toolbar.setTitleTextColor(Color.BLACK)
-        toolbar.setNavigationIcon(R.drawable.ic_menu)
-        setSupportActionBar(toolbar)
 
+        init()
+    }
 
+    private fun init() {
+        homeFragement = HomeFragment()
+        eventsFragement = MyEventsFragment()
+        notiFragement = AllNotificationFragment()
+        settingsFragement = SettingsFragment()
+        switchFragment(homeFragement!!)
 
-        val drawerLayout: DrawerLayout = findViewById(R.id.drawer_layout)
-        val navView: NavigationView = findViewById(R.id.nav_view)
-        val navController = findNavController(R.id.nav_host_fragment)
-        // Passing each menu ID as a set of Ids because each
-        // menu should be considered as top level destinations.
-        appBarConfiguration = AppBarConfiguration(
-            setOf(
-                R.id.nav_home, R.id.nav_events, R.id.nav_notification,R.id.nav_settings
-            ), drawerLayout
-        )
+        menuIcon = findViewById(R.id.ic_menu_button)
+        menuIcon!!.setImageResource(R.drawable.ic_menu)
+        info = findViewById(R.id.info_button)
+        headlineText = findViewById(R.id.headline_text)
+        drawerLayout = findViewById(R.id.drawer_layout)
+        navView = findViewById(R.id.nav_view)
+        var view = navView!!.getHeaderView(0)
+        emailText = view.findViewById(R.id.emailText)
+        homeText = view.findViewById(R.id.home)
+        eventText = view.findViewById(R.id.my_events)
+        notiText = view.findViewById(R.id.notifications)
+        settingsText = view.findViewById(R.id.settings)
 
-        setupActionBarWithNavController(navController, appBarConfiguration)
-        navView.setupWithNavController(navController)
-        navView.itemBackground=resources.getDrawable(android.R.color.transparent,null)
-
-
+        menuIcon!!.setOnClickListener {
+            if(check){
+                drawerLayout!!.open()
+            }else{
+                switchFragment(homeFragement!!)
+                check=true
+                menuIcon!!.setImageResource(R.drawable.ic_menu)
+                info!!.visibility = View.VISIBLE
+            }
+            
+        }
+        homeText!!.setOnClickListener {
+            switchFragment(homeFragement!!)
+            drawerLayout!!.close()
+            info!!.visibility = View.VISIBLE
+            menuIcon!!.setImageResource(R.drawable.ic_menu)
+            check = true
+        }
+        eventText!!.setOnClickListener {
+            switchFragment(eventsFragement!!)
+            drawerLayout!!.close()
+            info!!.visibility = View.GONE
+            menuIcon!!.setImageResource(R.drawable.ic_back_arrow)
+            check = false
+        }
+        notiText!!.setOnClickListener {
+            switchFragment(notiFragement!!)
+            drawerLayout!!.close()
+            info!!.visibility = View.GONE
+            menuIcon!!.setImageResource(R.drawable.ic_back_arrow)
+            check = false
+        }
+        settingsText!!.setOnClickListener {
+            switchFragment(settingsFragement!!)
+            drawerLayout!!.close()
+            info!!.visibility = View.GONE
+            menuIcon!!.setImageResource(R.drawable.ic_back_arrow)
+            check = false
+        }
 
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        val navController = findNavController(R.id.nav_host_fragment)
+    private fun switchFragment(fragment: Fragment) {
+        fragmentManager = supportFragmentManager
+        fragmentTransaction = fragmentManager!!.beginTransaction()
+        fragmentTransaction!!.replace(R.id.nav_host_fragment, fragment)
+        fragmentTransaction!!.commit()
 
-        return navController.navigateUp(appBarConfiguration) || super.onSupportNavigateUp()
     }
 }

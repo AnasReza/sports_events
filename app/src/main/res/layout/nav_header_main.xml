@@ -1,51 +1,130 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="172dp"
-    android:background="@drawable/ic_sidenav_left_top"
-    android:layout_marginBottom="30dp">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <de.hdodenhof.circleimageview.CircleImageView
+    <RelativeLayout
+        android:id="@+id/top_layout"
+        android:layout_width="match_parent"
+        android:layout_height="172dp"
+        android:layout_alignParentTop="true"
+        android:background="@drawable/ic_sidenav_left_top">
 
-        android:id="@+id/profile_image"
-        android:layout_width="66dp"
-        android:layout_height="66dp"
-        android:layout_centerVertical="true"
-        android:src="@drawable/example"
+        <de.hdodenhof.circleimageview.CircleImageView
+
+            android:id="@+id/profile_image"
+            android:layout_width="66dp"
+            android:layout_height="66dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="20dp"
+            android:src="@drawable/example"
+            app:civ_border_color="#FFFFFF"
+            app:civ_border_width="0.5dp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="66dp"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_toRightOf="@+id/profile_image"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/nameText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/roboto_medium"
+                android:text="Sofia Willaims"
+                android:textColor="@android:color/white"
+                android:textSize="16sp" />
+
+            <TextView
+                android:id="@+id/emailText"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/nameText"
+                android:layout_toRightOf="@+id/profile_image"
+                android:fontFamily="@font/roboto_regular"
+                android:text="Sofiawillaims@gmail.com"
+                android:textColor="#8AA8BE"
+                android:textSize="13sp" />
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/top_layout"
         android:layout_marginLeft="20dp"
-        app:civ_border_color="#FFFFFF"
-        app:civ_border_width="0.5dp" />
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="66dp"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/profile_image"
-        android:orientation="vertical">
+        android:layout_marginTop="30dp">
 
         <TextView
-            android:id="@+id/nameText"
+            android:id="@+id/home"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/ic_home"
+            android:drawablePadding="10dp"
             android:fontFamily="@font/roboto_medium"
-            android:text="Sofia Willaims"
-            android:textColor="@android:color/white"
+            android:text="Home"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/textView"
+            android:id="@+id/my_events"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/nameText"
-            android:layout_toRightOf="@+id/profile_image"
-            android:fontFamily="@font/roboto_regular"
-            android:text="Sofiawillaims@gmail.com"
-            android:textColor="#8AA8BE"
-            android:textSize="13sp" />
-    </LinearLayout>
+            android:layout_below="@+id/home"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/ic_events"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="My Events"
+            android:textSize="16sp" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/notifications"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/my_events"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="20dp"
+            android:drawableLeft="@drawable/ic_notifications"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Notifications"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/settings"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/notifications"
+            android:layout_gravity="center_vertical"
+            android:drawableLeft="@drawable/ic_settings"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/roboto_medium"
+            android:text="Settings"
+            android:textSize="16sp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/settings"
+            android:layout_gravity="bottom"
+            android:layout_marginTop="200dp"
+            android:drawableLeft="@drawable/ic_logout"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/helvetica_medium"
+            android:text="Logout"
+            android:textColor="#ff0000"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+
+</LinearLayout>
