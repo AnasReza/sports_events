@@ -83,7 +83,6 @@ class HomeActivity : AppCompatActivity() {
                 menuIcon!!.setImageResource(R.drawable.ic_menu)
                 info!!.visibility = View.VISIBLE
             }
-            
         }
         homeText!!.setOnClickListener {
             switchFragment(homeFragement!!)

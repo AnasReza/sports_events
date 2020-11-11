@@ -11,14 +11,7 @@
         android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-<<<<<<< HEAD
+
         android:background="@android:color/white"/>
-=======
-        app:defaultNavHost="false"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:navGraph="@navigation/mobile_navigation"
-        android:background="@android:color/black"/>
->>>>>>> d9b9a30d08783cba60e2823acc1f5c7c43235b1b
+
 </androidx.constraintlayout.widget.ConstraintLayout>
