@@ -112,12 +112,11 @@
             android:text="Settings"
             android:textSize="16sp" />
 
-        <TextView
+        <TextView android:id="@+id/logout"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/settings"
-            android:layout_gravity="bottom"
-            android:layout_marginTop="200dp"
+
             android:drawableLeft="@drawable/ic_logout"
             android:drawablePadding="10dp"
             android:fontFamily="@font/helvetica_medium"

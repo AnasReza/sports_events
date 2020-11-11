@@ -2,10 +2,13 @@ package com.sportseventmanagement.ui.activity
 
 import android.annotation.SuppressLint
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.View
+import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
 import android.widget.ImageView
+import android.widget.RelativeLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import androidx.drawerlayout.widget.DrawerLayout
@@ -18,6 +21,8 @@ import com.sportseventmanagement.ui.fragment.AllNotificationFragment
 import com.sportseventmanagement.ui.fragment.HomeFragment
 import com.sportseventmanagement.ui.fragment.MyEventsFragment
 import com.sportseventmanagement.ui.fragment.SettingsFragment
+import kotlin.math.roundToInt
+
 
 class HomeActivity : AppCompatActivity() {
 
@@ -28,6 +33,7 @@ class HomeActivity : AppCompatActivity() {
     private var eventText: TextView? = null
     private var homeText: TextView? = null
     private var notiText: TextView? = null
+    private var logout: TextView? = null
     private var settingsText: TextView? = null
     private var drawerLayout: DrawerLayout? = null
     private var navView: NavigationView? = null
@@ -55,6 +61,11 @@ class HomeActivity : AppCompatActivity() {
     }
 
     private fun init() {
+        val displayMetrics = DisplayMetrics()
+        windowManager.defaultDisplay.getMetrics(displayMetrics)
+        val height = displayMetrics.heightPixels
+        val width = displayMetrics.widthPixels
+
         homeFragement = HomeFragment()
         eventsFragement = MyEventsFragment()
         notiFragement = AllNotificationFragment()
@@ -73,6 +84,13 @@ class HomeActivity : AppCompatActivity() {
         eventText = view.findViewById(R.id.my_events)
         notiText = view.findViewById(R.id.notifications)
         settingsText = view.findViewById(R.id.settings)
+        logout = view.findViewById(R.id.logout)
+
+        val params=RelativeLayout.LayoutParams(RelativeLayout.LayoutParams.WRAP_CONTENT,RelativeLayout.LayoutParams.WRAP_CONTENT)
+        params.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+        params.topMargin=(height*0.6).roundToInt()
+
+        logout!!.layoutParams = params
 
         menuIcon!!.setOnClickListener {
             if(check){
