@@ -6,12 +6,13 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
 import com.sportseventmanagement.ui.activity.OTPActivity
 
 class ForgotPasswordActivity :AppCompatActivity(), View.OnClickListener {
-    private var send_email:LinearLayout?=null
+    private var send_email:RelativeLayout?=null
     
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

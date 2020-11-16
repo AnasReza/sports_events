@@ -15,12 +15,14 @@ import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.sportseventmanagement.R
+import kotlinx.android.synthetic.main.activity_all_events.*
 
 class StartRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListener {
     private var mainScroll: ScrollView?=null
     private var mapFragment: SupportMapFragment? = null
     private var transparent_image: ImageView?=null
     private var startRace: RelativeLayout?=null
+    private var backbutton: ImageView?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -39,9 +41,10 @@ class StartRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickL
         mainScroll=findViewById(R.id.mainScroll)
         transparent_image=findViewById(R.id.transparent_image)
         startRace=findViewById(R.id.start_race)
-
+        backbutton=findViewById(R.id.back_button)
         mapFragment!!.getMapAsync(this)
         startRace!!.setOnClickListener(this)
+        back_button.setOnClickListener(this)
 
         transparent_image!!.setOnTouchListener(object : View.OnTouchListener {
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
@@ -80,6 +83,9 @@ class StartRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickL
         when(v!!.id){
             R.id.start_race->{
                 startActivity(Intent(this@StartRaceActivity,ReadyRaceActivity::class.java))
+            }
+            R.id.back_button->{
+                finish()
             }
         }
     }

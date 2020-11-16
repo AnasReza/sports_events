@@ -2,7 +2,7 @@
     <string name="app_name">Sports Event Management</string>
 
 
-    <string name="create_one"><u>Create One</u></string>
+    <string name="create_one"><b><u>Create One</u></b></string>
 
     <string-array name="termsArray">
         <item><b>1. Introduction\n</b></item>

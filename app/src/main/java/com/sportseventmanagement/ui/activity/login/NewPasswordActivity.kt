@@ -10,11 +10,12 @@ import android.view.WindowManager
 import android.widget.EditText
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
 
 class NewPasswordActivity : AppCompatActivity(), View.OnClickListener {
-    private var reset_password:LinearLayout?=null
+    private var reset_password:RelativeLayout?=null
     private var pass_edit_text: EditText? =null
     private var eye_image: ImageView? =null
 

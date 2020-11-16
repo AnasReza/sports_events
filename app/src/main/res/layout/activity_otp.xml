@@ -81,8 +81,8 @@
 
                         android:maxLength="1"
                         android:inputType="number"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@android:color/white"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
                         android:gravity="center"
                         android:background="@drawable/rectangle_black_stroke" />
                     <EditText android:id="@+id/edit2"
@@ -91,9 +91,9 @@
                         android:layout_marginRight="10dp"
 
                         android:maxLength="1"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:inputType="number"
-                        android:textColorHint="@android:color/white"
+                        android:textColorHint="@android:color/black"
                         android:gravity="center"
                         android:background="@drawable/rectangle_black_stroke" />
                     <EditText android:id="@+id/edit3"
@@ -102,9 +102,9 @@
                         android:layout_marginRight="10dp"
 
                         android:maxLength="1"
-                        android:textColor="@android:color/white"
+                        android:textColor="@android:color/black"
                         android:inputType="number"
-                        android:textColorHint="@android:color/white"
+                        android:textColorHint="@android:color/black"
                         android:gravity="center"
                         android:background="@drawable/rectangle_black_stroke" />
                     <EditText android:id="@+id/edit4"
@@ -113,8 +113,8 @@
                         android:layout_marginRight="10dp"
 
                         android:maxLength="1"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@android:color/white"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
                         android:gravity="center"
                         android:inputType="number"
                         android:background="@drawable/rectangle_black_stroke" />
@@ -125,8 +125,8 @@
                         android:layout_marginRight="10dp"
 
                         android:maxLength="1"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@android:color/white"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
                         android:gravity="center"
                         android:inputType="number"
                         android:background="@drawable/rectangle_black_stroke" />
@@ -136,8 +136,8 @@
                         android:layout_marginRight="10dp"
 
                         android:maxLength="1"
-                        android:textColor="@android:color/white"
-                        android:textColorHint="@android:color/white"
+                        android:textColor="@android:color/black"
+                        android:textColorHint="@android:color/black"
                         android:gravity="center"
                         android:inputType="number"
                         android:background="@drawable/rectangle_black_stroke"/>
@@ -145,18 +145,18 @@
                 </LinearLayout>
 
 
-                <LinearLayout android:id="@+id/verify_layout"
+
+                <RelativeLayout android:id="@+id/verify_layout"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:layout_marginTop="40dp"
+
                     android:background="@drawable/button_drawable"
-                    android:orientation="horizontal"
                     android:weightSum="2">
 
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:layout_weight="0.3"
                         android:elevation="0dp"
                         android:fontFamily="@font/roboto_regular"
                         android:gravity="center"
@@ -165,11 +165,12 @@
                         android:textSize="18sp" />
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
+                        android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
-                        android:layout_marginRight="10dp"
-                        android:layout_weight="1.7">
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginRight="30dp">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -179,7 +180,7 @@
                             android:background="@drawable/ic_arrow_right" />
                     </RelativeLayout>
 
-                </LinearLayout>
+                </RelativeLayout>
 
             </LinearLayout>
         </LinearLayout>

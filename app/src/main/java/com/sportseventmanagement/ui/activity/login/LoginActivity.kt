@@ -8,10 +8,7 @@ import android.text.method.PasswordTransformationMethod
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.widget.EditText
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TextView
+import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
 import com.sportseventmanagement.ui.activity.HomeActivity
@@ -19,7 +16,7 @@ import com.sportseventmanagement.ui.activity.HomeActivity
 class LoginActivity : AppCompatActivity(), View.OnClickListener {
     private var create_one: TextView? = null
     private var forgot_text: TextView? = null
-    private var login: LinearLayout? =null
+    private var login: RelativeLayout? =null
     private var pass_edit_text: EditText? =null
     private var eye_image: ImageView? =null
 

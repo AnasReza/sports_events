@@ -8,13 +8,14 @@ import android.view.Window
 import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
 import com.sportseventmanagement.ui.activity.race.StartRaceActivity
 
 class PaymentActivity() : AppCompatActivity(),
     View.OnClickListener {
-    private var addcard:LinearLayout?=null
+    private var addcard:RelativeLayout?=null
     private var card1:LinearLayout?=null
     private var back_button: ImageView?=null
     override fun onCreate(savedInstanceState: Bundle?) {

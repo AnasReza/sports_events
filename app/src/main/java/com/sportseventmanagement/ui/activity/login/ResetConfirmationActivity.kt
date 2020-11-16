@@ -6,12 +6,13 @@ import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.widget.LinearLayout
+import android.widget.RelativeLayout
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
 import com.sportseventmanagement.ui.activity.HomeActivity
 
 class ResetConfirmationActivity :AppCompatActivity(), View.OnClickListener {
-    private var verify_layout:LinearLayout?=null
+    private var verify_layout:RelativeLayout?=null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

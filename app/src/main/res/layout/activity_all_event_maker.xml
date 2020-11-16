@@ -61,7 +61,7 @@
                 android:drawablePadding="8dp"
                 android:fontFamily="@font/helvetica_medium"
                 android:gravity="center_vertical"
-                android:hint="Search Events"
+                android:hint="Search Events Makers"
                 android:paddingLeft="20dp"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
@@ -86,7 +86,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/fox_icon"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_centerVertical="true"
                     android:orientation="vertical">
                     <TextView
@@ -131,7 +131,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/greenz_icon"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_centerVertical="true"
                     android:orientation="vertical">
                     <TextView
@@ -176,7 +176,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/fossa_icon"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_centerVertical="true"
                     android:orientation="vertical">
                     <TextView
@@ -221,7 +221,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/sparks_icon"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_centerVertical="true"
                     android:orientation="vertical">
                     <TextView
@@ -267,7 +267,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/lola_icon"
-                    android:layout_marginLeft="5dp"
+                    android:layout_marginLeft="10dp"
                     android:layout_centerVertical="true"
                     android:orientation="vertical">
                     <TextView
