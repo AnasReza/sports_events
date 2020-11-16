@@ -10,20 +10,21 @@ import android.view.WindowManager
 import android.widget.ImageView
 import android.widget.RelativeLayout
 import android.widget.ScrollView
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.sportseventmanagement.R
 import com.sportseventmanagement.ui.activity.settings.PaymentActivity
-import kotlinx.android.synthetic.main.activity_payment.*
 
-class EventDetailActivity: AppCompatActivity(), OnMapReadyCallback, View.OnClickListener {
-    private var mainScroll:ScrollView?=null
+class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListener {
+    private var mainScroll: ScrollView? = null
     private var mapFragment: SupportMapFragment? = null
-    private var transparent_image:ImageView?=null
-    private var To_Pay:RelativeLayout?=null
-    private var back_button:ImageView?=null
+    private var transparent_image: ImageView? = null
+    private var To_Pay: RelativeLayout? = null
+    private var back_button: ImageView? = null
+    private var event_maker: TextView? = null
     private lateinit var mMap: GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -38,16 +39,18 @@ class EventDetailActivity: AppCompatActivity(), OnMapReadyCallback, View.OnClick
     }
 
     private fun init() {
-        mapFragment= supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
-        mainScroll=findViewById(R.id.mainScroll)
-        transparent_image=findViewById(R.id.transparent_image)
-        To_Pay=findViewById(R.id.ToPay)
-        back_button=findViewById(R.id.back_button)
+        mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
+        mainScroll = findViewById(R.id.mainScroll)
+        transparent_image = findViewById(R.id.transparent_image)
+        To_Pay = findViewById(R.id.ToPay)
+        back_button = findViewById(R.id.back_button)
+        event_maker = findViewById(R.id.event_maker)
 
 
         mapFragment!!.getMapAsync(this)
         To_Pay!!.setOnClickListener(this)
         back_button!!.setOnClickListener(this)
+        event_maker!!.setOnClickListener(this)
         transparent_image!!.setOnTouchListener(object : View.OnTouchListener {
             override fun onTouch(v: View?, event: MotionEvent?): Boolean {
                 var action: Int = event!!.action
@@ -82,13 +85,20 @@ class EventDetailActivity: AppCompatActivity(), OnMapReadyCallback, View.OnClick
     }
 
     override fun onClick(v: View?) {
-        when(v!!.id)
-        {
-            R.id.ToPay ->{
-                startActivity(Intent(this@EventDetailActivity,PaymentActivity::class.java))
+        when (v!!.id) {
+            R.id.ToPay -> {
+                startActivity(Intent(this@EventDetailActivity, PaymentActivity::class.java))
             }
             R.id.back_button -> {
                 finish()
+            }
+            R.id.event_maker -> {
+                startActivity(
+                    Intent(
+                        this@EventDetailActivity,
+                        EventMakerDetailsActivity::class.java
+                    )
+                )
             }
         }
     }

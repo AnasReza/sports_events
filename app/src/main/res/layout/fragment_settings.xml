@@ -66,14 +66,25 @@
                 android:text="Personal Information"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:layout_marginLeft="20dp"
+    android:layout_marginTop="20dp"
+    android:layout_marginRight="30dp">
+    <ImageView
+        android:layout_width="16.65dp"
+        android:layout_height="20.07dp"
+        android:background="@drawable/ic_reward"/>
+</LinearLayout>
             <TextView android:id="@+id/my_awards"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:drawableLeft="@drawable/reward"
+                android:drawableLeft="@drawable/ic_reward"
                 android:drawableRight="@drawable/ic_path"
                 android:drawablePadding="20dp"
                 android:fontFamily="@font/helvetica_medium"

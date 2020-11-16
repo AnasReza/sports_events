@@ -4,32 +4,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical">
-    <androidx.cardview.widget.CardView android:id="@+id/toplayout"
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/toplayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="10dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clipToPadding="false"
             android:elevation="20dp"
             android:paddingTop="10dp"
-            android:translationZ="90dp"
             android:paddingBottom="10dp"
-            android:clipToPadding="false">
+            android:translationZ="90dp">
+
             <ImageView
+                android:id="@+id/back_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/back_button"
-                android:background="@drawable/ic_back_arrow"
+                android:layout_centerVertical="true"
                 android:layout_marginLeft="30dp"
-                android:layout_centerVertical="true"/>
+                android:background="@drawable/ic_back_arrow" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:fontFamily="@font/helvetica_medium"
                 android:gravity="center"
                 android:paddingTop="10dp"
-                android:layout_centerInParent="true"
                 android:paddingBottom="10dp"
                 android:text="Personal Information"
                 android:textColor="@android:color/black"
@@ -40,9 +45,9 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
+        android:layout_below="@+id/toplayout"
         android:layout_alignParentTop="true"
-        android:layout_below="@+id/toplayout">
+        android:background="@android:color/white">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,16 +55,27 @@
             android:background="@android:color/white"
             android:orientation="vertical">
 
+<RelativeLayout
+    android:layout_width="88dp"
+    android:layout_height="88dp"
+    android:layout_gravity="center_horizontal"
+    android:layout_marginTop="30dp">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/profile_image"
+        android:layout_width="84dp"
+        android:layout_height="84dp"
+        android:background="@drawable/example"
+        android:layout_centerInParent="true"
+        app:civ_border_color="#FFFFFF"
+        app:civ_border_width="0.5dp" />
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_image_edit"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"/>
+</RelativeLayout>
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/profile_image"
-                android:layout_width="66dp"
-                android:layout_height="66dp"
-                android:layout_gravity="center_horizontal"
-                android:layout_marginTop="30dp"
-                android:background="@drawable/example"
-                app:civ_border_color="#FFFFFF"
-                app:civ_border_width="0.5dp" />
 
 
             <TextView
@@ -87,26 +103,27 @@
                 android:textSize="12sp" />
 
             <TextView
+                android:id="@+id/changeEmail"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
-                android:id="@+id/changeEmail"
                 android:drawableRight="@drawable/ic_path"
                 android:drawablePadding="20dp"
                 android:fontFamily="@font/helvetica_medium"
                 android:text="Change Email"
                 android:textColor="@android:color/black"
-                android:textSize="16sp" />
+                android:textSize="16sp"
+                android:visibility="gone"/>
 
             <TextView
+                android:id="@+id/changePassword"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="50dp"
                 android:layout_marginRight="30dp"
-                android:id="@+id/changePassword"
                 android:drawableRight="@drawable/ic_path"
                 android:drawablePadding="20dp"
                 android:fontFamily="@font/helvetica_medium"
@@ -115,12 +132,12 @@
                 android:textSize="16sp" />
 
             <TextView
+                android:id="@+id/changeUsername"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginRight="30dp"
-                android:id="@+id/changeUsername"
                 android:drawableRight="@drawable/ic_path"
                 android:drawablePadding="20dp"
                 android:fontFamily="@font/helvetica_medium"

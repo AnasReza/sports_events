@@ -9,8 +9,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/white"
-        android:padding="10dp"
-        android:elevation="2dp">
+        android:elevation="2dp"
+        android:padding="10dp">
 
         <ImageView
             android:id="@+id/back_button"
@@ -24,26 +24,19 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:fontFamily="@font/helvetica_medium"
-            android:text="ADAM'S PROFILE"
-            android:textColor="@android:color/white"
+            android:textColor="@android:color/black"
             android:textSize="16dp"
             android:textStyle="bold" />
 
     </RelativeLayout>
-    <androidx.recyclerview.widget.RecyclerView android:id="@+id/textList"
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/textList"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginTop="20dp"
         android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="20dp">
 
     </androidx.recyclerview.widget.RecyclerView>
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-
-        android:scrollbars="none">
-
-
-    </ScrollView>
 </LinearLayout>

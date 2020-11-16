@@ -114,6 +114,9 @@
         <activity
             android:name=".ui.activity.race.LeaderBoardActivity"
             android:screenOrientation="portrait" />
+        <activity
+            android:name=".ui.activity.TextActivity"
+            android:screenOrientation="portrait" />
 
     </application>
 

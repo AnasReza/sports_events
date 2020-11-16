@@ -20,9 +20,9 @@ import com.sportseventmanagement.R
 import com.sportseventmanagement.ui.activity.TextActivity
 
 class RegisterActivity : AppCompatActivity(), View.OnClickListener {
-    private var create_account:LinearLayout?=null
-    private var terms_policy:TextView?=null
-    private var back_button: ImageView?=null
+    private var create_account: LinearLayout? = null
+    private var terms_policy: TextView? = null
+    private var back_button: ImageView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,22 +37,31 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
     }
 
     private fun init() {
-        create_account=findViewById(R.id.create_account)
-        terms_policy=findViewById(R.id.terms_policy)
-        back_button=findViewById(R.id.back_button)
+        create_account = findViewById(R.id.create_account)
+        terms_policy = findViewById(R.id.terms_policy)
+        back_button = findViewById(R.id.back_button)
 
         back_button!!.setOnClickListener(this)
 
 
-        val termsSpan=SpannableString("By registering you consent to our Terms & Condition And Privacy Policy")
-        var termClickable:ClickableSpan=object: ClickableSpan() {
+        val termsSpan =
+            SpannableString("By registering you consent to our Terms & Condition And Privacy Policy")
+        var termClickable: ClickableSpan = object : ClickableSpan() {
             override fun onClick(p0: View) {
-                startActivity(Intent(this@RegisterActivity, TextActivity::class.java).putExtra("headline", "TERMS OF USAGE"))
+                startActivity(
+                    Intent(
+                        this@RegisterActivity,
+                        TextActivity::class.java
+                    ).putExtra("headline", "TERMS OF USAGE")
+                )
             }
 
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
-                ds.isUnderlineText=true
+                ds.isFakeBoldText = false
+                ds.isUnderlineText = true
+
+                ds.color = resources.getColor(R.color.termsColor)
             }
         }
         var policyClickable: ClickableSpan = object : ClickableSpan() {
@@ -67,21 +76,23 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener {
 
             override fun updateDrawState(ds: TextPaint) {
                 super.updateDrawState(ds)
-
+                ds.isFakeBoldText = false
                 ds.isUnderlineText = true
+
+                ds.color = resources.getColor(R.color.termsColor)
             }
         }
-        termsSpan.setSpan(termClickable,34,50, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
-        termsSpan[56, 69]=policyClickable
+        termsSpan.setSpan(termClickable, 34, 51, Spanned.SPAN_EXCLUSIVE_EXCLUSIVE)
+        termsSpan[56, 70] = policyClickable
         create_account!!.setOnClickListener(this)
-        terms_policy!!.text=termsSpan
-        terms_policy!!.movementMethod=LinkMovementMethod.getInstance()
-        terms_policy!!.highlightColor= Color.TRANSPARENT
+        terms_policy!!.text = termsSpan
+        terms_policy!!.movementMethod = LinkMovementMethod.getInstance()
+        terms_policy!!.highlightColor = Color.TRANSPARENT
     }
 
     override fun onClick(v: View?) {
-        when(v!!.id){
-            R.id.create_account->{
+        when (v!!.id) {
+            R.id.create_account -> {
                 startActivity(Intent(this, VerifyAccountActivity::class.java))
             }
             R.id.back_button -> {

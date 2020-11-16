@@ -99,6 +99,7 @@ class HomeActivity : AppCompatActivity() {
                 switchFragment(homeFragement!!)
                 check=true
                 menuIcon!!.setImageResource(R.drawable.ic_menu)
+                headlineText!!.text="Explore Events"
                 info!!.visibility = View.VISIBLE
             }
         }
@@ -107,12 +108,14 @@ class HomeActivity : AppCompatActivity() {
             drawerLayout!!.close()
             info!!.visibility = View.VISIBLE
             menuIcon!!.setImageResource(R.drawable.ic_menu)
+            headlineText!!.text="Explore Events"
             check = true
         }
         eventText!!.setOnClickListener {
             switchFragment(eventsFragement!!)
             drawerLayout!!.close()
             info!!.visibility = View.GONE
+            headlineText!!.text="My Events"
             menuIcon!!.setImageResource(R.drawable.ic_back_arrow)
             check = false
         }
@@ -120,6 +123,7 @@ class HomeActivity : AppCompatActivity() {
             switchFragment(notiFragement!!)
             drawerLayout!!.close()
             info!!.visibility = View.GONE
+            headlineText!!.text="All Notifications"
             menuIcon!!.setImageResource(R.drawable.ic_back_arrow)
             check = false
         }
@@ -127,6 +131,7 @@ class HomeActivity : AppCompatActivity() {
             switchFragment(settingsFragement!!)
             drawerLayout!!.close()
             info!!.visibility = View.GONE
+            headlineText!!.text="Settings"
             menuIcon!!.setImageResource(R.drawable.ic_back_arrow)
             check = false
         }
