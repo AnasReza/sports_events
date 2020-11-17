@@ -30,7 +30,7 @@ private var backbutton:ImageView?=null
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.back_button -> {
-                finishAffinity()
+                finish()
 
             }
         }

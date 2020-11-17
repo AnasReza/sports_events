@@ -83,12 +83,12 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
     override fun onMapReady(map: GoogleMap?) {
         map!!.uiSettings.isCompassEnabled = true
 
-        map!!.addMarker(
-            MarkerOptions()
-                .position(LatLng(24.8607, 67.0011))
-                .icon(BitmapDescriptorFactory.fromResource(R.drawable.path_track))
-        )
-        map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(24.8607, 67.0011,),19F))
+//        map!!.addMarker(
+//            MarkerOptions()
+//                .position(LatLng(24.8607, 67.0011))
+//                .icon(BitmapDescriptorFactory.fromResource(R.drawable.path_track))
+//        )
+//        map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(24.8607, 67.0011,),19F))
      //   map!!.animateCamera(CameraUpdateFactory.zoomTo(19F))
     }
     override fun onClick(v: View?) {
