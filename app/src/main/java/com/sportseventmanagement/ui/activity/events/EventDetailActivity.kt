@@ -87,7 +87,7 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.ToPay -> {
-                startActivity(Intent(this@EventDetailActivity, PaymentActivity::class.java))
+               // startActivity(Intent(this@EventDetailActivity, PaymentActivity::class.java))
             }
             R.id.back_button -> {
                 finish()
