@@ -132,7 +132,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="10dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -211,21 +211,21 @@ iste Unde Omnis Iste... "
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="15dp"
                                     android:drawableLeft="@drawable/ic_start"
-                                    android:drawablePadding="10dp"
+                                    android:drawablePadding="5dp"
                                     android:fontFamily="@font/helvetica_bold"
-                                    android:text="7 Oct 14:56 To 8 Oct 18:56"
+                                    android:text="7 Oct 14:56  To  8 Oct 18:56"
                                     android:textColor="@android:color/black"
-                                    android:textSize="10sp" />
+                                    android:textSize="9sp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:drawableLeft="@drawable/ic_finish"
-                                    android:drawablePadding="10dp"
+                                    android:drawablePadding="6dp"
                                     android:fontFamily="@font/helvetica_bold"
-                                    android:text="8 Oct 09:56 To 8 Oct 18:56"
+                                    android:text="8 Oct 09:56  To  8 Oct 18:56"
                                     android:textColor="@android:color/black"
-                                    android:textSize="10sp" />
+                                    android:textSize="9sp" />
                             </LinearLayout>
 
                             <TextView
@@ -271,7 +271,7 @@ iste Unde Omnis Iste... "
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="15dp"
+                        android:layout_marginLeft="10dp"
                         android:orientation="vertical">
 
                         <TextView
@@ -350,21 +350,21 @@ iste Unde Omnis Iste... "
                                     android:layout_height="wrap_content"
                                     android:layout_marginBottom="15dp"
                                     android:drawableLeft="@drawable/ic_start"
-                                    android:drawablePadding="10dp"
+                                    android:drawablePadding="5dp"
                                     android:fontFamily="@font/helvetica_bold"
-                                    android:text="7 Oct 14:56 To 8 Oct 18:56"
+                                    android:text="7 Oct 14:56  To  8 Oct 18:56"
                                     android:textColor="@android:color/black"
-                                    android:textSize="10sp" />
+                                    android:textSize="9sp" />
 
                                 <TextView
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:drawableLeft="@drawable/ic_finish"
-                                    android:drawablePadding="10dp"
+                                    android:drawablePadding="6dp"
                                     android:fontFamily="@font/helvetica_bold"
-                                    android:text="8 Oct 09:56 To 8 Oct 18:56"
+                                    android:text="8 Oct 09:56  To  8 Oct 18:56"
                                     android:textColor="@android:color/black"
-                                    android:textSize="10sp" />
+                                    android:textSize="9sp" />
                             </LinearLayout>
 
                             <TextView
