@@ -6,14 +6,14 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginBottom="20dp">
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="10dp"
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
-            android:elevation="2dp"
             app:cardCornerRadius="5dp"
             app:cardElevation="10dp">
 
@@ -25,7 +25,7 @@
 
                 <ImageView
                     android:layout_width="108dp"
-                    android:layout_height="159dp"
+                    android:layout_height="match_parent"
                     android:background="@drawable/cycling" />
 
                 <LinearLayout
@@ -95,19 +95,22 @@ iste Unde Omnis Iste... "
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         >
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerVertical="true"
                             android:padding="8dp"
                             android:background="@drawable/light_blue">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:drawableLeft="@drawable/ic_start"
-                                android:textSize="8sp"
+                                android:textSize="10sp"
                                 android:layout_marginBottom="15dp"
                                 android:textColor="@android:color/black"
                                 android:fontFamily="@font/helvetica_bold"
@@ -117,7 +120,7 @@ iste Unde Omnis Iste... "
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:drawableLeft="@drawable/ic_finish"
-                                android:textSize="8sp"
+                                android:textSize="10sp"
                                 android:textColor="@android:color/black"
                                 android:fontFamily="@font/helvetica_bold"
                                 android:text="8 Oct 09:56 To 8 Oct 18:56"
@@ -147,7 +150,6 @@ iste Unde Omnis Iste... "
             android:layout_marginTop="20dp"
             android:layout_marginRight="10dp"
             android:layout_marginBottom="20dp"
-            android:elevation="2dp"
             app:cardCornerRadius="5dp"
             app:cardElevation="10dp">
 
@@ -159,7 +161,7 @@ iste Unde Omnis Iste... "
 
                 <ImageView
                     android:layout_width="108dp"
-                    android:layout_height="159dp"
+                    android:layout_height="match_parent"
                     android:background="@drawable/cycling" />
 
                 <LinearLayout
@@ -229,19 +231,22 @@ iste Unde Omnis Iste... "
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
+                        android:layout_marginBottom="10dp"
                         >
 
                         <LinearLayout
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:orientation="vertical"
+                            android:layout_alignParentBottom="true"
+                            android:layout_centerVertical="true"
                             android:padding="8dp"
                             android:background="@drawable/light_blue">
                             <TextView
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:drawableLeft="@drawable/ic_start"
-                                android:textSize="8sp"
+                                android:textSize="10sp"
                                 android:layout_marginBottom="15dp"
                                 android:textColor="@android:color/black"
                                 android:fontFamily="@font/helvetica_bold"
@@ -251,7 +256,7 @@ iste Unde Omnis Iste... "
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"
                                 android:drawableLeft="@drawable/ic_finish"
-                                android:textSize="8sp"
+                                android:textSize="10sp"
                                 android:textColor="@android:color/black"
                                 android:fontFamily="@font/helvetica_bold"
                                 android:text="8 Oct 09:56 To 8 Oct 18:56"

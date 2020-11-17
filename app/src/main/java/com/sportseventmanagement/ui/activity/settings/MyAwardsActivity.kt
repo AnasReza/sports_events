@@ -52,10 +52,10 @@ class MyAwardsActivity : AppCompatActivity(), View.OnClickListener {
         val dialog = Dialog(this@MyAwardsActivity)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(true)
-        var window=dialog.window
-        window!!.setLayout(100,100)
-        dialog.setContentView(R.layout.dialog_award)
 
+        dialog.setContentView(R.layout.dialog_award)
+        var window=dialog.window
+        window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
         val close_layout: RelativeLayout = dialog.findViewById(R.id.delete_layout)
         val leadership: CardView = dialog.findViewById(R.id.leaderboard_card)
 

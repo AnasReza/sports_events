@@ -53,11 +53,6 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
 
-        <ImageView
-            android:id="@+id/transparent_image"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:src="@android:color/transparent" />
     </RelativeLayout>
 
     <LinearLayout android:id="@+id/info_layout"

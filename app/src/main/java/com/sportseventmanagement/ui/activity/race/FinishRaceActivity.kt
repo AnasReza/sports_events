@@ -12,9 +12,13 @@ import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.cardview.widget.CardView
+import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.gms.maps.model.BitmapDescriptorFactory
+import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.MarkerOptions
 import com.sportseventmanagement.R
 import com.sportseventmanagement.ui.activity.HomeActivity
 import kotlin.math.roundToInt
@@ -24,10 +28,17 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
     private var mapFragment: SupportMapFragment? = null
     private var transparent_image: ImageView? = null
     private var finish_race: RelativeLayout? = null
+    private var info_layout2: RelativeLayout? = null
+    private var info_layout: RelativeLayout? = null
     private var details_layout: LinearLayout? = null
+    private var timeLayout: LinearLayout? = null
+    private var distanceCoveredLayout: RelativeLayout? = null
+    private var percentageLayout: LinearLayout? = null
     private var up_down_layout: RelativeLayout? = null
+    private var up_down: ImageView? = null
     private var quitText: TextView? = null
     private var selectedOption: Int = 0
+    private var check: Boolean = true
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,11 +58,20 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
         transparent_image = findViewById(R.id.transparent_image)
         details_layout = findViewById(R.id.details_layout)
         up_down_layout = findViewById(R.id.up_down_layout)
+        up_down = findViewById(R.id.up_down)
         quitText = findViewById(R.id.quitText)
         finish_race = findViewById(R.id.finish_race)
+        info_layout2 = findViewById(R.id.info_layout2)
+        info_layout = findViewById(R.id.info_layout)
+        finish_race = findViewById(R.id.finish_race)
+        timeLayout = findViewById(R.id.timeLayout)
+        distanceCoveredLayout = findViewById(R.id.distanceCoveredLayout)
+        percentageLayout = findViewById(R.id.percentageLayout)
 
+        up_down!!.setImageResource(R.drawable.ic_down)
 
         mapFragment!!.getMapAsync(this)
+
         up_down_layout!!.setOnClickListener(this)
         quitText!!.setOnClickListener(this)
         finish_race!!.setOnClickListener(this)
@@ -60,12 +80,53 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
     }
 
     override fun onMapReady(map: GoogleMap?) {
-        Log.i("Anas", "MAP IS READY")
-    }
+        map!!.uiSettings.isCompassEnabled = true
 
+        map!!.addMarker(
+            MarkerOptions()
+                .position(LatLng(24.8607, 67.0011))
+                .icon(BitmapDescriptorFactory.fromResource(R.drawable.path_track))
+        )
+        map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(LatLng(24.8607, 67.0011,),19F))
+     //   map!!.animateCamera(CameraUpdateFactory.zoomTo(19F))
+    }
     override fun onClick(v: View?) {
         when (v!!.id) {
             R.id.up_down_layout -> {
+                if (check) {
+                    var params = info_layout!!.layoutParams
+                    params.height = 100
+                    info_layout!!.layoutParams = params
+                    var params1 = details_layout!!.layoutParams
+                    params1.height = 0
+                    details_layout!!.layoutParams = params1
+
+                    // info_layout!!.setBackgroundColor(Color.WHITE)
+                    up_down!!.setImageResource(R.drawable.ic_up)
+                    timeLayout!!.visibility = View.GONE
+                    distanceCoveredLayout!!.visibility = View.GONE
+                    percentageLayout!!.visibility = View.GONE
+                    info_layout2!!.visibility = View.GONE
+                    // details_layout!!.visibility=View.GONE
+                    check = false
+                } else {
+                    var params = info_layout!!.layoutParams
+                    params.height = 280
+                    info_layout!!.layoutParams = params
+
+                    var params1 = details_layout!!.layoutParams
+                    params1.height = 250
+                    details_layout!!.layoutParams = params1
+                    // info_layout!!.setBackgroundColor(Color.TRANSPARENT)
+                    up_down!!.setImageResource(R.drawable.ic_down)
+                    timeLayout!!.visibility = View.VISIBLE
+                    distanceCoveredLayout!!.visibility = View.VISIBLE
+                    percentageLayout!!.visibility = View.VISIBLE
+                    info_layout2!!.visibility = View.VISIBLE
+                    //   details_layout!!.visibility=View.VISIBLE
+                    check = true
+                }
+
             }
 
             R.id.quitText -> {

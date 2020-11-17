@@ -60,7 +60,12 @@
         android:layout_height="100dp"
         android:layout_above="@+id/info_layout2"
         android:background="@android:color/transparent">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="90dp"
+    android:background="@android:color/white"
+    android:layout_alignParentBottom="true"
+    />
         <LinearLayout android:id="@+id/details_layout"
             android:layout_width="match_parent"
             android:layout_height="90dp"
@@ -69,7 +74,7 @@
             android:orientation="horizontal"
             android:weightSum="3">
 
-            <LinearLayout
+            <LinearLayout android:id="@+id/timeLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -87,7 +92,7 @@
 
             </LinearLayout>
 
-            <RelativeLayout
+            <RelativeLayout android:id="@+id/distanceCoveredLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -120,7 +125,7 @@
 
             </RelativeLayout>
 
-            <LinearLayout
+            <LinearLayout android:id="@+id/percentageLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -168,7 +173,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
-                android:background="@drawable/ic_down" />
+                />
         </RelativeLayout>
     </RelativeLayout>
 

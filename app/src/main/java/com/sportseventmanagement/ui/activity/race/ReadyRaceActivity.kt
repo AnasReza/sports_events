@@ -17,9 +17,7 @@ import com.google.android.gms.maps.SupportMapFragment
 import com.sportseventmanagement.R
 
 class ReadyRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListener {
-    private var mainScroll: ScrollView?=null
     private var mapFragment: SupportMapFragment? = null
-    private var transparent_image: ImageView?=null
     private var start_race:RelativeLayout?=null
     private lateinit var mMap: GoogleMap
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,40 +34,12 @@ class ReadyRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickL
 
     private fun init() {
         mapFragment= supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
-        mainScroll=findViewById(R.id.mainScroll)
-        transparent_image=findViewById(R.id.transparent_image)
+
         start_race=findViewById(R.id.start_race_button)
 
 
         mapFragment!!.getMapAsync(this)
         start_race!!.setOnClickListener(this)
-
-        transparent_image!!.setOnTouchListener(object : View.OnTouchListener {
-            override fun onTouch(v: View?, event: MotionEvent?): Boolean {
-                var action: Int = event!!.action
-                return when (action) {
-                    MotionEvent.ACTION_DOWN -> {
-                        // Disallow ScrollView to intercept touch events.
-                        mainScroll!!.requestDisallowInterceptTouchEvent(true)
-                        // Disable touch on transparent view
-                        false
-                    }
-                    MotionEvent.ACTION_UP -> {
-                        // Allow ScrollView to intercept touch events.
-                        mainScroll!!.requestDisallowInterceptTouchEvent(false)
-                        true
-                    }
-                    MotionEvent.ACTION_MOVE -> {
-                        mainScroll!!.requestDisallowInterceptTouchEvent(true)
-                        false
-                    }
-                    else -> true
-                }
-                return false
-            }
-
-        })
-
 
     }
 
