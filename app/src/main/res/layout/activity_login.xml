@@ -38,7 +38,7 @@
                 android:layout_gravity="center_horizontal"
                 android:layout_marginTop="20dp"
                 android:fontFamily="@font/archivoblack_regular"
-                android:gravity="center"
+
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
                 android:lineSpacingMultiplier="0.75"
