@@ -35,7 +35,7 @@ init(view)
         second=view.findViewById(R.id.second)
 
         first!!.setOnClickListener { requireActivity().startActivity(Intent(activity,NearByActivity::class.java)) }
-        second!!.setOnClickListener { requireActivity().startActivity(Intent(activity,NearByActivity::class.java)) }
+        second!!.setOnClickListener { showFinishDialog() }
     }
 
     private fun showFinishDialog() {
@@ -43,7 +43,8 @@ init(view)
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.dialog_award)
-
+        var window=dialog.window
+        window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT,ViewGroup.LayoutParams.WRAP_CONTENT)
         val close_layout: RelativeLayout = dialog.findViewById(R.id.delete_layout)
         val leaderboard: CardView = dialog.findViewById(R.id.leaderboard_card)
 

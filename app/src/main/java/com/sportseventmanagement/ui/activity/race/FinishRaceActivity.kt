@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.DisplayMetrics
 import android.util.Log
 import android.view.View
+import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
 import android.widget.*
@@ -185,7 +186,8 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
         dialog.requestWindowFeature(Window.FEATURE_NO_TITLE)
         dialog.setCancelable(true)
         dialog.setContentView(R.layout.dialog_reason)
-        dialog.window!!.setLayout(width - 20, (height * 0.41).roundToInt())
+        var window=dialog.window
+        window!!.setLayout(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT)
         var radioGroup: RadioGroup = dialog.findViewById(R.id.radioGroup)
         val finishText: TextView = dialog.findViewById(R.id.finish_race)
         var radioButton: RadioButton
