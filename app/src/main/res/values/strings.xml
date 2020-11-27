@@ -1,9 +1,10 @@
 <resources>
-    <string name="app_name">Sports Event Management</string>
+    <string name="app_name">Sports Event</string>
 
 
     <string name="create_one"><b><u>Create One</u></b></string>
         <string name="by_maker">By <b><u>Fossa</u></b></string>
+        <string name="by_makers">Event Maker <b><u>Fossa</u></b></string>
 
     <string-array name="termsArray">
         <item><b>1. Introduction\n</b></item>

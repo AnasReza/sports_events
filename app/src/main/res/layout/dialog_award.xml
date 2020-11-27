@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/medal"
         android:layout_centerHorizontal="true"
-        android:text="Event Maker Fossa"
+        android:text="@string/by_makers"
         android:textSize="14sp"
         android:layout_gravity="center"
         android:layout_marginTop="4dp"
