@@ -5,7 +5,6 @@
     android:background="@android:color/white"
     android:orientation="vertical">
 
-
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -50,13 +49,28 @@
                 android:text="Create Your New Account"
                 android:textColor="@android:color/black"
                 android:textSize="30sp" />
-            <ImageView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/ic_upload"
-                android:layout_gravity="center"
-                android:layout_marginTop="30dp"
-                />
+
+            <RelativeLayout
+                android:layout_width="70dp"
+                android:layout_height="75dp"
+                android:layout_gravity="center">
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_image"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_centerInParent="true"
+                    android:layout_centerVertical="true"
+                    android:background="@drawable/profile" />
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/camera"
+                    android:layout_alignParentBottom="true"
+                    android:layout_alignParentRight="true"/>
+            </RelativeLayout>
+
+
 
 
             <LinearLayout
@@ -68,32 +82,41 @@
                 android:orientation="vertical">
 
 
-
                 <EditText
                     android:layout_width="match_parent"
-                    android:id="@+id/edit1"
+                    android:id="@+id/email_text"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
+                    android:inputType="textEmailAddress"
                     android:background="@drawable/rectangle_black_stroke"
                     android:elevation="0dp"
                     android:hint="E.g Sofiawilliams@gmail.com"
                     android:paddingLeft="20dp" />
-
                 <EditText
                     android:layout_width="match_parent"
-                    android:id="@+id/edit2"
+                    android:id="@+id/password_text"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:inputType="textPassword"
+                    android:background="@drawable/rectangle_black_stroke"
+                    android:elevation="0dp"
+                    android:hint="Password"
+                    android:paddingLeft="20dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/name_text"
                     android:layout_height="40dp"
                     android:background="@drawable/rectangle_black_stroke"
 
                     android:layout_marginTop="20dp"
 
                     android:elevation="0dp"
-                    android:hint="Your Email"
+                    android:hint="Your Full Name"
                     android:paddingLeft="20dp" />
 
                 <EditText
                     android:layout_width="match_parent"
-                    android:id="@+id/edit3"
+                    android:id="@+id/username_text"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/rectangle_black_stroke"
@@ -105,33 +128,16 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/rectangle_black_stroke"
-
-                    android:orientation="horizontal"
-                    android:weightSum="2">
-
-                    <EditText
+                    android:orientation="horizontal">
+                    <Spinner
+                        android:id="@+id/gender_spin"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_weight="0.2"
-                        android:background="@null"
-                        android:elevation="0dp"
-                        android:hint="Gender"
-
-                        android:paddingLeft="20dp" />
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
+                        android:layout_height="40dp"
                         android:layout_gravity="center"
                         android:layout_marginRight="10dp"
-                        android:layout_weight="1.8">
+                        android:layout_marginLeft="10dp"
+                        android:dropDownSelector="@drawable/ic_drop_down"/>
 
-                        <ImageView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_centerInParent="true"
-                            android:background="@drawable/ic_drop_down" />
-                    </RelativeLayout>
 
                 </LinearLayout>
                 <CheckBox
@@ -158,7 +164,6 @@
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:layout_marginTop="20dp"
-
                     android:background="@drawable/button_drawable"
                     android:weightSum="2">
 
@@ -196,7 +201,7 @@
                     android:layout_marginTop="30dp"
                     android:background="@drawable/or" />
 
-                <Button
+                <Button android:id="@+id/google_button"
                     android:layout_width="match_parent"
                     android:layout_height="46dp"
                     android:layout_marginTop="30dp"

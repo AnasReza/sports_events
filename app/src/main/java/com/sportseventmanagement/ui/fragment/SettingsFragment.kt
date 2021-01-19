@@ -19,12 +19,19 @@ import com.sportseventmanagement.ui.activity.TextActivity
 import com.sportseventmanagement.ui.activity.settings.MyAwardsActivity
 import com.sportseventmanagement.ui.activity.settings.PersonalInfoActivity
 import com.sportseventmanagement.ui.activity.settings.ReportProblemActivity
+import com.sportseventmanagement.utility.Preferences
+import com.squareup.picasso.Picasso
+import de.hdodenhof.circleimageview.CircleImageView
 
 class SettingsFragment : Fragment(), View.OnClickListener {
     private var info_text: TextView? = null
     private var report: TextView? = null
+    private var nameText: TextView? = null
+    private var emailText: TextView? = null
+    private var profileImage: CircleImageView? = null
     private var terms_policy: TextView? = null
     private var myAwards: TextView? = null
+    private var pref:Preferences?=null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -37,10 +44,22 @@ class SettingsFragment : Fragment(), View.OnClickListener {
     }
 
     private fun init(view: View) {
+        pref= Preferences(requireActivity())
+
         info_text = view.findViewById(R.id.info_text)
         report = view.findViewById(R.id.report)
         myAwards = view.findViewById(R.id.my_awards)
         terms_policy = view.findViewById(R.id.terms_policy)
+        nameText=view.findViewById(R.id.nameText)
+        emailText=view.findViewById(R.id.emailText)
+        profileImage=view.findViewById(R.id.profile_image)
+
+        nameText!!.text=pref!!.getFullName()
+        emailText!!.text=pref!!.getEmail()
+        if(pref!!.getPhotoURL()!=""){
+            profileImage!!.setImageDrawable(null)
+            Picasso.with(requireActivity()).load(pref!!.getPhotoURL()).into(profileImage)
+        }
 
         info_text!!.setOnClickListener(this)
         report!!.setOnClickListener(this)

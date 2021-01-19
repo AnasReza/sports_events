@@ -93,10 +93,12 @@ class OnBoardingActivity : AppCompatActivity(), View.OnClickListener {
                     index++
                 }else if(index>3){
                    startActivity(Intent(this@OnBoardingActivity, LoginActivity::class.java))
+                    finish()
                 }
             }
             R.id.skip_text->{
                 startActivity(Intent(this@OnBoardingActivity, LoginActivity::class.java))
+                finish()
             }
         }
     }

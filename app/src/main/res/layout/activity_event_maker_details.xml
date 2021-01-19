@@ -30,6 +30,7 @@
                 android:background="@drawable/ic_back_arrow" />
 
             <TextView
+                android:id="@+id/headline"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_centerInParent="true"
@@ -37,7 +38,6 @@
                 android:gravity="center"
                 android:paddingTop="10dp"
                 android:paddingBottom="10dp"
-                android:text="Fox Events"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </RelativeLayout>
@@ -68,18 +68,19 @@
                     android:orientation="vertical">
 
                     <ImageView
+                        android:id="@+id/maker_image"
                         android:layout_width="73dp"
                         android:layout_height="73dp"
                         android:layout_gravity="center"
-                        android:background="@drawable/fox" />
+                        />
 
                     <TextView
+                        android:id="@+id/maker_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_horizontal"
                         android:layout_marginTop="10dp"
                         android:fontFamily="@font/helvetica_bold"
-                        android:text="Fox Events"
                         android:textColor="@android:color/black"
                         android:textSize="16sp" />
 
@@ -87,6 +88,7 @@
             </RelativeLayout>
 
             <TextView
+                android:id="@+id/description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="40dp"
@@ -107,282 +109,10 @@
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
 
-            <androidx.cardview.widget.CardView
-                android:id="@+id/first_card"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="108dp"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/cycling" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/helvetica_bold"
-                            android:text="Cycling Event 1"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/helvetica_medium"
-                                android:text="Cycling • 820KM • Copenhagen"
-                                android:textSize="8sp" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/helvetica_bold"
-                                    android:text="5/12"
-                                    android:textColor="#004B74"
-                                    android:textSize="9sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:fontFamily="@font/helvetica_bold"
-                                    android:text="Booked"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="9sp" />
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/helvetica_medium"
-                            android:text="Sed ut perspiciatis unde omnis
-iste Unde Omnis Iste... "
-                            android:textColor="#787878"
-                            android:textSize="12sp" />
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerVertical="true"
-                                android:background="@drawable/light_blue"
-                                android:orientation="vertical"
-                                android:padding="8dp">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="15dp"
-                                    android:drawableLeft="@drawable/ic_start"
-                                    android:drawablePadding="5dp"
-                                    android:fontFamily="@font/helvetica_bold"
-                                    android:text="7 Oct 14:56  To  8 Oct 18:56"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="9sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:drawableLeft="@drawable/ic_finish"
-                                    android:drawablePadding="6dp"
-                                    android:fontFamily="@font/helvetica_bold"
-                                    android:text="8 Oct 09:56  To  8 Oct 18:56"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="9sp" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentBottom="true"
-                                android:fontFamily="@font/helvetica_bold"
-                                android:text="$5.00"
-                                android:textColor="@android:color/black"
-                                android:textSize="14sp" />
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginTop="10dp"
-                android:layout_marginRight="20dp"
-                android:layout_marginBottom="20dp"
-                app:cardCornerRadius="5dp"
-                app:cardElevation="10dp">
-
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginRight="15dp"
-                    android:orientation="horizontal">
-
-                    <ImageView
-                        android:layout_width="108dp"
-                        android:layout_height="match_parent"
-                        android:background="@drawable/cycling" />
-
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_gravity="center_vertical"
-                        android:layout_marginLeft="10dp"
-                        android:orientation="vertical">
-
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:fontFamily="@font/helvetica_bold"
-                            android:text="Cycling Event 1"
-                            android:textColor="@android:color/black"
-                            android:textSize="14sp" />
-
-                        <RelativeLayout
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content">
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_centerVertical="true"
-                                android:fontFamily="@font/helvetica_medium"
-                                android:text="Cycling • 820KM • Copenhagen"
-                                android:textSize="8sp" />
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:orientation="horizontal">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:fontFamily="@font/helvetica_bold"
-                                    android:text="5/12"
-                                    android:textColor="#004B74"
-                                    android:textSize="9sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginLeft="10dp"
-                                    android:fontFamily="@font/helvetica_bold"
-                                    android:text="Booked"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="9sp" />
-                            </LinearLayout>
-
-                        </RelativeLayout>
-
-                        <TextView
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:fontFamily="@font/helvetica_medium"
-                            android:text="Sed ut perspiciatis unde omnis
-iste Unde Omnis Iste... "
-                            android:textColor="#787878"
-                            android:textSize="12sp" />
-
-                        <RelativeLayout
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:layout_marginBottom="10dp">
-
-                            <LinearLayout
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentBottom="true"
-                                android:layout_centerVertical="true"
-                                android:background="@drawable/light_blue"
-                                android:orientation="vertical"
-                                android:padding="8dp">
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:layout_marginBottom="15dp"
-                                    android:drawableLeft="@drawable/ic_start"
-                                    android:drawablePadding="5dp"
-                                    android:fontFamily="@font/helvetica_bold"
-                                    android:text="7 Oct 14:56  To  8 Oct 18:56"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="9sp" />
-
-                                <TextView
-                                    android:layout_width="wrap_content"
-                                    android:layout_height="wrap_content"
-                                    android:drawableLeft="@drawable/ic_finish"
-                                    android:drawablePadding="6dp"
-                                    android:fontFamily="@font/helvetica_bold"
-                                    android:text="8 Oct 09:56  To  8 Oct 18:56"
-                                    android:textColor="@android:color/black"
-                                    android:textSize="9sp" />
-                            </LinearLayout>
-
-                            <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_alignParentRight="true"
-                                android:layout_alignParentBottom="true"
-                                android:fontFamily="@font/helvetica_bold"
-                                android:text="$5.00"
-                                android:textColor="@android:color/black"
-                                android:textSize="14sp" />
-                        </RelativeLayout>
-
-                    </LinearLayout>
-
-                </LinearLayout>
-
-            </androidx.cardview.widget.CardView>
+           <LinearLayout android:id="@+id/eventsLayout"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="vertical"/>
 
         </LinearLayout>
     </ScrollView>
@@ -398,20 +128,22 @@ iste Unde Omnis Iste... "
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
             android:layout_centerInParent="true"
+            android:orientation="horizontal"
             android:paddingTop="20dp"
             android:paddingBottom="20dp">
+
             <ImageView
                 android:layout_width="25dp"
                 android:layout_height="25dp"
-                android:background="@drawable/globe1"
-                android:layout_gravity="center_vertical"/>
+                android:layout_gravity="center_vertical"
+                android:background="@drawable/globe1" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/helvetica_medium"
                 android:layout_marginLeft="15dp"
+                android:fontFamily="@font/helvetica_medium"
                 android:text="See Website"
                 android:textColor="@android:color/white"
                 android:textSize="18sp"

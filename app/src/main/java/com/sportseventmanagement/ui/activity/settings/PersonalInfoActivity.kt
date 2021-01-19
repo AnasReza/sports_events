@@ -11,12 +11,19 @@ import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.sportseventmanagement.R
+import com.sportseventmanagement.utility.Preferences
+import com.squareup.picasso.Picasso
+import de.hdodenhof.circleimageview.CircleImageView
 
 class PersonalInfoActivity :AppCompatActivity(), View.OnClickListener{
     private var changeEmail: TextView? =null
     private var changePassword: TextView?=null
     private var changeUsername: TextView?=null
+    private var nameText: TextView?=null
+    private var emailText: TextView?=null
     private var back_button: ImageView?=null
+    private var profile_image: CircleImageView?=null
+    private var pref:Preferences?=null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -30,11 +37,22 @@ class PersonalInfoActivity :AppCompatActivity(), View.OnClickListener{
         init()
     }
     private fun init(){
+        pref= Preferences(this)
+
         changeEmail =findViewById(R.id.changeEmail)
         changePassword=findViewById(R.id.changePassword)
         changeUsername=findViewById(R.id.changeUsername)
+        nameText=findViewById(R.id.nameText)
+        emailText=findViewById(R.id.emailText)
         back_button=findViewById(R.id.back_button)
+        profile_image=findViewById(R.id.profile_image)
 
+        nameText!!.text=pref!!.getFullName()
+        emailText!!.text=pref!!.getEmail()
+        if(pref!!.getPhotoURL()!=""){
+            profile_image!!.setImageDrawable(null)
+            Picasso.with(this).load(pref!!.getPhotoURL()).into(profile_image)
+        }
 
         changeEmail!!.setOnClickListener(this)
         changePassword!!.setOnClickListener(this)

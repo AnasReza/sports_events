@@ -3,9 +3,18 @@
 
 
     <string name="create_one"><b><u>Create One</u></b></string>
-        <string name="by_maker">By <b><u>Fossa</u></b></string>
-        <string name="by_makers">Event Maker <b><u>Fossa</u></b></string>
+    <string name="by_maker">By <b><u>Fossa</u></b></string>
+    <string name="by_makers">Event Maker <b><u>Fossa</u></b></string>
 
+
+    <string-array name="gender_list">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string name="facebookID">1086968758425866</string>
+    <string name="fb_login_protocol_scheme">fb1086968758425866</string>
     <string-array name="termsArray">
         <item><b>1. Introduction\n</b></item>
         <item>1.1. These are the terms of use, including the terms and conditions
@@ -1170,6 +1179,6 @@ reach us:\n</item>
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
-        <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBDeSBsvnLmEuOAsIRuNA18Z-dYREq-45Q</string>
+    <string name="google_maps_key" templateMergeStrategy="preserve" translatable="false">AIzaSyBDeSBsvnLmEuOAsIRuNA18Z-dYREq-45Q</string>
 
 </resources>

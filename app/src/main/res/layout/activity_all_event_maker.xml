@@ -5,39 +5,41 @@
     android:layout_height="match_parent"
     android:background="@android:color/white"
     android:orientation="vertical">
+
     <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:cardElevation="10dp">
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:clipToPadding="false"
             android:elevation="20dp"
             android:paddingTop="10dp"
-            android:translationZ="90dp"
             android:paddingBottom="10dp"
-            android:clipToPadding="false">
+            android:translationZ="90dp">
 
             <ImageView
+                android:id="@+id/back_button"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/back_button"
                 android:layout_marginLeft="30dp"
                 android:background="@drawable/ic_back_arrow" />
+
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
                 android:fontFamily="@font/helvetica_medium"
                 android:gravity="center"
                 android:paddingTop="10dp"
-                android:layout_centerInParent="true"
                 android:paddingBottom="10dp"
                 android:text="All Events Makers"
                 android:textColor="@android:color/black"
                 android:textSize="16sp" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
-
 
 
     <ScrollView
@@ -68,238 +70,16 @@
                 android:textColorHint="#B7B7B7"
                 android:textSize="14sp"></EditText>
 
-            <RelativeLayout android:id="@+id/foxLayout"
+            <LinearLayout
+                android:id="@+id/eventLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp"
-                android:layout_marginTop="30dp"
-                android:padding="20dp"
-                android:background="@drawable/border1">
-                <ImageView android:id="@+id/fox_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/fox"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/fox_icon"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fox Events"
-                        android:fontFamily="@font/helvetica_bold"
-                        android:textSize="14sp"
-                        android:textColor="@android:color/black"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Joined On 12/5/20"
-                        android:fontFamily="@font/helvetica_medium"
-                        android:textSize="12sp"
-                        android:textColor="#7A7A7A"/>
-                </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4 Events"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:textSize="14sp"
-                    android:textColor="#6B6B6B"
-                    android:fontFamily="@font/helvetica_medium"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp"
-                android:padding="20dp"
-                android:background="@drawable/border1">
-                <ImageView android:id="@+id/greenz_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/greenz"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/greenz_icon"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Greenz"
-                        android:fontFamily="@font/helvetica_bold"
-                        android:textSize="14sp"
-                        android:textColor="@android:color/black"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Joined On 12/5/20"
-                        android:fontFamily="@font/helvetica_medium"
-                        android:textSize="12sp"
-                        android:textColor="#7A7A7A"/>
-                </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4 Events"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:textSize="14sp"
-                    android:textColor="#6B6B6B"
-                    android:fontFamily="@font/helvetica_medium"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp"
-                android:padding="20dp"
-                android:background="@drawable/border1">
-                <ImageView android:id="@+id/fossa_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/fossa"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/fossa_icon"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fossa Sports"
-                        android:fontFamily="@font/helvetica_bold"
-                        android:textSize="14sp"
-                        android:textColor="@android:color/black"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Joined On 12/5/20"
-                        android:fontFamily="@font/helvetica_medium"
-                        android:textSize="12sp"
-                        android:textColor="#7A7A7A"/>
-                </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4 Events"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:textSize="14sp"
-                    android:textColor="#6B6B6B"
-                    android:fontFamily="@font/helvetica_medium"/>
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp"
-                android:padding="20dp"
-                android:background="@drawable/border1">
-                <ImageView android:id="@+id/sparks_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/sparks"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/sparks_icon"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Sparks Llc"
-                        android:fontFamily="@font/helvetica_bold"
-                        android:textSize="14sp"
-                        android:textColor="@android:color/black"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Joined On 12/5/20"
-                        android:fontFamily="@font/helvetica_medium"
-                        android:textSize="12sp"
-                        android:textColor="#7A7A7A"/>
-                </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4 Events"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:textSize="14sp"
-                    android:textColor="#6B6B6B"
-                    android:fontFamily="@font/helvetica_medium"/>
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginLeft="30dp"
-                android:layout_marginRight="30dp"
-                android:layout_marginBottom="10dp"
-                android:padding="20dp"
-                android:background="@drawable/border1">
-                <ImageView android:id="@+id/lola_icon"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@drawable/lola"/>
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/lola_icon"
-                    android:layout_marginLeft="10dp"
-                    android:layout_centerVertical="true"
-                    android:orientation="vertical">
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Lola Event Makers"
-                        android:fontFamily="@font/helvetica_bold"
-                        android:textSize="14sp"
-                        android:textColor="@android:color/black"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Joined On 12/5/20"
-                        android:fontFamily="@font/helvetica_medium"
-                        android:textSize="12sp"
-                        android:textColor="#7A7A7A"/>
-                </LinearLayout>
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="4 Events"
-                    android:layout_alignParentRight="true"
-                    android:layout_centerVertical="true"
-                    android:textSize="14sp"
-                    android:textColor="#6B6B6B"
-                    android:fontFamily="@font/helvetica_medium"/>
-            </RelativeLayout>
-
+                android:orientation="vertical"
+                android:layout_marginTop="50dp"></LinearLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="20dp"/>
+                android:layout_height="20dp" />
         </LinearLayout>
     </ScrollView>
 </LinearLayout>

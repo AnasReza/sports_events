@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "769818239294",
+    "project_id": "sports-event-7cf95",
+    "storage_bucket": "sports-event-7cf95.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769818239294:android:ee5a164d7b20ca74284c6f",
+        "android_client_info": {
+          "package_name": "com.sportsevent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769818239294-p1mo5l18h4sed3l1kq0s99talenmrieu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAuBC4hRgCi-gha0PhA4Xsf5AG8xxHBG1Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769818239294-p1mo5l18h4sed3l1kq0s99talenmrieu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

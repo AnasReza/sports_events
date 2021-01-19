@@ -81,7 +81,7 @@
                 android:layout_weight="1"
                 android:orientation="vertical">
 
-                <TextView
+                <TextView android:id="@+id/timer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -204,7 +204,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="10sp" />
 
-            <TextView
+            <TextView android:id="@+id/route_length"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica_bold"
@@ -231,7 +231,7 @@
                 android:textColor="@android:color/black"
                 android:textSize="10sp" />
 
-            <TextView
+            <TextView android:id="@+id/checkpoints"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/helvetica_bold"
