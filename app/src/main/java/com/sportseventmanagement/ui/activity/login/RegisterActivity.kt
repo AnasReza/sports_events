@@ -49,11 +49,12 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, RegisterMode
     private var back_button: ImageView? = null
     private var email_text: EditText? = null
     private var password_text: EditText? = null
+    private var repeat_password_text: EditText? = null
     private var name_text: EditText? = null
     private var username_text: EditText? = null
     private var gender_spin: Spinner? = null
     private var profile_image: CircleImageView? = null
-    private var google_button:Button?=null
+    private var google_button: Button? = null
     private var genderSelected = "Male"
 
     private var uploadedURL: String = ""
@@ -66,7 +67,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, RegisterMode
     private var model: RegisterModel? = null
     private var googleLogin: GoogleLoginModel? = null
     lateinit var mGoogleSignInClient: GoogleSignInClient
-    private var pref:Preferences?=null
+    private var pref: Preferences? = null
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -84,7 +85,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, RegisterMode
     private fun init() {
         model = RegisterModel(this, this)
         googleLogin = GoogleLoginModel(this, this)
-        pref= Preferences(this)
+        pref = Preferences(this)
         locationManager = getSystemService(Context.LOCATION_SERVICE) as LocationManager?
 
         create_account = findViewById(R.id.create_account)
@@ -92,11 +93,12 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, RegisterMode
         back_button = findViewById(R.id.back_button)
         email_text = findViewById(R.id.email_text)
         password_text = findViewById(R.id.password_text)
+        repeat_password_text = findViewById(R.id.password_text)
         name_text = findViewById(R.id.name_text)
         username_text = findViewById(R.id.username_text)
         gender_spin = findViewById(R.id.gender_spin)
         profile_image = findViewById(R.id.profile_image)
-        google_button=findViewById(R.id.google_button)
+        google_button = findViewById(R.id.google_button)
 
         ArrayAdapter.createFromResource(
             this,
@@ -195,40 +197,52 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, RegisterMode
                 var username = username_text!!.text.toString()
                 var name = name_text!!.text.toString()
                 var password = password_text!!.toString()
+                var repeat_password = repeat_password_text!!.toString()
                 genderSelected = gender_spin!!.selectedItem.toString()
-                if (imageUpload) {
-                    Log.d("Anas", "$imageUpload imageUploaded")
-                    if (locationIsEnabled) {
-                        Log.d("Anas", "$locationIsEnabled imageUploaded")
-                        FirebaseApp.initializeApp(this)
-                        FirebaseInstanceId.getInstance().instanceId.addOnCompleteListener { task ->
-                            if (!task.isSuccessful) {
-                                task.exception!!.printStackTrace()
-                                return@addOnCompleteListener
+
+                if (password == repeat_password) {
+                    if (imageUpload) {
+                        Log.d("Anas", "$imageUpload imageUploaded")
+                        if (locationIsEnabled) {
+                            Log.d("Anas", "$locationIsEnabled imageUploaded")
+                            FirebaseApp.initializeApp(this)
+                            FirebaseInstanceId.getInstance().instanceId.addOnCompleteListener { task ->
+                                if (!task.isSuccessful) {
+                                    task.exception!!.printStackTrace()
+                                    return@addOnCompleteListener
+                                }
+                                val token = task.result?.token
+
+                                val locationJson = JSONObject()
+                                locationJson.put("latitude", latitude)
+                                locationJson.put("longitude", longitude)
+                                val mainJson = JSONObject()
+                                mainJson.put("email", email)
+                                mainJson.put("password", password)
+                                mainJson.put("fullname", name)
+                                mainJson.put("username", username)
+                                mainJson.put("gender", genderSelected)
+                                mainJson.put("image", uploadedURL)
+                                mainJson.put("location", locationJson)
+                                mainJson.put("pushToken", token)
+
+                                model!!.onRegister(mainJson)
                             }
-                            val token = task.result?.token
 
-                            val locationJson = JSONObject()
-                            locationJson.put("latitude", latitude)
-                            locationJson.put("longitude", longitude)
-                            val mainJson = JSONObject()
-                            mainJson.put("email", email)
-                            mainJson.put("password", password)
-                            mainJson.put("fullname", name)
-                            mainJson.put("username", username)
-                            mainJson.put("gender", genderSelected)
-                            mainJson.put("image", uploadedURL)
-                            mainJson.put("location", locationJson)
-                            mainJson.put("pushToken", token)
-
-                            model!!.onRegister(mainJson)
+                        } else {
+                            Toast.makeText(this, "Please enable your Location", Toast.LENGTH_SHORT)
+                                .show()
                         }
 
-                    }else{
-                        Toast.makeText(this,"Please enable your Location",Toast.LENGTH_SHORT).show()
                     }
-
+                } else {
+                    Toast.makeText(
+                        this,
+                        "Password and Repeat Password is not equal",
+                        Toast.LENGTH_SHORT
+                    ).show()
                 }
+
 
                 // startActivity(Intent(this, VerifyAccountActivity::class.java))
             }
@@ -351,11 +365,12 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, RegisterMode
                 }
             }).dispatch()
 
-        }else if (resultCode == Activity.RESULT_OK &&requestCode == 9001) {
+        } else if (resultCode == Activity.RESULT_OK && requestCode == 9001) {
             val task = GoogleSignIn.getSignedInAccountFromIntent(data)
             handleSignInResult(task)
         }
     }
+
     private fun handleSignInResult(task: Task<GoogleSignInAccount>?) {
         try {
             val account = task!!.getResult(
@@ -410,6 +425,7 @@ class RegisterActivity : AppCompatActivity(), View.OnClickListener, RegisterMode
             )
         }
     }
+
     override fun onResult(response: String) {
         Log.e("Anas", "$response  response on register")
         val data = JSONObject(response)

@@ -19,7 +19,6 @@ import androidx.fragment.app.FragmentTransaction
 import com.google.android.material.navigation.NavigationView
 import com.sportseventmanagement.R
 import com.sportseventmanagement.model.LogoutModel
-import com.sportseventmanagement.model.NearByEventModel
 import com.sportseventmanagement.ui.activity.login.LoginActivity
 import com.sportseventmanagement.ui.fragment.AllNotificationFragment
 import com.sportseventmanagement.ui.fragment.HomeFragment
@@ -54,7 +53,7 @@ class HomeActivity : AppCompatActivity(), LogoutModel.Logout {
     private var settingsFragement: SettingsFragment? = null
     private var fragmentManager: FragmentManager? = null
     private var fragmentTransaction: FragmentTransaction? = null
-    private var logoutModel:LogoutModel?=null
+    private var logoutModel: LogoutModel? = null
     private var check: Boolean = true
     private var pref: Preferences? = null
 
@@ -84,7 +83,7 @@ class HomeActivity : AppCompatActivity(), LogoutModel.Logout {
         settingsFragement = SettingsFragment()
         switchFragment(homeFragement!!)
         pref = Preferences(this)
-        logoutModel= LogoutModel(this,this)
+        logoutModel = LogoutModel(this, this)
 
 
         menuIcon = findViewById(R.id.ic_menu_button)
@@ -165,7 +164,8 @@ class HomeActivity : AppCompatActivity(), LogoutModel.Logout {
         }
 
         logout!!.setOnClickListener {
-            logoutModel!!.onLogin(pref!!.getToken()!!)}
+            logoutModel!!.onLogin(pref!!.getToken()!!)
+        }
 
 
     }
@@ -179,11 +179,11 @@ class HomeActivity : AppCompatActivity(), LogoutModel.Logout {
     }
 
     override fun onLogout(response: String) {
-        val json=JSONObject(response)
-        val success=json.getBoolean("success")
-        val message=json.getString("message")
+        val json = JSONObject(response)
+        val success = json.getBoolean("success")
+        val message = json.getString("message")
 
-        if(success){
+        if (success) {
             pref!!.setToken("access_token")
             pref!!.setEmail("")
             pref!!.setType("")
@@ -194,8 +194,8 @@ class HomeActivity : AppCompatActivity(), LogoutModel.Logout {
             pref!!.setPhotoURL("")
             pref!!.setLogin(false)
 
-            startActivity(Intent(this,LoginActivity::class.java))
+            startActivity(Intent(this, LoginActivity::class.java))
         }
-        Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
     }
 }

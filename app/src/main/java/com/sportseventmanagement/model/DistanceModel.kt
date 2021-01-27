@@ -6,27 +6,33 @@ import com.android.volley.Request
 import com.android.volley.RequestQueue
 import com.android.volley.Response
 import com.android.volley.ServerError
-import com.android.volley.toolbox.JsonObjectRequest
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
-import com.sportseventmanagement.api.API
+import com.google.android.gms.maps.model.LatLng
 import org.json.JSONException
 import org.json.JSONObject
 import java.io.UnsupportedEncodingException
 
-class NearByEventModel(private val result: NearByEvent, private val context: Context) {
+class DistanceModel(private val result: onDirectionResult, private val context: Context) {
+
+    //MODEL BOILERPLATE
+    interface onDirectionResult {
+        fun onDirectionResult(response: String)
+    }
 
     private var requestQueue: RequestQueue? = null
 
 
-    fun onGetNearByEvent(lat:Double,longi:Double, token: String)  {
+    fun onGetDistance(latlng: LatLng, nextLatlng: LatLng) {
         requestQueue = Volley.newRequestQueue(context)
-        val url = "${API.userNearByEvent}?longitude=$longi&latitude=$lat&populateEventMaker=true"
+        val url =
+            "https://maps.googleapis.com/maps/api/directions/json?origin=${latlng.latitude},${latlng.longitude}&destination=${nextLatlng.latitude},${nextLatlng.longitude}&mode=bicycling&key=AIzaSyD3h20CTKpHUM_zB1FcTK8irTowxPZaghI"
         Log.d("Anas", url)
         val postReq = object : StringRequest(Request.Method.GET, url,
             Response.Listener { response ->
 
-                result.onNearBy(response.toString())
+                //  mainResponse = response
+                result.onDirectionResult(response.toString())
             }, Response.ErrorListener { error ->
                 error.printStackTrace()
                 val response = error.networkResponse
@@ -37,7 +43,7 @@ class NearByEventModel(private val result: NearByEvent, private val context: Con
                         )
                         // Now you can use any deserializer to make sense of data
                         val obj = JSONObject(res)
-                        result.onNearBy(obj.toString())
+                        result.onDirectionResult(obj.toString())
                     } catch (e1: UnsupportedEncodingException) {
                         // Couldn't properly decode data to string
                         e1.printStackTrace()
@@ -47,19 +53,10 @@ class NearByEventModel(private val result: NearByEvent, private val context: Con
                     }
                 }
             }) {
-            override fun getHeaders(): MutableMap<String, String> {
-                val params: MutableMap<String, String> = HashMap()
-                params["Authorization"] = "Bearer $token"
 
-                return params
-            }
         }
 
         requestQueue!!.add(postReq)
     }
 
-    //MODEL BOILERPLATE
-    interface NearByEvent {
-        fun onNearBy(response: String)
-    }
 }

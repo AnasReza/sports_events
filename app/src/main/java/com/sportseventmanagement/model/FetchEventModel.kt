@@ -20,7 +20,7 @@ class FetchEventModel(private val result: Event?, private val context: Context) 
 
     fun onEventsLimit(token: String) {
         requestQueue = Volley.newRequestQueue(context)
-        val url = "${API.userEvents}?limit=2&populateEventMaker=true"
+        val url = "${API.userEvents}?populateEventMaker=true"
         Log.d("Anas", url)
         val postReq = object : StringRequest(Request.Method.GET, url,
             Response.Listener { response ->

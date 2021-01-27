@@ -63,8 +63,8 @@
                     android:layout_centerVertical="true"
                     android:background="@drawable/profile" />
                 <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_width="23dp"
+                    android:layout_height="23dp"
                     android:background="@drawable/camera"
                     android:layout_alignParentBottom="true"
                     android:layout_alignParentRight="true"/>
@@ -101,6 +101,16 @@
                     android:background="@drawable/rectangle_black_stroke"
                     android:elevation="0dp"
                     android:hint="Password"
+                    android:paddingLeft="20dp" />
+                <EditText
+                    android:layout_width="match_parent"
+                    android:id="@+id/repeat_password_text"
+                    android:layout_height="40dp"
+                    android:layout_marginTop="20dp"
+                    android:inputType="textPassword"
+                    android:background="@drawable/rectangle_black_stroke"
+                    android:elevation="0dp"
+                    android:hint="Confirm Password"
                     android:paddingLeft="20dp" />
                 <EditText
                     android:layout_width="match_parent"

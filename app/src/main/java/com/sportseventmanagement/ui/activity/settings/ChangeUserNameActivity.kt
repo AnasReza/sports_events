@@ -1,7 +1,6 @@
 package com.sportseventmanagement.ui.activity.settings
 
 import android.os.Bundle
-import android.util.Log
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -43,6 +42,8 @@ class ChangeUserNameActivity : AppCompatActivity(), View.OnClickListener,
         usernameText = findViewById(R.id.usernameText)
         saveChanges = findViewById(R.id.saveChanges)
 
+        usernameText!!.setText(pref!!.getUserName()!!)
+
         back_button!!.setOnClickListener(this)
         saveChanges!!.setOnClickListener(this)
     }
@@ -65,14 +66,14 @@ class ChangeUserNameActivity : AppCompatActivity(), View.OnClickListener,
     }
 
     override fun onUpdate(response: String) {
-       val data=JSONObject(response)
-        val success=data.getBoolean("success")
-        val message=data.getString("message")
-        if(success){
-            Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
+        val data = JSONObject(response)
+        val success = data.getBoolean("success")
+        val message = data.getString("message")
+        if (success) {
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
             finish()
-        }else{
-            Toast.makeText(this,message,Toast.LENGTH_SHORT).show()
+        } else {
+            Toast.makeText(this, message, Toast.LENGTH_SHORT).show()
         }
     }
 

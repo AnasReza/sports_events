@@ -19,10 +19,12 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.sportseventmanagement.R
+import com.sportseventmanagement.model.DistanceModel
 import com.sportseventmanagement.model.GPXModel
 import com.sportseventmanagement.utility.Preferences
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_all_events.*
+import org.apache.commons.io.IOUtils
 import org.json.JSONObject
 import org.w3c.dom.*
 import org.xml.sax.InputSource
@@ -36,7 +38,7 @@ import javax.xml.parsers.ParserConfigurationException
 import kotlin.collections.ArrayList
 
 class StartRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListener,
-    GPXModel.GpxResult {
+    GPXModel.GpxResult, DistanceModel.onDirectionResult {
     private var mainScroll: ScrollView? = null
     private var mapFragment: SupportMapFragment? = null
     private var transparent_image: ImageView? = null
@@ -58,10 +60,18 @@ class StartRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickL
 
     private var jsonStr: String = ""
     private var model: GPXModel? = null
+    private var distmodel: DistanceModel? = null
     private var pref:Preferences?=null
     private var mMap: GoogleMap? = null
     private var gpxUrl: String = ""
     private var gpxList: ArrayList<LatLng>? = null
+    private var wptList: ArrayList<LatLng>? = null
+    var durationArr: ArrayList<String>? = null
+    var distanceArr: ArrayList<String>? = null
+    private var avg: Double? = null
+    private var index: Int? = -1
+    var destlat: Double = 0.0
+    var destlong: Double = 0.0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
@@ -78,8 +88,13 @@ class StartRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickL
     private fun init() {
         jsonStr = intent.getStringExtra("details")!!
         model = GPXModel(this, this)
+        distmodel= DistanceModel(this,this)
         pref=Preferences(this)
-        gpxList= ArrayList()
+        gpxList = ArrayList()
+        wptList = ArrayList()
+        pref = Preferences(this)
+        durationArr = ArrayList()
+        distanceArr = ArrayList()
 
         mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mainScroll = findViewById(R.id.mainScroll)
@@ -209,10 +224,265 @@ class StartRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickL
 
     }
 
+//    override fun onMapReady(map: GoogleMap?) {
+//        Log.i("Anas", "MAP IS READY")
+//        mMap = map!!
+//        model!!.onGetGPX(gpxUrl)
+//
+//    }
+
     override fun onMapReady(map: GoogleMap?) {
         Log.i("Anas", "MAP IS READY")
-        mMap = map!!
-        model!!.onGetGPX(gpxUrl)
+        mMap = map
+        // model!!.onGetGPX(gpxUrl)
+        var assetInStream: InputStream? = null
+
+        try {
+            assetInStream = assets.open("test1.gpx")
+            val size: Int = assetInStream.available()
+            val buffer = ByteArray(size)
+            var text: String = String(buffer)
+            //  Log.d("Anas","$text   text")
+
+            var file: File = File.createTempFile("test", ".gpx")
+
+
+            FileOutputStream(file).use { out -> IOUtils.copy(assetInStream, out) }
+            Log.d("Anas", "${file.exists()}  input stream file")
+            decodeGPX(file)
+
+            for (x in 0 until wptList!!.size) {
+                if (x < wptList!!.size - 1) {
+                    distmodel!!.onGetDistance(wptList!![x], wptList!![x + 1])
+                }
+                when (x) {
+                    0 -> {
+                        if (pref!!.getPhotoURL() != "") {
+                            Glide.with(this).asBitmap().load(pref!!.getPhotoURL())
+                                .override(70, 70)
+                                .apply(RequestOptions().fitCenter())
+                                .listener(object : RequestListener<Bitmap> {
+                                    override fun onLoadFailed(
+                                        e: GlideException?,
+                                        model: Any?,
+                                        target: com.bumptech.glide.request.target.Target<Bitmap>?,
+                                        isFirstResource: Boolean
+                                    ): Boolean {
+                                        e!!.printStackTrace()
+                                        return true
+                                    }
+
+                                    override fun onResourceReady(
+                                        resource: Bitmap?,
+                                        model: Any?,
+                                        target: com.bumptech.glide.request.target.Target<Bitmap>?,
+                                        dataSource: DataSource?,
+                                        isFirstResource: Boolean
+                                    ): Boolean {
+
+
+                                        var icon: BitmapDescriptor =
+                                            BitmapDescriptorFactory.fromBitmap(getCircular(resource!!))
+
+                                        var markerOptions: MarkerOptions =
+                                            MarkerOptions().position(wptList!![0]).icon(icon)
+
+
+                                        map!!.addMarker(markerOptions)
+
+                                        return true
+                                    }
+
+                                })
+                                .placeholder(R.drawable.ic_user_placeholder)
+                                .preload()
+                        }
+                        map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(wptList!![0], 10f))
+                    }
+                    wptList!!.size - 1 -> {
+                        Glide.with(this).asBitmap().load(R.drawable.finish_circle)
+                            .override(70, 70)
+                            .apply(RequestOptions().fitCenter())
+                            .listener(object : RequestListener<Bitmap> {
+                                override fun onLoadFailed(
+                                    e: GlideException?,
+                                    model: Any?,
+                                    target: com.bumptech.glide.request.target.Target<Bitmap>?,
+                                    isFirstResource: Boolean
+                                ): Boolean {
+                                    e!!.printStackTrace()
+                                    return true
+                                }
+
+                                override fun onResourceReady(
+                                    resource: Bitmap?,
+                                    model: Any?,
+                                    target: com.bumptech.glide.request.target.Target<Bitmap>?,
+                                    dataSource: DataSource?,
+                                    isFirstResource: Boolean
+                                ): Boolean {
+
+
+                                    var icon: BitmapDescriptor =
+                                        BitmapDescriptorFactory.fromBitmap(getCircular(resource!!))
+
+                                    var markerOptions: MarkerOptions =
+                                        MarkerOptions().position(wptList!![x]).icon(icon)
+
+
+                                    map!!.addMarker(markerOptions)
+
+                                    return true
+                                }
+
+                            })
+                            .preload()
+                    }
+                    else -> {
+                        map!!.addMarker(
+                            MarkerOptions().position(wptList!![x])
+                                .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker))
+                        )
+                    }
+
+                }
+
+            }
+
+            Log.d("Anas", "${wptList!!.size} wptList ki size ")
+            var polyLineOptions = PolylineOptions()
+            polyLineOptions.addAll(wptList)
+            polyLineOptions.width(13F)
+            polyLineOptions.color(Color.MAGENTA)
+            polyLineOptions.geodesic(true)
+
+
+        } catch (e: IOException) {
+            e.printStackTrace()
+        } finally {
+            assetInStream?.close()
+        }
+    }
+
+    private fun decodePolyline(encoded: String, int: Int): List<LatLng> {
+        Log.d("inside", "inside decode $int")
+        val poly = ArrayList<LatLng>()
+        //latlngList!!.clear()
+        var index = 0
+        val len = encoded.length
+        var lat = 0
+        var lng = 0
+
+        while (index < len) {
+            var b: Int
+            var shift = 0
+            var result = 0
+            do {
+                b = encoded[index++].toInt() - 63
+                result = result or (b and 0x1f shl shift)
+                shift += 5
+            } while (b >= 0x20)
+            val dlat = if (result and 1 != 0) (result shr 1).inv() else result shr 1
+            lat += dlat
+
+            shift = 0
+            result = 0
+            do {
+                b = encoded[index++].toInt() - 63
+                result = result or (b and 0x1f shl shift)
+                shift += 5
+            } while (b >= 0x20)
+            val dlng = if (result and 1 != 0) (result shr 1).inv() else result shr 1
+            lng += dlng
+
+            val latLng = LatLng((lat.toDouble() / 1E5), (lng.toDouble() / 1E5))
+
+            poly!!.add(latLng)
+        }
+        // mainList!!.add(latlngList1)
+        //Log.d("sizeOF","ye time to  ${poly[1]}")
+        return poly
+    }
+
+    private fun jsonParsing(response: String?) {
+        val json = JSONObject(response)
+        val route = json.getJSONArray("routes")
+        var mainList = ArrayList<ArrayList<LatLng>>()
+        Log.d("array of", "${route.length()}")
+
+        for (item in 0 until route.length()) {
+            Log.d("index", "$item  item")
+            //ye sare route k ander jitne itme ha unka andar jitne objet ha wo ha ye
+            val routeItems = route.getJSONObject(item)
+            //Log.d("item", "${routeItems.length()}")
+
+            // ye ek array tha jo legs me tha api me
+            val legs = routeItems.getJSONArray("legs")
+            // Log.d("legsData","${legs.length()}")
+            for (X in 0 until legs.length()) {
+                val legItem = legs.getJSONObject(X)
+                val duration = legItem.getJSONObject("duration").getString("text")
+                val distance = legItem.getJSONObject("distance").getString("text")
+                durationArr!!.add(duration)
+                distanceArr!!.add(distance)
+
+                val durTime = duration.split(' ')[0]
+                val disTime = distance.split(' ')[0]
+
+                var average = (durTime.toDouble() + disTime.toDouble()).toDouble() / 2
+
+                if (avg != null && avg!! < average) {
+                    Log.d("small", "inside if  ${avg}")
+                } else {
+                    index = item
+                    avg = average
+                    Log.d("small", "inside else  ${avg}  ${index}")
+                }
+                Log.d(
+                    "size1",
+                    "}   vvvvv  ${durTime} ${disTime} ${average}  ${durationArr}  ${distanceArr} "
+                )
+
+
+                val endLocation = legItem.getJSONObject("end_location")
+                destlat = endLocation.getDouble("lat")
+                destlong = endLocation.getDouble("lng")
+//                mMap!!.addMarker(
+//                    MarkerOptions().position(LatLng(destlat, destlong))
+//                        .title("this is my destination")
+//                )
+                val steps = legItem.getJSONArray("steps")
+                Log.d("list", "step length   ${steps.length()}")
+                //Log.d("legItems","${legItem.length()}")
+                val latlngList1 = ArrayList<LatLng>()
+                for (Y in 0 until steps.length()) {
+                    val stepsItem = steps.getJSONObject(Y)
+                    val polyline = stepsItem.getJSONObject("polyline")
+                    val points = polyline.getString("points")
+                    //Log.d("points","$points")
+                    latlngList1!!.addAll(decodePolyline(points, item))
+                    // var lineOptions = PolylineOptions()
+
+
+                }
+
+                mainList!!.add(latlngList1)
+//                val c=mainList!!.size
+//                Log.d("sizeOF","}   vvvvv  $mainList[c]")
+            }
+        }
+        for (x in 0 until mainList.size) {
+            var lineOptions = PolylineOptions()
+            lineOptions.addAll(mainList!![x])
+            lineOptions.width(10f)
+            lineOptions.color(Color.MAGENTA)
+            lineOptions.geodesic(true)
+
+            mMap!!.addPolyline(lineOptions)
+
+
+        }
+
 
     }
 
@@ -300,6 +570,83 @@ class StartRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickL
         }
     }
 
+
+    private fun decodeGPX(file: File) {
+
+        val documentBuilderFactory: DocumentBuilderFactory = DocumentBuilderFactory.newInstance()
+        try {
+            val documentBuilder: DocumentBuilder = documentBuilderFactory.newDocumentBuilder()
+            val fileInputStream = FileInputStream(file)
+            val document: Document = documentBuilder.parse(fileInputStream)
+            val elementRoot: Element = document.documentElement
+            val nodelist_trkpt: NodeList = elementRoot.getElementsByTagName("trkpt")
+            val nodeList_wpt: NodeList = elementRoot.getElementsByTagName("wpt")
+            Log.d("Anas", "${nodeList_wpt.length} length of nodelist wpt")
+            val metadata = elementRoot.getElementsByTagName("metadata")
+            var minLat: Double = 0.0
+            var minLong: Double = 0.0
+            for (i in 0 until wptList!!.size) {
+                val metaNode = metadata.item(i)
+                val attr = metaNode.attributes
+                val maxLat = attr.getNamedItem("maxlat").textContent.toDouble()
+                val maxLong = attr.getNamedItem("maxlon").textContent.toDouble()
+                minLat = attr.getNamedItem("minlat").textContent.toDouble()
+                minLong = attr.getNamedItem("minlon").textContent.toDouble()
+                wptList!!.add(LatLng(maxLat, maxLong))
+            }
+
+
+            for (x in 0 until nodeList_wpt.length) {
+                val node: Node = nodeList_wpt.item(x)
+                val attributes: NamedNodeMap = node.attributes
+                val newLatitude: String = attributes.getNamedItem("lat").textContent
+                val newLatitude_double = newLatitude.toDouble()
+                val newLongitude: String = attributes.getNamedItem("lon").textContent
+                val newLongitude_double = newLongitude.toDouble()
+                val newLocationName = "$newLatitude:$newLongitude"
+                val newLocation = Location(newLocationName)
+                newLocation.latitude = newLatitude_double
+                newLocation.longitude = newLongitude_double
+                Log.d(
+                    "Anas",
+                    "Latitude=${newLocation.latitude}   Longitude=${newLocation.longitude}"
+                )
+                wptList!!.add(LatLng(newLatitude_double, newLongitude_double))
+                //gpxList!!.add(LatLng(newLatitude_double, newLongitude_double))
+            }
+            //  wptList!!.add(LatLng(minLat, minLong))
+//            for (i in 0 until nodelist_trkpt.length) {
+//                val node: Node = nodelist_trkpt.item(i)
+//                val attributes: NamedNodeMap = node.attributes
+//                val newLatitude: String = attributes.getNamedItem("lat").textContent
+//                val newLatitude_double = newLatitude.toDouble()
+//                val newLongitude: String = attributes.getNamedItem("lon").textContent
+//                val newLongitude_double = newLongitude.toDouble()
+//                val newLocationName = "$newLatitude:$newLongitude"
+//                val newLocation = Location(newLocationName)
+//                newLocation.latitude = newLatitude_double
+//                newLocation.longitude = newLongitude_double
+//                gpxList!!.add(LatLng(newLatitude_double, newLongitude_double))
+//            }
+            fileInputStream.close()
+        } catch (e: ParserConfigurationException) {
+            // TODO Auto-generated catch block
+            Log.d("Anas", "ParserConfigurationException")
+            e.printStackTrace()
+        } catch (e: FileNotFoundException) {
+            // TODO Auto-generated catch block
+            Log.d("Anas", "FileNotFoundException")
+            e.printStackTrace()
+        } catch (e: SAXException) {
+            // TODO Auto-generated catch block
+            Log.d("Anas", "SAXException")
+            e.printStackTrace()
+        } catch (e: IOException) {
+            // TODO Auto-generated catch block
+            Log.d("Anas", "IOException")
+            e.printStackTrace()
+        }
+    }
     override fun onGpxResult(response: String) {
         decode(response)
 
@@ -414,6 +761,10 @@ class StartRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickL
 //                            Log . d ("Anas", "$info    lat lng"
 //                )
         }
+    }
+
+    override fun onDirectionResult(response: String) {
+        jsonParsing(response)
     }
 
 }

@@ -20,8 +20,8 @@ import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.*
 import com.sportseventmanagement.R
+import com.sportseventmanagement.model.DistanceModel
 import com.sportseventmanagement.model.GPXModel
-import com.sportseventmanagement.utility.GoogleDirection
 import com.sportseventmanagement.utility.Preferences
 import com.squareup.picasso.Picasso
 import org.apache.commons.io.IOUtils
@@ -38,7 +38,7 @@ import javax.xml.parsers.ParserConfigurationException
 import kotlin.collections.ArrayList
 
 class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickListener,
-    GPXModel.GpxResult, RoutingListener {
+    GPXModel.GpxResult, DistanceModel.onDirectionResult {
     private var mainScroll: ScrollView? = null
     private var mapFragment: SupportMapFragment? = null
     private var transparent_image: ImageView? = null
@@ -64,10 +64,17 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
     private var pref: Preferences? = null
     private var makerJson: JSONObject? = null
     private var model: GPXModel? = null
+    private var distmodel: DistanceModel? = null
     private var mMap: GoogleMap? = null
     private var gpxUrl: String = ""
     private var gpxList: ArrayList<LatLng>? = null
     private var wptList: ArrayList<LatLng>? = null
+    var durationArr: ArrayList<String>? = null
+    var distanceArr: ArrayList<String>? = null
+    private var avg: Double? = null
+    private var index: Int? = -1
+    var destlat: Double = 0.0
+    var destlong: Double = 0.0
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.setFlags(
@@ -83,9 +90,12 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
     private fun init() {
         str = intent.getStringExtra("details")!!
         model = GPXModel(this, this)
+        distmodel = DistanceModel(this, this)
         gpxList = ArrayList()
         wptList = ArrayList()
         pref = Preferences(this)
+        durationArr = ArrayList()
+        distanceArr = ArrayList()
 
         mapFragment = supportFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mainScroll = findViewById(R.id.mainScroll)
@@ -302,6 +312,8 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
 
     override fun onMapReady(map: GoogleMap?) {
         Log.i("Anas", "MAP IS READY")
+        mMap = map
+       // model!!.onGetGPX(gpxUrl)
         var assetInStream: InputStream? = null
 
         try {
@@ -319,7 +331,9 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
             decodeGPX(file)
 
             for (x in 0 until wptList!!.size) {
-
+                if (x < wptList!!.size - 1) {
+                    distmodel!!.onGetDistance(wptList!![x], wptList!![x + 1])
+                }
                 when (x) {
                     0 -> {
                         if (pref!!.getPhotoURL() != "") {
@@ -631,6 +645,7 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
     }
 
     override fun onGpxResult(response: String) {
+        Log.e("Anas","$response  gpx")
         decode(response)
 
         var polyLineOptions = PolylineOptions()
@@ -747,118 +762,147 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
         }
     }
 
-    override fun onRoutingFailure(p0: RouteException?) {
-        p0!!.printStackTrace()
+    fun Polyline.addInfoWindow(map: GoogleMap) {
+        val pointsOnLine = this.points.size
+        val infoLatLng = this.points[(pointsOnLine / 2)]
+        val invisibleMarker =
+            BitmapDescriptorFactory.fromBitmap(Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888))
+        val marker = map.addMarker(
+            MarkerOptions()
+                .position(infoLatLng)
+                .alpha(0f)
+                .icon(invisibleMarker)
+                .anchor(0f, 0f)
+
+        )
+
+        marker.showInfoWindow()
     }
 
-    override fun onRoutingStart() {
-        Log.d("Anas", "on stared")
+    private fun decodePolyline(encoded: String, int: Int): List<LatLng> {
+        Log.d("inside", "inside decode $int")
+        val poly = ArrayList<LatLng>()
+        //latlngList!!.clear()
+        var index = 0
+        val len = encoded.length
+        var lat = 0
+        var lng = 0
+
+        while (index < len) {
+            var b: Int
+            var shift = 0
+            var result = 0
+            do {
+                b = encoded[index++].toInt() - 63
+                result = result or (b and 0x1f shl shift)
+                shift += 5
+            } while (b >= 0x20)
+            val dlat = if (result and 1 != 0) (result shr 1).inv() else result shr 1
+            lat += dlat
+
+            shift = 0
+            result = 0
+            do {
+                b = encoded[index++].toInt() - 63
+                result = result or (b and 0x1f shl shift)
+                shift += 5
+            } while (b >= 0x20)
+            val dlng = if (result and 1 != 0) (result shr 1).inv() else result shr 1
+            lng += dlng
+
+            val latLng = LatLng((lat.toDouble() / 1E5), (lng.toDouble() / 1E5))
+
+            poly!!.add(latLng)
+        }
+        // mainList!!.add(latlngList1)
+        //Log.d("sizeOF","ye time to  ${poly[1]}")
+        return poly
     }
 
-    override fun onRoutingSuccess(list: java.util.ArrayList<Route>?, p1: Int) {
-        Log.d("Anas", "${list!!.size} on routing size")
-        for (x in 0 until list!!.size) {
-            when (x) {
-                0 -> {
-                    if (pref!!.getPhotoURL() != "") {
-                        Glide.with(this).asBitmap().load(pref!!.getPhotoURL())
-                            .override(70, 70)
-                            .apply(RequestOptions().fitCenter())
-                            .listener(object : RequestListener<Bitmap> {
-                                override fun onLoadFailed(
-                                    e: GlideException?,
-                                    model: Any?,
-                                    target: com.bumptech.glide.request.target.Target<Bitmap>?,
-                                    isFirstResource: Boolean
-                                ): Boolean {
-                                    e!!.printStackTrace()
-                                    return true
-                                }
+    private fun jsonParsing(response: String?) {
+        val json = JSONObject(response)
+        val route = json.getJSONArray("routes")
+        var mainList = ArrayList<ArrayList<LatLng>>()
+        Log.d("array of", "${route.length()}")
 
-                                override fun onResourceReady(
-                                    resource: Bitmap?,
-                                    model: Any?,
-                                    target: com.bumptech.glide.request.target.Target<Bitmap>?,
-                                    dataSource: DataSource?,
-                                    isFirstResource: Boolean
-                                ): Boolean {
+        for (item in 0 until route.length()) {
+            Log.d("index", "$item  item")
+            //ye sare route k ander jitne itme ha unka andar jitne objet ha wo ha ye
+            val routeItems = route.getJSONObject(item)
+            //Log.d("item", "${routeItems.length()}")
 
+            // ye ek array tha jo legs me tha api me
+            val legs = routeItems.getJSONArray("legs")
+            // Log.d("legsData","${legs.length()}")
+            for (X in 0 until legs.length()) {
+                val legItem = legs.getJSONObject(X)
+                val duration = legItem.getJSONObject("duration").getString("text")
+                val distance = legItem.getJSONObject("distance").getString("text")
+                durationArr!!.add(duration)
+                distanceArr!!.add(distance)
 
-                                    var icon: BitmapDescriptor =
-                                        BitmapDescriptorFactory.fromBitmap(getCircular(resource!!))
+                val durTime = duration.split(' ')[0]
+                val disTime = distance.split(' ')[0]
 
-                                    var markerOptions: MarkerOptions =
-                                        MarkerOptions().position(wptList!![0]).icon(icon)
+                var average = (durTime.toDouble() + disTime.toDouble()).toDouble() / 2
 
-
-                                    mMap!!.addMarker(markerOptions)
-
-                                    return true
-                                }
-
-                            })
-                            .placeholder(R.drawable.ic_user_placeholder)
-                            .preload()
-                    }
-                    mMap!!.moveCamera(CameraUpdateFactory.newLatLngZoom(wptList!![0], 10f))
+                if (avg != null && avg!! < average) {
+                    Log.d("small", "inside if  ${avg}")
+                } else {
+                    index = item
+                    avg = average
+                    Log.d("small", "inside else  ${avg}  ${index}")
                 }
-                wptList!!.size - 1 -> {
-                    Glide.with(this).asBitmap().load(R.drawable.finish_circle)
-                        .override(70, 70)
-                        .apply(RequestOptions().fitCenter())
-                        .listener(object : RequestListener<Bitmap> {
-                            override fun onLoadFailed(
-                                e: GlideException?,
-                                model: Any?,
-                                target: com.bumptech.glide.request.target.Target<Bitmap>?,
-                                isFirstResource: Boolean
-                            ): Boolean {
-                                e!!.printStackTrace()
-                                return true
-                            }
-
-                            override fun onResourceReady(
-                                resource: Bitmap?,
-                                model: Any?,
-                                target: com.bumptech.glide.request.target.Target<Bitmap>?,
-                                dataSource: DataSource?,
-                                isFirstResource: Boolean
-                            ): Boolean {
+                Log.d(
+                    "size1",
+                    "}   vvvvv  ${durTime} ${disTime} ${average}  ${durationArr}  ${distanceArr} "
+                )
 
 
-                                var icon: BitmapDescriptor =
-                                    BitmapDescriptorFactory.fromBitmap(getCircular(resource!!))
+                val endLocation = legItem.getJSONObject("end_location")
+                destlat = endLocation.getDouble("lat")
+                destlong = endLocation.getDouble("lng")
+//                mMap!!.addMarker(
+//                    MarkerOptions().position(LatLng(destlat, destlong))
+//                        .title("this is my destination")
+//                )
+                val steps = legItem.getJSONArray("steps")
+                Log.d("list", "step length   ${steps.length()}")
+                //Log.d("legItems","${legItem.length()}")
+                val latlngList1 = ArrayList<LatLng>()
+                for (Y in 0 until steps.length()) {
+                    val stepsItem = steps.getJSONObject(Y)
+                    val polyline = stepsItem.getJSONObject("polyline")
+                    val points = polyline.getString("points")
+                    //Log.d("points","$points")
+                    latlngList1!!.addAll(decodePolyline(points, item))
+                    // var lineOptions = PolylineOptions()
 
-                                var markerOptions: MarkerOptions =
-                                    MarkerOptions().position(wptList!![x]).icon(icon)
 
-
-                                mMap!!.addMarker(markerOptions)
-
-                                return true
-                            }
-
-                        })
-                        .preload()
-                }
-                else -> {
-                    mMap!!.addMarker(
-                        MarkerOptions().position(wptList!![x])
-                            .icon(BitmapDescriptorFactory.fromResource(R.drawable.marker))
-                    )
                 }
 
+                mainList!!.add(latlngList1)
+//                val c=mainList!!.size
+//                Log.d("sizeOF","}   vvvvv  $mainList[c]")
             }
         }
-        var polyLineOptions = PolylineOptions()
-        polyLineOptions.addAll(wptList)
-        polyLineOptions.width(13F)
-        polyLineOptions.color(Color.MAGENTA)
-        polyLineOptions.geodesic(true)
-        mMap!!.addPolyline(polyLineOptions)
+        for (x in 0 until mainList.size) {
+            var lineOptions = PolylineOptions()
+            lineOptions.addAll(mainList!![x])
+            lineOptions.width(10f)
+            lineOptions.color(Color.MAGENTA)
+            lineOptions.geodesic(true)
+
+             mMap!!.addPolyline(lineOptions)
+
+
+        }
+
+
     }
 
-    override fun onRoutingCancelled() {
-        Log.d("Anas", "on routing cancelled")
+    override fun onDirectionResult(response: String) {
+        jsonParsing(response)
     }
+
 }

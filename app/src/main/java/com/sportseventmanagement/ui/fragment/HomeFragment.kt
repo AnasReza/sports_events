@@ -51,6 +51,8 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
     private var longitude: Double = 0.0
     private var height: Int = 0
     private var width: Int = 0
+    private var nearbyJson: String = ""
+    private var allEventJson: String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -127,9 +129,14 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
 
     override fun onClick(v: View?) {
         when (v!!.id) {
-//
+
             R.id.nearby_event -> {
-                requireActivity().startActivity(Intent(activity, NearByActivity::class.java))
+                if (nearbyJson != "") {
+                    requireActivity().startActivity(
+                        Intent(activity, NearByActivity::class.java)
+                            .putExtra("NearByJson", nearbyJson)
+                    )
+                }
             }
             R.id.all_event_maker -> {
                 requireActivity().startActivity(
@@ -140,16 +147,17 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
                 )
             }
             R.id.all_event -> {
-                requireActivity().startActivity(Intent(activity, AllEventsActivity::class.java))
-            }
-            R.id.foxLayout -> {
-                requireActivity().startActivity(
-                    Intent(
-                        activity,
-                        EventMakerDetailsActivity::class.java
+                if (allEventJson != "") {
+                    requireActivity().startActivity(
+                        Intent(
+                            activity,
+                            AllEventsActivity::class.java
+                        ).putExtra("allEventJson", allEventJson)
                     )
-                )
+                }
+
             }
+
         }
     }
 
@@ -166,7 +174,7 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
         } catch (e: ArrayIndexOutOfBoundsException) {
             Toast.makeText(
                 requireActivity(),
-                "Please web RTCSwitch on Your Location to get Nearby Events",
+                "Please Switch on Your Location to get Nearby Events",
                 Toast.LENGTH_SHORT
             ).show()
         }
@@ -204,9 +212,9 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
     private val locationListener: LocationListener = object : LocationListener {
 
         override fun onLocationChanged(location: Location) {
-            Log.d("Anas","${location.longitude} longi")
+            // Log.d("Anas","${location.longitude} longi")
             if (check) {
-
+                Log.d("Anas", "${location.longitude} longi")
                 check = false
 
                 latitude = location.latitude
@@ -229,96 +237,96 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
     }
 
     override fun onNearBy(response: String) {
-        Log.i("Anas","onNearBy")
-        if (activity != null) {
-            val json = JSONObject(response)
-            val data = json.getJSONObject("data")
-            val eventArray = data.getJSONArray("events")
-            if (eventArray.length() > 0) {
-                for (x in 0 until eventArray.length()) {
-                    val desSub: String
-                    val inflator = LayoutInflater.from(activity)
-                    var newView = inflator!!.inflate(R.layout.event_card_view, null)
-                    val dataJSON = eventArray.getJSONObject(x)
-                    val imageURL = dataJSON.getString("picture")
-                    val participatesList = dataJSON.getJSONArray("participates")
-                    val totalPartcipants = dataJSON.getInt("totalParticipants")
-                    val descriptionString = dataJSON.getString("description")
-                    val startTimeData = dataJSON.getJSONObject("startTime")
-                    val endTimeData = dataJSON.getJSONObject("endTime")
-                    val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
-                    val c = Calendar.getInstance()
-                    val c1 = Calendar.getInstance()
-                    val c2 = Calendar.getInstance()
-                    val c3 = Calendar.getInstance()
-                    val sdf = SimpleDateFormat("MMM")
-                    val startTimeFrom = inputFormat.parse(startTimeData.getString("from"))
-                    val startTimeTo = inputFormat.parse(startTimeData.getString("to"))
-                    val endTimeFrom = inputFormat.parse(endTimeData.getString("from"))
-                    val endTimeTo = inputFormat.parse(endTimeData.getString("to"))
-                    c.time = startTimeFrom
-                    c1.time = startTimeTo
-                    c2.time = endTimeFrom
-                    c3.time = endTimeTo
+        Log.i("Anas", "onNearBy")
+        nearbyJson = response
+        val json = JSONObject(response)
+        val data = json.getJSONObject("data")
+        val eventArray = data.getJSONArray("events")
+        if (eventArray.length() > 0) {
+            for (x in 0 until eventArray.length()) {
+                val desSub: String
+                val inflator = LayoutInflater.from(activity)
+                var newView = inflator!!.inflate(R.layout.event_card_view, null)
+                val dataJSON = eventArray.getJSONObject(x)
+                val imageURL = dataJSON.getString("picture")
+                val participatesList = dataJSON.getJSONArray("participates")
+                val totalPartcipants = dataJSON.getInt("totalParticipants")
+                val descriptionString = dataJSON.getString("description")
+                val startTimeData = dataJSON.getJSONObject("startTime")
+                val endTimeData = dataJSON.getJSONObject("endTime")
+                val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
+                val c = Calendar.getInstance()
+                val c1 = Calendar.getInstance()
+                val c2 = Calendar.getInstance()
+                val c3 = Calendar.getInstance()
+                val sdf = SimpleDateFormat("MMM")
+                val startTimeFrom = inputFormat.parse(startTimeData.getString("from"))
+                val startTimeTo = inputFormat.parse(startTimeData.getString("to"))
+                val endTimeFrom = inputFormat.parse(endTimeData.getString("from"))
+                val endTimeTo = inputFormat.parse(endTimeData.getString("to"))
+                c.time = startTimeFrom
+                c1.time = startTimeTo
+                c2.time = endTimeFrom
+                c3.time = endTimeTo
 
-                    desSub = if (descriptionString.length > 50) {
-                        "${descriptionString.substring(0, 50)}..."
-                    } else {
-                        descriptionString
-                    }
-
-                    val title: TextView = newView.findViewById(R.id.title)
-                    val details: TextView = newView.findViewById(R.id.details)
-                    val description: TextView = newView.findViewById(R.id.descriptionText)
-                    val event_image: ImageView = newView.findViewById(R.id.event_image)
-                    val price: TextView = newView.findViewById(R.id.price)
-                    val participantsText: TextView = newView.findViewById(R.id.participantsText)
-                    val startTimeText: TextView = newView.findViewById(R.id.startTime)
-                    val endTimeText: TextView = newView.findViewById(R.id.endTime)
-
-                    newView.layoutParams =
-                        ViewGroup.LayoutParams((width * 0.84).toInt(), (height * 0.23).toInt())
-                    title.text = dataJSON.getString("title")
-                    details.text =
-                        "${dataJSON.getString("category")} • ${dataJSON.getString("routeLength")} KM • ${
-                            dataJSON.getString(
-                                "startingAreaAddress"
-                            )
-                        }"
-                    description.text = desSub
-                    price.text = "$${dataJSON.getString("price")}"
-                    participantsText.text = "${participatesList.length()}/$totalPartcipants"
-                    startTimeText.text =
-                        "${startTimeFrom.date} ${sdf.format(c.time)} ${startTimeFrom.hours}:${startTimeFrom.minutes} " +
-                                "To ${startTimeTo.date} ${sdf.format(c1.time)} ${startTimeTo.hours}:${startTimeTo.minutes}"
-
-                    endTimeText.text =
-                        "${endTimeFrom.date} ${sdf.format(c2.time)} ${endTimeFrom.hours}:${endTimeFrom.minutes} " +
-                                "To ${endTimeTo.date} ${sdf.format(c3.time)} ${endTimeTo.hours}:${endTimeTo.minutes}"
-
-                    event_image.setImageDrawable(null)
-                    Picasso.with(requireActivity()).load(imageURL).into(event_image)
-
-                    newView.setOnClickListener {
-                        startActivity(
-                            Intent(
-                                requireActivity(),
-                                EventDetailActivity::class.java
-                            ).putExtra("details", eventArray[x].toString())
-                        )
-                    }
-
-                    nearbyCard!!.addView(newView)
-
+                desSub = if (descriptionString.length > 50) {
+                    "${descriptionString.substring(0, 50)}..."
+                } else {
+                    descriptionString
                 }
-            }
 
+                val title: TextView = newView.findViewById(R.id.title)
+                val details: TextView = newView.findViewById(R.id.details)
+                val description: TextView = newView.findViewById(R.id.descriptionText)
+                val event_image: ImageView = newView.findViewById(R.id.event_image)
+                val price: TextView = newView.findViewById(R.id.price)
+                val participantsText: TextView = newView.findViewById(R.id.participantsText)
+                val startTimeText: TextView = newView.findViewById(R.id.startTime)
+                val endTimeText: TextView = newView.findViewById(R.id.endTime)
+
+                newView.layoutParams =
+                    ViewGroup.LayoutParams((width * 0.84).toInt(), (height * 0.23).toInt())
+                title.text = dataJSON.getString("title")
+                details.text =
+                    "${dataJSON.getString("category")} • ${dataJSON.getString("routeLength")} KM • ${
+                        dataJSON.getString(
+                            "startingAreaAddress"
+                        )
+                    }"
+                description.text = desSub
+                price.text = "$${dataJSON.getString("price")}"
+                participantsText.text = "${participatesList.length()}/$totalPartcipants"
+                startTimeText.text =
+                    "${startTimeFrom.date} ${sdf.format(c.time)} ${startTimeFrom.hours}:${startTimeFrom.minutes} " +
+                            "To ${startTimeTo.date} ${sdf.format(c1.time)} ${startTimeTo.hours}:${startTimeTo.minutes}"
+
+                endTimeText.text =
+                    "${endTimeFrom.date} ${sdf.format(c2.time)} ${endTimeFrom.hours}:${endTimeFrom.minutes} " +
+                            "To ${endTimeTo.date} ${sdf.format(c3.time)} ${endTimeTo.hours}:${endTimeTo.minutes}"
+
+                event_image.setImageDrawable(null)
+                Picasso.with(requireActivity()).load(imageURL).into(event_image)
+
+                newView.setOnClickListener {
+                    startActivity(
+                        Intent(
+                            requireActivity(),
+                            EventDetailActivity::class.java
+                        ).putExtra("details", eventArray[x].toString())
+                    )
+                }
+
+                nearbyCard!!.addView(newView)
+
+            }
         }
+
 
     }
 
     override fun onEventLimit(response: String) {
-        Log.i("Anas","onEventLimit")
+        Log.i("Anas", "onEventLimit")
+        allEventJson = response
         val json = JSONObject(response)
         val data = json.getJSONObject("data")
         val eventArray = data.getJSONArray("events")
@@ -365,7 +373,7 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
             val endTimeText: TextView = newView.findViewById(R.id.endTime)
 
             newView.layoutParams =
-                ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500)
+                ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (height*0.23).toInt())
             title.text = dataJSON.getString("title")
             details.text =
                 "${dataJSON.getString("category")} • ${dataJSON.getString("routeLength")} KM • ${
@@ -403,7 +411,7 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
     }
 
     override fun onAllEventMaker(response: String) {
-        Log.i("Anas","onAllEventMaker")
+        Log.i("Anas", "onAllEventMaker")
         val json = JSONObject(response)
         val data = json.getJSONObject("data")
         val eventArray = data.getJSONArray("eventMakers")

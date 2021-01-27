@@ -70,9 +70,7 @@ dependencies {
     implementation 'com.android.volley:volley:1.1.1'
     implementation 'com.google.android.gms:play-services-auth:19.0.0'
 implementation 'com.github.jd-alexander:library:1.1.0'
-    implementation 'org.apache.httpcomponents:httpcore:4.4.1'
-    //noinspection DuplicatePlatformClasses
-    implementation 'org.apache.httpcomponents:httpclient:4.5'
+
     implementation 'com.google.firebase:firebase-messaging:20.2.0'
     implementation 'com.google.firebase:firebase-core:16.0.4'
     implementation 'com.squareup.picasso:picasso:2.5.2'

@@ -3,7 +3,6 @@ package com.sportseventmanagement.ui.activity.settings
 import android.os.Bundle
 import android.text.method.HideReturnsTransformationMethod
 import android.text.method.PasswordTransformationMethod
-import android.util.Log
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
@@ -125,7 +124,11 @@ class ChangePasswordActivity : AppCompatActivity(), View.OnClickListener,
                 } else {
                     when {
                         current.isEmpty() -> {
-                            Toast.makeText(this, "Your Current Password is Empty.", Toast.LENGTH_SHORT)
+                            Toast.makeText(
+                                this,
+                                "Your Current Password is Empty.",
+                                Toast.LENGTH_SHORT
+                            )
                                 .show()
                         }
                         newPass.isEmpty() -> {
@@ -133,7 +136,11 @@ class ChangePasswordActivity : AppCompatActivity(), View.OnClickListener,
                                 .show()
                         }
                         repeat.isEmpty() -> {
-                            Toast.makeText(this, "Your repeat Password is Empty.", Toast.LENGTH_SHORT)
+                            Toast.makeText(
+                                this,
+                                "Your repeat Password is Empty.",
+                                Toast.LENGTH_SHORT
+                            )
                                 .show()
                         }
                     }
@@ -144,7 +151,11 @@ class ChangePasswordActivity : AppCompatActivity(), View.OnClickListener,
     }
 
     override fun onUpdate(response: String) {
-        Log.e("Anas", "$response  from update password")
+        Toast.makeText(
+            this@ChangePasswordActivity,
+            "Your password has been updated.",
+            Toast.LENGTH_SHORT
+        ).show()
     }
 }
 
