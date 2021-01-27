@@ -6,7 +6,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-        android:layout_marginTop="30dp">
+        android:layout_marginTop="30dp"
+        android:id="@+id/ll">
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -28,12 +29,16 @@
             android:layout_marginTop="15dp"
             android:textColor="#666666"
             android:fontFamily="@font/helvetica_medium"/>
+
+
     </LinearLayout>
 
-<ImageView android:id="@+id/center_image"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:background="@drawable/ic_mission"
-    android:layout_centerInParent="true"/>
+    <ImageView android:id="@+id/center_image"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/ic_mission"
+        android:layout_marginTop="25dp"
+        android:layout_centerInParent="true"
+        android:layout_below="@+id/ll"/>
 
 </RelativeLayout>

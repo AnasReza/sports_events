@@ -2,6 +2,7 @@ package com.sportseventmanagement.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -20,7 +21,7 @@ import java.util.*
 
 class PastEventsFragment : Fragment(), FetchEventModel.Event {
     private var past_layout: LinearLayout? = null
-
+    private var height: Int = 0
     private var model: FetchEventModel? = null
     private var pref: Preferences? = null
     override fun onCreateView(
@@ -36,7 +37,9 @@ class PastEventsFragment : Fragment(), FetchEventModel.Event {
     private fun init(view: View) {
         model = FetchEventModel(this, requireActivity())
         pref = Preferences(requireActivity())
-
+        val displayMetrics = DisplayMetrics()
+        requireActivity().windowManager.defaultDisplay.getMetrics(displayMetrics)
+        height = displayMetrics.heightPixels
         past_layout = view.findViewById(R.id.past_layout)
 
         model!!.onEventsFilter(pref!!.getToken()!!, "past")
@@ -98,9 +101,16 @@ class PastEventsFragment : Fragment(), FetchEventModel.Event {
                     val participantsText: TextView = newView.findViewById(R.id.participantsText)
                     val startTimeText: TextView = newView.findViewById(R.id.startTime)
                     val endTimeText: TextView = newView.findViewById(R.id.endTime)
-
-                    newView.layoutParams =
-                        ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 360)
+                    if(height<=864){
+                        title.setTextSize(height*0.014.toFloat())
+                        details.setTextSize(height*0.008.toFloat())
+                        description.setTextSize(height*0.011.toFloat())
+                        participantsText.setTextSize(height*0.007.toFloat())
+                        startTimeText.setTextSize(height*0.009.toFloat())
+                        endTimeText.setTextSize(height*0.009.toFloat())
+                    }
+//                    newView.layoutParams =
+//                        ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500)
                     title!!.text = dataJSON.getString("title")
                     details!!.text =
                         "${dataJSON.getString("category")} • ${dataJSON.getString("routeLength")} KM • ${

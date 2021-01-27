@@ -2,6 +2,7 @@ package com.sportseventmanagement.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 class ActiveEventsFragment() : Fragment(), FetchEventModel.Event {
+    private var height: Int= 0
     private var active_layout: LinearLayout? = null
 
     private var model: FetchEventModel? = null
@@ -36,7 +38,9 @@ class ActiveEventsFragment() : Fragment(), FetchEventModel.Event {
     private fun init(view: View) {
         model = FetchEventModel(this, requireActivity())
         pref = Preferences(requireActivity())
-
+        val displayMetrics = DisplayMetrics()
+        requireActivity().windowManager.defaultDisplay.getMetrics(displayMetrics)
+        height = displayMetrics.heightPixels
         active_layout = view.findViewById(R.id.active_layout)
 
         model!!.onEventsFilter(pref!!.getToken()!!, "active")
@@ -69,6 +73,7 @@ class ActiveEventsFragment() : Fragment(), FetchEventModel.Event {
                     val descriptionString = dataJSON.getString("description")
                     val startTimeData = dataJSON.getJSONObject("startTime")
                     val endTimeData = dataJSON.getJSONObject("endTime")
+
                     val inputFormat = SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS'Z'")
                     val c = Calendar.getInstance()
                     val c1 = Calendar.getInstance()
@@ -98,9 +103,16 @@ class ActiveEventsFragment() : Fragment(), FetchEventModel.Event {
                     val participantsText: TextView = newView.findViewById(R.id.participantsText)
                     val startTimeText: TextView = newView.findViewById(R.id.startTime)
                     val endTimeText: TextView = newView.findViewById(R.id.endTime)
-
-                    newView.layoutParams =
-                        ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500)
+                    if(height<=864){
+                        title.setTextSize(height*0.014.toFloat())
+                        details.setTextSize(height*0.008.toFloat())
+                        description.setTextSize(height*0.011.toFloat())
+                        participantsText.setTextSize(height*0.007.toFloat())
+                        startTimeText.setTextSize(height*0.009.toFloat())
+                        endTimeText.setTextSize(height*0.009.toFloat())
+                    }
+//                    newView.layoutParams =
+//                        ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, 500)
                     title!!.text = dataJSON.getString("title")
                     details!!.text =
                         "${dataJSON.getString("category")} • ${dataJSON.getString("routeLength")} KM • ${
