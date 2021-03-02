@@ -73,7 +73,7 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
         val display = requireActivity().windowManager.defaultDisplay
         val stageWidth = display.width
         val stageHeight = display.height
-        Log.d("Anas", "$stageWidth x $stageHeight")
+        Log.d("Anas", "$stageWidth x $height  x $width  x  $stageHeight")
         nearbyModel = NearByEventModel(this, requireActivity())
         eventModel = FetchEventModel(this, requireActivity())
         eventMakerModel = AllEventsMakersModel(this, requireActivity())
@@ -200,7 +200,7 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
 
             } else {
                 locationManager?.requestLocationUpdates(
-                    LocationManager.NETWORK_PROVIDER,
+                    LocationManager.GPS_PROVIDER,
                     0L,
                     0F,
                     locationListener
@@ -372,9 +372,23 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
             val participantsText: TextView = newView.findViewById(R.id.participantsText)
             val startTimeText: TextView = newView.findViewById(R.id.startTime)
             val endTimeText: TextView = newView.findViewById(R.id.endTime)
+            if(height<=864){
+                title.setTextSize(height*0.014.toFloat())
+                details.setTextSize(height*0.008.toFloat())
+                description.setTextSize(height*0.011.toFloat())
+                participantsText.setTextSize(height*0.007.toFloat())
+                startTimeText.setTextSize(height*0.009.toFloat())
+                endTimeText.setTextSize(height*0.009.toFloat())
+            }
 
+
+<<<<<<< HEAD
             newView.layoutParams =
                 ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (height * 0.3).toInt())
+=======
+//            newView.layoutParams =
+//                ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (height).toInt())
+>>>>>>> 2eb4b12234b3de09446c5012fc4d0730bc89693e
             title.text = dataJSON.getString("title")
             details.text =
                 "${dataJSON.getString("category")} • ${dataJSON.getString("routeLength")} KM • ${

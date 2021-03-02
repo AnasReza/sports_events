@@ -7,7 +7,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:id="@+id/ll">
 
         <TextView
             android:layout_width="wrap_content"
@@ -31,13 +32,18 @@
             android:text="Get ready in the starting area and start the time to complete against yourself and others."
             android:textColor="#666666"
             android:textSize="16sp" />
+
+
     </LinearLayout>
 
     <ImageView
         android:id="@+id/center_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+       android:layout_below="@+id/ll"
         android:layout_centerInParent="true"
+        android:layout_marginTop="20dp"
         android:background="@drawable/ic_clock" />
+
 
 </RelativeLayout>
