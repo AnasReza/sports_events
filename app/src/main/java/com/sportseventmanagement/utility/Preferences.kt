@@ -14,8 +14,8 @@ class Preferences(context: Context) {
     private val USERNAME = "username"
     private val FULLNAME = "fullname"
     private val TOKEN = "token"
+    private val BRAINTREE_TOKEN = "braintree"
     private val PHOTOURL = "photourl"
-
 
 
     private val preferences = PreferenceManager.getDefaultSharedPreferences(context)
@@ -88,6 +88,14 @@ class Preferences(context: Context) {
 
     fun setToken(value: String) {
         preferences.edit().putString(TOKEN, value).apply()
+    }
+    fun getBrainTreeToken(): String? {
+        var deviceToken = preferences.getString(BRAINTREE_TOKEN, "")
+        return deviceToken
+    }
+
+    fun setBrainTreeToken(value: String) {
+        preferences.edit().putString(BRAINTREE_TOKEN, value).apply()
     }
     fun getPhotoURL(): String? {
         var deviceToken = preferences.getString(PHOTOURL, "")

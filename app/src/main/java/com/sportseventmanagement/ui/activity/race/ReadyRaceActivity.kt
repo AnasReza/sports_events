@@ -154,9 +154,9 @@ class ReadyRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickL
             decodeGPX(file)
             checkpoints!!.text = wptList!!.size.toString()
             for (x in 0 until wptList!!.size) {
-                if (x < wptList!!.size - 1) {
-                    distmodel!!.onGetDistance(wptList!![x], wptList!![x + 1])
-                }
+//                if (x < wptList!!.size - 1) {
+//                    distmodel!!.onGetDistance(wptList!![x], wptList!![x + 1])
+//                }
                 when (x) {
                     0 -> {
                         if (pref!!.getPhotoURL() != "") {
@@ -257,6 +257,7 @@ class ReadyRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClickL
             polyLineOptions.width(13F)
             polyLineOptions.color(Color.MAGENTA)
             polyLineOptions.geodesic(true)
+            map!!.addPolyline(polyLineOptions)
 
 
         } catch (e: IOException) {

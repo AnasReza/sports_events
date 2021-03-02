@@ -89,6 +89,7 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
         eventLimitEvent = root.findViewById(R.id.eventLimitLayout)
         event_maker_layout = root.findViewById(R.id.event_maker_layout)
 
+        Log.e("Anas","${pref!!.getToken()} token")
         eventMakerModel!!.onEventMaker(pref!!.getToken()!!)
         eventModel!!.onEventsLimit(pref!!.getToken()!!)
 
@@ -373,7 +374,7 @@ class HomeFragment : Fragment(), View.OnClickListener, NearByEventModel.NearByEv
             val endTimeText: TextView = newView.findViewById(R.id.endTime)
 
             newView.layoutParams =
-                ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (height*0.23).toInt())
+                ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, (height * 0.3).toInt())
             title.text = dataJSON.getString("title")
             details.text =
                 "${dataJSON.getString("category")} • ${dataJSON.getString("routeLength")} KM • ${

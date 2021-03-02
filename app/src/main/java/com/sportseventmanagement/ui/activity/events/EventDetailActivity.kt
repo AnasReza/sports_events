@@ -3,6 +3,7 @@ package com.sportseventmanagement.ui.activity.events
 import android.content.Intent
 import android.graphics.*
 import android.location.Location
+import android.net.Uri
 import android.os.Bundle
 import android.util.Log
 import android.view.*
@@ -13,7 +14,6 @@ import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.RequestOptions
-import com.directions.route.*
 import com.google.android.gms.maps.CameraUpdateFactory
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
@@ -59,7 +59,6 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
     private var price: TextView? = null
     private var rulesLayout: LinearLayout? = null
 
-
     private var str: String = ""
     private var pref: Preferences? = null
     private var makerJson: JSONObject? = null
@@ -75,6 +74,7 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
     private var index: Int? = -1
     var destlat: Double = 0.0
     var destlong: Double = 0.0
+    var eventID=""
     override fun onCreate(savedInstanceState: Bundle?) {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.setFlags(
@@ -154,7 +154,7 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
 
     private fun readingJSON(str: String) {
         val dataJSON = JSONObject(str)
-        val eventID = dataJSON.getString("_id")
+         eventID = dataJSON.getString("_id")
         Log.e("Anas", "$eventID")
         val rulesList = dataJSON.getJSONArray("rules")
         val imageURL = dataJSON.getString("picture")
@@ -331,9 +331,9 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
             decodeGPX(file)
 
             for (x in 0 until wptList!!.size) {
-                if (x < wptList!!.size - 1) {
-                    distmodel!!.onGetDistance(wptList!![x], wptList!![x + 1])
-                }
+//                if (x < wptList!!.size - 1) {
+//                    distmodel!!.onGetDistance(wptList!![x], wptList!![x + 1])
+//                }
                 when (x) {
                     0 -> {
                         if (pref!!.getPhotoURL() != "") {
@@ -441,8 +441,8 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
             polyLineOptions.addAll(wptList)
             polyLineOptions.width(13F)
             polyLineOptions.color(Color.MAGENTA)
-            polyLineOptions.geodesic(true)
-            //map!!.addPolyline(polyLineOptions)
+
+            map!!.addPolyline(polyLineOptions)
 //            val middle: Int = (gpxList!!.size) / 2
 //            for (i in gpxList!!.indices) {
 //
@@ -629,6 +629,13 @@ class EventDetailActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClic
         when (v!!.id) {
             R.id.ToPay -> {
                 // startActivity(Intent(this@EventDetailActivity, PaymentActivity::class.java))
+                var token=pref!!.getToken()
+                var braintree_token=pref!!.getBrainTreeToken()
+
+                val browserIntent =
+                    Intent(Intent.ACTION_VIEW, Uri.parse(
+                        "https://sports-event-client.netlify.app/payment?authToken=$token&braintreeClientToken=$braintree_token&eventId=$eventID"))
+                startActivity(browserIntent)
             }
             R.id.back_button -> {
                 finish()

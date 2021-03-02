@@ -711,7 +711,11 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
     }
     override fun onMapReady(map: GoogleMap?) {
         Log.i("Anas", "MAP IS READY")
+
         mMap = map
+        mMap!!.mapType=GoogleMap.MAP_TYPE_SATELLITE
+        var settings=mMap!!.projection
+
         // model!!.onGetGPX(gpxUrl)
         var assetInStream: InputStream? = null
 
@@ -737,7 +741,7 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
                     0 -> {
                         if (pref!!.getPhotoURL() != "") {
                             Glide.with(this).asBitmap().load(pref!!.getPhotoURL())
-                                .override(70, 70)
+                                .override(100, 100)
                                 .apply(RequestOptions().fitCenter())
                                 .listener(object : RequestListener<Bitmap> {
                                     override fun onLoadFailed(
@@ -775,7 +779,11 @@ class FinishRaceActivity : AppCompatActivity(), OnMapReadyCallback, View.OnClick
                                 .placeholder(R.drawable.ic_user_placeholder)
                                 .preload()
                         }
-                        map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(wptList!![0], 10f))
+
+
+                        map!!.moveCamera(CameraUpdateFactory.newLatLngZoom(wptList!![0],18f))
+                        var cp=CameraPosition.builder(map.cameraPosition).bearing(10f).build()
+                        map!!.animateCamera(CameraUpdateFactory.newCameraPosition(cp))
                     }
                     wptList!!.size - 1 -> {
                         Glide.with(this).asBitmap().load(R.drawable.finish_circle)

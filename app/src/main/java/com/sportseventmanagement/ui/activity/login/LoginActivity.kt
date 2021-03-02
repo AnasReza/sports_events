@@ -297,6 +297,7 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginModel.Resu
             true -> {
                 var dataObject = json.getJSONObject("data")
                 var token = dataObject.getString("token")
+                var brain_tree=dataObject.getString("braintreeClientToken")
                 var userObject = dataObject.getJSONObject("user")
                 var id = userObject.getString("_id")
                 var email = userObject.getString("email")
@@ -306,7 +307,9 @@ class LoginActivity : AppCompatActivity(), View.OnClickListener, LoginModel.Resu
                 var image=userObject.getString("image")
 
 
+
                 pref!!.setToken(token)
+                pref!!.setBrainTreeToken(brain_tree)
                 pref!!.setEmail(email)
                 pref!!.setType("email")
                 pref!!.setFullName(fullname)

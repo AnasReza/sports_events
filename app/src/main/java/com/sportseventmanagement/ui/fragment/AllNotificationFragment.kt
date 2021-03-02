@@ -298,14 +298,19 @@ class AllNotificationFragment : Fragment(), NotificationModel.Notification, Fetc
             var notiList: MutableList<String> = mutableListOf()
             var sideList: MutableList<Int> = mutableListOf()
             for (x in 0 until lastMonth!!.size) {
-                val body = lastWeek!![x].getBody()
-                bodyList.add(body)
-                notiList.add(lastWeek!![x].getNotificationID())
-                if (body.contains("CHECK NOW!", true)) {
-                    sideList.add(R.drawable.ic_yellow_cycle)
-                } else {
-                    sideList.add(R.drawable.ic_purple_medal)
+                try{
+                    val body = lastWeek!![x].getBody()
+                    bodyList.add(body)
+                    notiList.add(lastWeek!![x].getNotificationID())
+                    if (body.contains("CHECK NOW!", true)) {
+                        sideList.add(R.drawable.ic_yellow_cycle)
+                    } else {
+                        sideList.add(R.drawable.ic_purple_medal)
+                    }
+                }catch(e:IndexOutOfBoundsException){
+                    e.printStackTrace()
                 }
+
             }
             var map: HashMap<String, MutableList<String>> =
                 hashMapOf("notificationID" to notiList, "body" to bodyList)
